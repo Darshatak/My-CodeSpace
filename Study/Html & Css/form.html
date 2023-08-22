@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>input</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                background-color: aquamarine;
+            }
+
+
+
+            div {
+                margin: auto;
+                padding: 5px;
+            }
+
+            #d {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            #f {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            #d input {
+                width: 150px;
+            }
+
+            #d label {
+                font-size: x-large;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            #f input {
+                width: 20px;
+            }
+
+            #f label {
+                font-size: x-large;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            label {
+                float: left;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            input {
+                float: right;
+            }
+
+            .container {
+                border-radius: 10px;
+                background-color: aliceblue;
+                width: 50%;
+                padding: 20px 40px;
+                margin: 50px 0px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form>
+                <h1>Form Elements</h1>
+                <div id="d">
+                    <label>Search</label>
+                    <input type="search">
+                </div>
+
+
+                <div id="d">
+                    <label>Text</label>
+                    <input type="text">
+                </div>
+
+                <div id="d">
+                    <label>email</label>
+                    <input type="email">
+                </div>
+
+                <div id="d">
+                    <label>tel</label>
+                    <input type="tel">
+                </div>
+
+                <div id="d">
+                    <label>number</label>
+                    <input type="number">
+                </div>
+
+                <div id="d">
+                    <label>password</label>
+                    <input type="password">
+                </div>
+
+                <div id="f">
+                    <label>radio</label>
+                    <div class="chekc"></div>
+                    <input type="radio" name="rad1" id="r1">
+                    <input type="radio" name="rad1" id="r2">
+                </div>
+
+                <div id="f">
+                    <label>checkbox</label>
+                    <div class="chekc"></div>
+                    <input type="checkbox" name="chk1" id="chk1">
+                    <input type="checkbox" name="chk1" id="chk2">
+                </div>
+
+                <div id="d">
+                    <label>color</label>
+                    <input type="color">
+                </div>
+
+                <div id="d">
+                    <label>date</label>
+                    <input type="date">
+                </div>
+
+                <div id="d">
+                    <label>datetime</label>
+                    <input type="datetime">
+                </div>
+
+                <div id="d">
+                    <label>datetime-local</label>
+                    <input type="datetime-local">
+                </div>
+
+                <div id="d">
+                    <label>month</label>
+                    <input type="month">
+                </div>
+
+                <div id="d">
+                    <label>hidden</label>
+                    <input type="hidden">
+                </div>
+
+                <div id="d">
+                    <label>time</label>
+                    <input type="time">
+                </div>
+
+                <div id="d">
+                    <label>img</label>
+                    <input type="image">
+                </div>
+
+                <div id="d">
+                    <label>range</label>
+                    <input type="range">
+                </div>
+
+                <div id="d">
+                    <label>button</label>
+                    <input type="button">
+                </div>
+
+                <div id="d">
+                    <label>reset</label>
+                    <input type="reset">
+                </div>
+
+                <div id="d">
+                    <label>file</label>
+                    <input type="file">
+                </div>
+
+                <div id="d">
+                    <label>url</label>
+                    <input type="url">
+                </div>
+
+                <div id="d">
+                    <label>week</label>
+                    <input type="week">
+                </div>
+
+            </form>
+
+        </div>
+    </body>
+</html>

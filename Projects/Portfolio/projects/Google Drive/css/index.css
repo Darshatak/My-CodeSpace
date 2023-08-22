@@ -1,0 +1,682 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Josefin+Sans&family=Poppins&family=REM&family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    
+}
+
+.left{
+    height: 100%;
+    width: 300px;
+    background-color: rgb(247, 249, 252);
+    position: relative;
+    padding: 20px 20px;
+   
+   
+}
+
+.right{
+    width: 70px;
+    background-color: rgb(247, 249, 252);
+    overflow: hidden;
+    position: relative;
+}
+
+
+.center{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px 10px 0px 0px;
+    position: relative;
+   
+}
+
+
+
+.heading{
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: start;
+    align-items: center;
+    
+}
+
+.heading img{
+    margin-right:5px;
+    width: 15%;
+}
+.heading p{
+    font-size: 25pt;
+    font-weight: 400;
+}
+
+.new{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: space-evenly ;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: white;
+    border:none;
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 0px 1px 2px 0px black;
+    margin-bottom: 20px;
+}
+.new i{
+    margin-right: 10px;
+}
+.new:hover{
+    background-color: rgba(101, 142, 195, 0.2);
+}
+
+.sticky{
+    height: 60%;
+    position: sticky;
+    top: 0%;
+    overflow: hidden;
+}
+
+.folder{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 20px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    
+}
+/* For WebKit-based browsers */
+/* For WebKit-based browsers */
+
+.sticky:hover {
+    overflow-y: auto;
+    /* Show scrollbar on hover */
+}
+
+.sticky::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+.sticky::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+.sticky::-webkit-scrollbar-thumb,
+.sticky::-webkit-scrollbar-thumb:hover {
+    background-color: gray;
+}
+.navigation:hover {
+    overflow-y: auto;
+    /* Show scrollbar on hover */
+}
+
+.navigation::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+.navigation::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+.navigation::-webkit-scrollbar-thumb,
+.navigation::-webkit-scrollbar-thumb:hover {
+    background-color: gray;
+}
+
+
+.folder .item{
+    width: 90%;
+    display: flex;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: 0;
+    font-size: 10pt;
+
+}
+
+.active{
+    background-color: rgba(117, 164, 225, 0.5);
+    border-radius: 32px;
+}
+
+.folder .item:hover{
+    background-color: rgba(101, 142, 195, 0.2);
+        border-radius: 32px;
+}
+
+.folder .item i{
+    width: 15%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: rgb(103, 102, 102);
+}
+.folder  a{
+    width: 70%;
+    font-size: 11pt;
+    text-align: center;
+    text-decoration: none;
+    color: blue;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 25px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.folder a:hover{
+    background-color: rgba(101, 142, 195, 0.2);
+    border-radius: 25px;
+}
+
+.rangeStorage{
+    width: 90%;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+.rangeStorage meter{
+    width: 100%;
+    height: 10px;
+    padding-right:10px;
+}
+.rangeStorage meter::-webkit-meter-optimum-value{
+    background-color:rgb(15, 87, 203);
+}
+
+
+.topNav{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(247, 249, 252);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    position: sticky;
+    top: 0%;
+    padding: 5px 0px ;
+    
+    
+}
+.leftNav {
+    position: relative;
+    height: 35px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    border-radius: 32px;
+    border: none;
+    background-color: rgb(237, 242, 251);
+    margin: 2px 0px;
+    padding: 5px 6px;
+}
+
+.leftNav:focus {
+    border: 1px solid black;
+}
+
+.searchBar {
+    height: 98%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+}
+.searchBar input{
+    padding: 0px 10px ;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color:rgb(237, 242, 251);
+    border-radius: 32px;
+    font-size: 13pt;
+    transition:all 0.4;
+}
+.leftNav:focus-within{
+    box-shadow: 0px 0.5px 3px black;
+    background-color: white;
+}
+
+.searchBar input::placeholder{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-weight: 600; 
+    font-size: 11pt;
+}
+.searchBar input:focus-within{
+    background-color: rgb(255, 255, 255);
+
+}
+
+
+.icon {
+    cursor: pointer;
+    margin: 0 6px;
+    padding: 10px 8px; 
+    transform: scale(1.2);
+}
+.icon:hover {
+    background-color: rgba(128, 128, 128,0.2);
+    border-radius:50% ;
+}
+
+.rightNav{
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.rightNav .icon{
+    cursor: pointer;
+    margin: 0 6px; 
+}
+
+.rightNav i{
+    cursor: pointer;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+
+}
+
+.leftH{
+    width: 40%;
+}
+
+.rightH{
+    width: 60%;
+    text-align: end;
+    padding-right: 30px;
+}
+.rightH i{
+    margin-left: 30px;
+    padding: 10px;
+}
+.rightH i:hover{
+    border-radius: 50%;
+   background-color: rgb(147, 144, 144);
+}
+
+.rightH i:nth-child(2){
+    padding: 2.5px 5px;
+    border: 2px solid rgb(147, 144, 144);
+    border-radius: 50%;
+    font-size: 9pt;
+}
+
+.sort {
+    margin-left: 10px;
+    
+}
+.sort .dropdown{
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 2px 5px;
+    text-align: start;
+    margin-left: 5px;
+    
+}
+.sort .dropdown span{
+    width: 100%;
+    padding-left: 10px;
+    padding: 0;
+}
+.sort .dropdown .item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.dropdown i{
+    font-size: 8pt;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 16px;
+
+}
+.dropdown span{
+    padding: 5px 0px;
+
+}
+.dropdown:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 5px 10px;
+}
+
+.dropdown-content .item:hover{
+        background-color: rgba(128, 128, 128,0.5);
+}
+
+.dropdown-content .item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    background-color: #f9f9f9;
+    padding: 0px 10px;
+
+}
+
+.dropdown-content .item i:nth-child(3) {
+    text-align: right;
+}
+
+.dropdown:hover .dropdown-content {
+    margin-top: 2px;
+    margin-left: -10px;
+    display: block;
+    
+
+}
+
+.dropdown-content a {
+    width: 100%;
+    color: black;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content img {
+    width: 20px;
+    display: block;
+}
+
+
+
+.navigation{
+    height: 80%;
+    padding-bottom: 200px;
+    overflow: scroll;
+}
+
+.files{
+    width: 100%;
+}
+
+
+.files .heading{
+    width: 100%;
+    margin-top: 25px;
+    padding-left: 20px;
+    
+}
+.files .heading p{
+    font-size: 11pt;
+    font-weight: 500;
+}
+
+.suggestions{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 260px;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+
+.Lfiles{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    padding-bottom: 100px;
+    overflow: hidden;
+    padding-left: 40px;
+    margin: 0px;
+}
+.Lfiles .items{
+    margin-right: 0px;
+}
+
+.F_files{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 0px;
+    padding-left: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    
+}
+
+
+.Fcard:hover {
+    background-color: rgb(200, 217, 245);
+    border-radius: 16px;
+}
+.items .Fcard{
+    padding: 15px;
+    width: 250px;
+    display: flex;
+}
+.items .Fcard .title{
+    width: 260px;
+    display: flex;
+    align-items: center;
+}
+.items .Fcard .title img{
+    width: 20px;
+    display: flex;
+    margin-right: 10px;
+}
+.items .Fcard .end i{
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.items .Fcard .end i:hover{
+    background-color: rgb(198, 205, 205);
+    border-radius: 50%;
+}
+
+
+.items{
+    background-color: rgb(241, 245, 255);
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+}
+.Lfiles .card{
+    cursor: pointer;
+}
+.card .title{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.card .title .start{
+    display: flex;
+    width: 60%;
+}
+.card .title .start img{
+    padding-right: 10px;
+}
+.card .title .end{
+    display: flex;
+    justify-content: end;
+    width: 30%;
+}
+.card .title .end i{
+    padding: 10px 15px;
+    border-radius: 50%;
+
+}
+.card .title .end i:hover{
+    background-color: rgb(147, 144, 144);
+
+}
+.card .title img{
+    width: 20px;
+
+}
+.card .body {
+    text-align: center;
+    padding: 10px 5px;
+    width: 280px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card .body img{
+    width: 100%;
+    height: 60%;
+}
+
+.card .body p{
+   padding-left: 15px;
+   opacity: 50%;
+   font-size: 9pt;
+   text-align: start;
+}
+
+.items .card:hover{
+    background-color: rgb(207, 216, 242)
+}
+
+
+
+.files .heading{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.files .heading .leftH{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0;
+    margin-right: 50px;
+}
+.files .heading .rightHt{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0;
+    margin-right: 50px;
+    cursor: pointer;
+}
+.files .heading .rightHt p{
+    padding-right: 10px;
+    padding: 10px;
+}
+.files .heading .rightHt p:hover{
+  background-color: rgb(207, 216, 242);
+  border-radius: 16px;
+}
+
+
+
+
+
+.right .top {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0%;
+    
+}
+.right .top img:nth-child(1){
+    width: 70%;
+    margin: 10px 0px;
+    margin-left: -5px;
+    
+}
+.right .top img{
+    width: 40%;
+    margin: 15px 0px;
+    padding: 2px;
+    cursor: pointer;
+    
+}
+
+.right .top img:hover{
+    background-color: rgba(128, 128, 128, 0.2);
+    transform: scale(1.096);
+    border-radius: 16px;
+    
+}
+
+.right .bottom{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0%;
+
+}
+
+.right .bottom i{
+    margin-bottom: 20px;
+    font-size: 11pt;
+    font-weight: 800;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.right .bottom i:hover{
+    background-color: rgba(128, 128, 128, 0.2);
+        transform: scale(1.096);
+        border-radius: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

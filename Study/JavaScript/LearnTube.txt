@@ -1,0 +1,548 @@
+Variables 
+    primitive DataType---Copied by there Value
+        String      "D" 'V'
+        number      56
+        boolean     true false
+        null
+        undefined
+
+    Non-perimeter(Reference Type)---Copied by there Reference
+        Object
+        Function
+        Array
+_________________________________________________________________________________________________________________________
+
+
+The new Keyeord
+    -Creates a new Empty Object()
+    -Sets the value of the 'this' to be the new empty object
+    calls the contructor 
+
+
+_________________________________________________________________________________________________________________________
+
+Declaring Variable
+    var - global variable
+    let - Within Scope
+    const - fixed Value
+
+_____________________________________________________________________________________________________________________________
+
+A JavaScript callback is a function which is to be executed after
+ another function has finished Execution.
+
+window.onload-function(){
+    document.querySelector("#callbackBtn").addEventListener("click",function(){
+        console.log("Hello World From Callback");
+    })
+}
+
+
+_____________________________________________________________________________________________________________________________
+
+
+No Name or Ananomuse Function
+
+setTimeout(function(){
+    console.log("Hello World From No_Name Function");
+},2000);
+
+setTimeout(()=>{
+    console.log("Hello World From Arrow Function");
+});
+
+
+_____________________________________________________________________________________________________________________
+
+Operators
+    -Symbols which are used to assign values, compare values, perform arithmetic operaions, and more.
+
+            arthematic operators(4 standard Operators) 
+                + 
+                -
+                / (qoificient) 4/2=2
+                % modulus (remainder) 4/2=0
+
+                ++ 
+                --
+
+
+            comparision operator
+                ==
+                === Equal calue and equal type
+                !== not equal value and not equal type
+                !=
+                >
+                <
+                >=
+                <=
+
+            logical operators
+                &&  AND
+                ||  OR
+                !   Not
+
+
+            ternary(3 oprends)
+            - it assigns a value to a variable based on some conditions
+
+                variablename = <condition>? <true>:<false>
+
+                eg: 
+                var voteable = (age<18) ?"Too Young":"Old enough";
+
+                eg: 
+                2>1 ? "yes":"no"
+                (if 2 is greater then 1 then, yes will be printed else no will be printed)
+
+
+
+            Assignment operators (works on 32 bit numbers. The results are converted in JS number)
+                &   AND
+                !   OR
+                ~   NOT
+                ^   XOR
+                <<  zero fill left shift
+                >>  signed right shift
+                >>> Zero fill right shift
+
+
+            Assignment operators(binary type of operator)
+                = simple assignment
+                += add and assignment C+=A --> C=C+A
+                -= subtract and assignment
+                *= multiply and assignment
+                /= division and assignment
+                %= modulus and assignment
+
+
+            String operators
+                var a=5;
+                var b=10;
+                var d="darshatak";
+                var e="vyas";
+
+                var c=a+b;     // 15
+                var c=d+e;      //darshatakvyas
+
+
+            Type operators
+                typeof - Returns the type of a variable
+                instanceof - Returns true if an object is an instance of an object type.
+
+_________________________________________________________________________________________________________________________
+DOM- Document Object Model
+.window
+
+get Element
+.document.title
+.document.body
+.document.scripts
+.document.links
+
+Get attribute
+.document.getElementById("")
+.document.getElementsByName("")
+.document.getElementsByTagName("")
+.document.getElementsByClassName("")
+
+Events
+    Mouse Event
+        onclick
+        oncontextmenu
+        ondblclick
+        onmousedown
+        onmouse enter
+        onmousekeave
+        onmousemove
+        onmouseover
+        onmouseout
+        onmouseup
+
+
+    Keyboard Event
+        onkeydown
+        onkeypress
+        onkeyup
+
+
+    Form Event
+        onblur — When an element loses focus
+        onfocus — An element gets focus
+        onchange — The content of a form element changes
+        onsearch — The user writes something in a search field
+        onselect — The user selects some text (for <input> and <textarea>)
+        onsubmit — A form is submitted
+        oninput — User input on an element
+        oninvalid — An element is invalid
+        onreset — A form is reset
+        onload - When document is fully loded 
+
+    window
+        scroll
+        resize
+        hashchange
+        load
+        unload
+
+
+    
+    eg:- document.getElementById("abc").addEventListener("click",FunctionName);
+
+
+_________________________________________________________________________________________________________________________
+
+
+substring(start,end) OR (start)
+    var str="welcome to edureka javascript training";
+    str.substring(3,7); --come 
+    str.substring(0,10); --welcome to
+    str.substring(11); --edureka javascript training
+    var anystr= str.substring(str.length-5) -- ining
+
+
+    substring()  
+    - start and end(optional) index to get part of str.
+
+    vs 
+
+    substr() 
+    - get part of str. from an index to number of characters.
+                it has 2 parameter startindex and length
+
+    vs 
+
+    slice() 
+    - start and end index to get part of str. if end 
+        index not given then it exclude the end of the string
+
+_________________________________________________________________________________________________________________________
+
+
+String search
+    let results = str.startswith("welcome") --- true
+    let results = str.startswith("edureka") --- false
+    let results = str.endswith("training") --- true
+    let results = str.includes("training") --- true
+    let results = str.indexOf("training") --- 30
+    let results = str.lastindexOf("t") --- 30
+    let results = str.search("welcome") --- 0
+    let results = str.charAt(4) --- o
+                (Returns char at that index of string)
+
+
+
+_________________________________________________________________________________________________________________________
+
+
+Template Literal (``)
+    let name ="Code"
+
+    const another= `THis is my
+    '${name}' for Js and sum is ${5+9}`
+
+            Output-- This is my
+                    'Code' for Js and sum is 14
+
+
+
+_________________________________________________________________________________________________________________________
+
+Arrays 
+    It is special type of object.
+
+    ways to create:- 
+        let arr=[0,1,2,3,4];
+        let arr = new Array();
+
+    Methods:-
+
+     valueOf() 
+    - to print the data of array
+    
+    isArray() 
+    - check if the variable is array or not
+    
+    concat() 
+    - join several array into one
+    
+    indexOf() 
+    - return the primitive value of the specified object(if found positive number will return else -1)
+    
+    join() 
+    - combine element of an array into a single string and return the string
+
+    pop() 
+    - remove the last element of an array and return the removed element
+    
+    push() 
+    - add an element to the end of an array and return the new length of the array
+    
+    reverse() 
+    - reverse the order of the elements of an array
+    
+    shift() 
+    - remove the first element of an array and return the removed element
+    
+    slice() 
+    - extract a section of an array and return the new array(give n-1)
+    
+    sort() 
+    - sort the elements of an array
+    
+    splice() 
+    - remove or replace elements in an array
+
+    unshift() 
+    - add one or more elements to the beginning of an array and return the new length of the array
+
+    toString() 
+    - convert an array into a string
+
+
+
+Array Iteration : 8 Methods
+    forEach
+    map
+    filter
+    reduce
+    some
+    every
+    find
+    find Index
+
+_________________________________________________________________________________________________________________________
+Object 
+    let Girl(Object) ={
+        Key : Value_Pair, //Keys are parameter
+        Name : "Darsh",
+        Age : 21
+    }
+
+
+_________________________________________________________________________________________________________________________
+
+List of methods
+    
+
+var value = 5.4567
+    toExponential() 
+    toprecision(4)  -- 5.456
+    tofixed(2)  -- 5.45
+    parseInt(value) --5
+    parsefloat(value) --5.4567
+
+_________________________________________________________________________________________________________________________
+Conditional Statements
+        if (condition){
+            Statement
+            }else if(condition){
+                Statement
+            }else{
+                Statement
+            }
+
+        
+
+        while(condition){
+            Statement
+        }
+
+
+        do{
+            Statement
+        }while()
+
+
+        for(let i=0;i<=10;i++){
+            Statement
+        }
+
+
+        
+        Create object in JS
+            let Job ={
+                name:"darsh",
+                Tech:"JS",
+                laptop:{
+                    cpu:"1.8GHZ",
+                    ram:8,
+                    brand:"Asus"
+                }
+            }
+
+        for(let key in Job){
+            console.log(key,Job[key]);
+        }
+
+
+_________________________________________________________________________________________________________________________
+
+
+List of date and time methods
+    Date() : To get the current date and time details according to the brower.
+    getFullYear():Get the year as a four digit number (yyyy).
+    getMonth():Get the month as a number (0-11).
+    getDate():Get the day as a number (1-31)
+    getHours():Get the hour (0-23).
+    getMinutes():Get the minute (0-59).
+    getSeconds():Get the second (0-59).
+    getMilliseconds():Get the millisecond (0-999).
+    getTime():Get the time (milliseconds since January 1, 1970).
+    getDay():Get the weekday as a number (0-6).
+
+
+    Date d = new Date();
+    console.log(d.getFullYear());
+
+
+
+
+_________________________________________________________________________________________________________________________
+
+
+
+Math Object
+    the math object contains some predefined mathematical methods.
+    Math.abs(x)  - return postitive value
+    Math.pi
+    Math.round()
+    Math.random - get number between 0 and 1
+    math.ceil - will retun upper limit always-->> 3.1,3.8=4 
+    math.floor - will retun lower limit always-->> 3.1,3.8=3 
+    math.max(x,y,z)
+    math.min(x,y,z)
+    math.pow(x,y) - 2^2= 4
+
+    If u want to make otp with random then 
+        Math.random() =0.152415
+        Math.random()*10000 = 8923.2541561
+        Math.floor(1000 + Math.random() * 9000) = 8923
+
+    If u want to make Dice with random then 
+        let upper = 6;
+        let lower = 1;
+        let randomNum = Math.floor(Math.random()*(upper-lower +1))+lower;
+
+
+
+_________________________________________________________________________________________________________________________
+
+(Immediately / Self) Invoked Function Expression (IIFE)
+
+(function(){
+    console.log("My Favorite number is 3");
+})()
+
+
+(function(name){
+    console.log("My name is " + name);
+})("Darsh");
+
+
+_________________________________________________________________________________________________________________________
+
+Call Method :-
+
+    function printName(first,last){
+        console.log(`${first},${last}`);
+        console.log(this);
+    }
+
+    printName.call({
+        Name:"Mohit",
+        Phone_num:9875641230
+    },"Darshatak","Vyas");
+_________________________________________________________________________________________________________________________
+
+
+javascript Promise
+            -A promise in JS is similar to a promise in real life
+            -It is gurantee that we are going to do something in tha future
+                -3 states of Promise
+            - Pending : Initial state before succeeds or fails
+            - Resolved : Completed Promise
+            - Rejected : Failed Promise
+
+            Promise--> Try(Resolved) 0r Catch(Rejected)
+
+Example:
+          const myPromise = new Promise((Resolved, Rejected) => { 
+                const a = 2,
+                b = 5;
+                const c = a + b;
+
+                if(c == = 4) { 
+                    Resolved(`Yes!, ${a} + ${b} = 4`);
+                }
+                else { 
+                    Rejected(`No!, ${a} + ${b} != 4`);
+                } 
+            });
+
+            myPromise.then((m) => { 
+                console.log(m);
+            }).catch((err) => { 
+                console.log(err);
+            });
+
+_________________________________________________________________________________________________________________________
+
+Template Literals 
+    (Destructuring Assignment)  
+    - it amkes the assignment of the value of an array or 
+    object to the new variable order.
+
+    console.log(`Hello ${Mline}! nice to have you`); //ES6
+
+
+_________________________________________________________________________________________________________________________
+Async
+- it is a function that returns a promise.
+
+async function DoWork(){
+    const response =await makeRequest("Facebook");
+    console.log("Responce Received");
+    const Processedresponse =await ProcessRequest(response);
+    console.log(Processedresponse);
+}
+
+DoWork();
+
+
+
+_________________________________________________________________________________________________________________________
+JSON
+    - JavaScript Object Notation
+    - it is a data format that is used to store and transmit data.
+    - Text-Based representation of structured data.
+    - Key- Value Pairs and ordered lists
+
+
+Datatype:
+    String
+    boolean
+    number
+    Array
+    object
+    Null
+
+    Example:
+            Person{
+                Name:"Darshatak",
+                Male:true,
+                Height:5.9,
+                Age: 21,
+                Flaws : null,
+                Education:["10th","12th","BVOC SD",]
+            }
+
+_________________________________________________________________________________________________________________________
+
+
+
+_________________________________________________________________________________________________________________________
+
+
+
+_________________________________________________________________________________________________________________________

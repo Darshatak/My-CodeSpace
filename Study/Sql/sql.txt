@@ -1,0 +1,482 @@
+show databases;
+
+
+CRUD Operation:
+        Create Database darsh;
+
+        use darsh;
+
+        create table darsh1(id int8 PRIMARY KEY, Name varchar(50) NOT NULL);
+
+        INSERT INTO darsh1(id, Name) VALUES(1, 'darsh');
+
+        select * from darsh1;
+
+        UPDATE darsh1 SET Name ="darshatak" WHERE id=1; 
+        //single update
+        
+        UPDATE darsh2 SET name ="darshatak" WHERE name= 'darsh'; 
+        //Multiple update
+
+        DELETE FROM darsh1 where name="Darshatak";
+
+        DELETE FROM darsh2 where roll_number=109;
+
+
+
+ALter table
+    ALTER TABLE darsh1 ADD COLUMN phone_num INT;
+        --Will add column in table
+
+    ALTER TABLE darsh1 DROP COLUMN phone_number;
+        --Will drop the column
+
+    ALTER TABLE darsh1 CHANGE phone_num phone_number int DEFAULT NULL; 
+        --Will change name of column    
+
+    ALTER TABLE darsh1 CHANGE Name Nam varchar(50);   
+                    OR
+    ALTER TABLE darsh1 MODIFY COLUMN Name varchar(100);   
+        --Will change datatype of column
+
+
+Drop and Truncate table
+    DROP TABLE darsh1;   
+        --It will delete table    
+    
+    DROP DATABASE sys;   
+        --It will delete Database    
+
+    TRUNCATE TABLE darsh1
+        --it will delete data of table        
+
+
+
+
+
+SELECT & WHERE Clauses With Operators
+
+    SELECT name FROM darsh2;
+
+    SELECT * FROM darsh2;
+
+    SELECT DISTINCT name FROM darsh2;
+
+    SELECT name FROM darsh2 Where Name='Emily';
+    
+
+
+
+OperatorS in Sql
+    Arithmetic Operators 
+    - {+ - * / %}
+
+    Comparision Operation 
+    - {= <>(Not Euall To) > < >= <=}
+             SELECT name FROM darsh2 Where roll_number >105  AND roll_number <109;
+
+    logical Operators 
+    - {ALL, IN, BETWEEN, LIKE, AND, OR, NOT, ANY, EXIST, SOME}
+            SELECT name FROM darsh2 Where Name='John' AND grade="c";
+
+            SELECT * FROM darsh2 Where roll_number >105  AND roll_number <109;
+
+            select * from darsh2 WHERE roll_number=101 AND grade = 'b';
+
+            select * from darsh2 WHERE roll_number = 105 OR grade ="C";
+            
+            select * from darsh2 WHERE NOT id = 4;
+
+            select * from darsh2 WHERE grade IN('A','C');
+
+            select * from darsh2 WHERE grade NOT IN('A','C');
+
+            SELECT name
+            From darsh2
+            WHERE id = ANY(SELECT id FROM darsh2 where roll_number=108)
+            ;
+                +-------+
+                | name  |
+                +-------+
+                | David |
+                +-------+
+             
+            SELECT All name
+            From darsh2
+            WHERE name = 'darshatak';
+                +-----------+
+                | name      |
+                +-----------+
+                | darshatak |
+                | darshatak |
+                +-----------+
+
+        Like Operators    
+            Wildcards are there.
+                % : Matches any string with zero or more characters
+                _ : Match one character
+
+                Select * from Darsh2 WHERE name LIKE 'd%'; 
+                    --starting word
+
+                Select * from Darsh2 WHERE name LIKE '%d'; 
+                    --ending word
+
+                Select * from Darsh2 WHERE name LIKE '__d'; 
+                    --start specific inbetween char word
+
+                Select * from Darsh2 WHERE name LIKE '__r%';
+                    --start from specific inbetween char word till end
+
+                Select * from Darsh2 WHERE name LIKE '__r';
+                    --ends from specific inbetween char word till end
+
+                Select * from Darsh2 WHERE name LIKE '%r%';
+                    --have atleast that char either start , mid , end or inbitween
+
+                select * from darsh2 Where roll_number BETWEEN 105 AND 108;
+
+                select * from darsh2 Where roll_number NOT BETWEEN 105 AND 108; 
+
+    Bitwise Operatot 
+    - {AND OR Exclusive OR}
+    - { %   |       ^     }
+
+    compound Operators
+
+            Operator	Description
+                +=	    Add equals
+                -=	    Subtract equals
+                *=	    Multiply equals
+                /=	    Divide equals
+                %=	    Modulo equals
+                &=	    Bitwise AND equals
+                ^-=	    Bitwise exclusive equals
+                |*=	    Bitwise OR equals
+
+
+Limit Clauses
+    -set an upper limit on the number of tuples return by SQl.
+        SELECT Name FROM Darsh2 LIMIT 5; 
+        SELECT Name FROM Darsh2 LIMIT 8; 
+
+
+Order By Clauses
+    Is used to sort the result-set in ascending (ASC) or decending Order(DESC).
+        SELECT Name FROM darsh2 ORDER BY Name; 
+            (Default ASC smallest to largest)
+        
+        SELECT Name FROM darsh2 ORDER BY Name DESC;
+
+Joins Clauses
+    join is a relation between two tables, where we have common column names and values.
+        Queries:-
+            select * from darsh1;
+            select * from darsh2;
+            
+    INNER JOIN: 
+        Returns records when both tables have a match for the join condition.
+        INNER JOIN is default Join clause.
+
+            select darsh2.name,darsh1.Salary
+            FROM darsh2
+            INNER JOIN darsh1 ON darsh2.id = darsh1.id;
+
+            +-----------+--------+
+            | name      | Salary |
+            +-----------+--------+
+            | John      |  10000 |
+            | Jane      |   1500 |
+            | Bob       |  60000 |
+            | darshatak |  50000 |
+            | Tom       |  40000 |
+            | Jerry     |  10000 |
+            | Mike      |  50000 |
+            | Mary      |  70000 |
+            | David     |  45000 |
+            | darshatak |  25000 |
+            +-----------+--------+
+    
+    LEFT JOIN:
+        Return all rows from left table, and matched rows from right table if it exists
+
+            select darsh2.name,darsh1.Salary
+            FROM darsh1
+            LEFT JOIN darsh2 ON darsh2.id = darsh1.id;
+
+                    OR
+
+            select name,Salary
+            FROM darsh1
+            LEFT JOIN darsh2 ON darsh2.id = darsh1.id;
+
+            +-----------+--------+
+            | name      | Salary |
+            +-----------+--------+
+            | John      |  10000 |
+            | Jane      |   1500 |
+            | Bob       |  60000 |
+            | darshatak |  50000 |
+            | Tom       |  40000 |
+            | Jerry     |  10000 |
+            | Mike      |  50000 |
+            | Mary      |  70000 |
+            | David     |  45000 |
+            | darshatak |  25000 |
+            | NULL      |  15000 |
+            +-----------+--------+
+
+    RIGNT JOIN:
+        Return all rows form right table,and matched row from left table if it exist
+            select darsh2.name,darsh1.Salary
+            FROM darsh1
+            RIGHT JOIN darsh2 ON darsh2.id = darsh1.id;
+
+            +-----------+--------+
+            | name      | Salary |
+            +-----------+--------+
+            | John      |  10000 |
+            | Jane      |   1500 |
+            | Bob       |  60000 |
+            | darshatak |  50000 |
+            | Tom       |  40000 |
+            | Jerry     |  10000 |
+            | Mike      |  50000 |
+            | Mary      |  70000 |
+            | David     |  45000 |
+            | darshatak |  25000 |
+            +-----------+--------+
+
+    FULL JOIN (NOT SUPPORTED)    
+
+Constraints
+    -Constraints are used to define rules for data values that must be true for a column value in a table.
+    -Constraints can be applied at three levels: Table level, Column Level and Row Level.
+
+
+    Folows:-
+
+        NOT NULL
+                The not null constraint is used to ensure that all columns have valid data when inserted into tables.
+
+                create table darsh1(id int8 PRIMARY KEY, Name varchar(50) NOT NULL);
+                    --Not Null means it will not have value of null in it and blank
+       
+
+        DEFAULT
+                A default value can be assigned to any column if no other value has been specified during insertion time.
+                     
+                CREATE TABLE darsh3
+                (
+                    id INT4 NOT NULL PRIMARY KEY, 
+                    name VARCHAR(60),
+                    age INT,
+                    salary FLOAT8,
+                    department CHAR(7) DEFAULT 'New Joinee',
+                );
+                
+
+        UNIQUE
+                -To enforce uniqueness constraints on one ore more columns within a database table we use unique constraints
+                
+                -Unique Constraints ensures uniqueness across rows within one table.
+                
+                create table darsh1(id int8 NOT NULL, Name varchar(50) NOT NULL, UNIQUE(id)); 
+                    --Unique means it will be Primary Key Automatically in it.
+
+        PRIMARY KEY
+                -Primary key is a unique identifier for each row in the table.
+
+                    CREATE TABLE employee(
+                    EMPID int NOT NULl AUTO_INCREMENT,
+                    NAME varchar(99) NOT NULL,
+                    COUNTRY VARCHAR(100) DEFAULT 'INDIA',
+                    DEPT varchar(99) NOT NULL,
+                    PRIMARY KEY(EMPID)
+                    );
+
+        FOREIGN NEY
+                -Foreign keys are used to establish relationships between tables and enforce referential integrity of data.
+
+        CHECK
+                -Check Constraint is used to validate the data against some conditions. It's like an assertion.
+                
+                CREATE TABLE darsh3
+                (
+                    id INT4 NOT NULL PRIMARY KEY, 
+                    name VARCHAR(60),
+                    age INT,
+                    salary FLOAT8,
+                    department CHAR(7),
+                    check (age > 18 AND salary < 50 )
+                );
+                INSERT INTO darsh3 VALUES ('1', 'darsh',20,9000,'IT'); //success
+                INSERT INTO darsh3 VALUES ('1', 'darsh',15,9000,'IT'); //Fail
+
+        INDEXES
+        
+                Create Index on Table:
+                    CREATE INDEX ALLVALUE ON darsh2(id,name,address);
+                    SHOW INDEXES FROM darsh2;
+
+                Drop INdexes on Table
+                    DROP INDEX ALLVALUE ON darsh2;
+
+    
+!!!!!!!!!Import CSV FIle!!!!!!!!!!!!!
+                COPY customerNew(customer_id,first_name,last_name,email,address_id)
+                From 'E:\College\BVOC\Codding\Sql\Csv\customer_new.csv'
+                DELIMITER ','
+                CSV HEADER;
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Functions
+    Count()
+        SELECT COUNT(*) AS total FROM darsh2 WHERE country = 'United States';
+        +-------+
+        | total |
+        +-------+
+        |     8 |
+        +-------+
+
+        SELECT COUNT(country) AS total FROM darsh2 WHERE country = 'United States';
+        +-------+
+        | total |
+        +-------+
+        |     8 |
+        +-------+
+
+        SELECT COUNT(country) FROM darsh2 WHERE NOT Country='Indai';
+        +----------------+
+        | COUNT(country) |
+        +----------------+
+        |              8 |
+        +----------------+
+
+        SELECT COUNT(country),country FROM darsh2
+        GROUP BY country
+        ORDER BY COUNT(country) DESC;
+        +----------------+---------------+
+        | COUNT(country) | country       |
+        +----------------+---------------+
+        |              8 | United States |
+        |              2 | INDIA         |
+        +----------------+---------------+
+
+
+    AVG()
+        Select an avg of column from table is the AVG () function.
+            
+            Select AVG(roll_number) FROM darsh2;
+            +------------------+
+            | AVG(roll_number) |
+            +------------------+
+            |         104.5000 |
+            +------------------+
+
+    SUM()
+        Sum of all values in a column
+
+            Select SUM(roll_number) FROM darsh2;
+            +------------------+
+            | SUM(roll_number) |
+            +------------------+
+            |             1045 |
+            +------------------+
+
+            Select SUM(roll_number) AS Total FROM darsh2;
+
+            +-------+
+            | Total |
+            +-------+
+            |  1045 |
+            +-------+
+
+Alias
+    Alias is a short form of Name or Title. It can be used to give temporary names for Temporary period of time.
+        Select * from Darsh2 as d;
+        Select name As FirstName  from Darsh2 ;
+        +-----------+
+        | FirstName |
+        +-----------+
+        | John      |
+        | Jane      |
+        | Bob       |
+        | darshatak |
+        | Tom       |
+        | Jerry     |
+        | Mike      |
+        | Mary      |
+        | David     |
+        | darshatak |
+        +-----------+
+
+Case mysql
+    Case when some condition is true or false then result else result will displayed 
+
+        SELECT name, roll_number, grade,
+        CASE
+        WHEN grade = 'A' THEN 'THe Employess is doing Excellent in JOB '
+        WHEN grade = 'B' THEN 'THe Employess is doing Great in JOB '
+        WHEN grade = 'C' THEN 'THe Employess is doing Good in JOB '
+        WHEN grade = 'D' THEN 'THe Employess is Not doing Good in JOB '
+        WHEN grade = 'E' THEN 'THe Employess is going to get Resignation'
+        ELSE 'Freshers.. New to the company'
+        END AS Score
+        FROM darsh2;
+
+        +-------+-------------+-------+-------------------------------------------+
+        | name  | roll_number | grade | Score                                     |
+        +-------+-------------+-------+-------------------------------------------+
+        | John  |         100 | A     | THe Employess is doing Excellent in JOB   |
+        | Jane  |         101 | B     | THe Employess is doing Great in JOB       |
+        | Bob   |         102 | C     | THe Employess is doing Good in JOB        |
+        | Darsh |         103 | D     | THe Employess is Not doing Good in JOB    |
+        | Tom   |         104 | E     | THe Employess is going to get Resignation |
+        | Jerry |         105 | F     | Freshers.. New to the company             |
+        | Mike  |         106 | G     | Freshers.. New to the company             |
+        | Mary  |         107 | H     | Freshers.. New to the company             |
+        | David |         108 | I     | Freshers.. New to the company             |
+        | John  |         109 | C     | THe Employess is doing Good in JOB        |
+        +-------+-------------+-------+-------------------------------------------+
+
+
+Small commands
+        desc darsh2; (WIll discribe the table structure)
+        
+
+        Single Line comments
+            select * FROM darsh2; # Fetch All records From Table
+            select * FROM darsh2; -- Fetch All records From Table
+        
+
+        Double Line comments /* */
+            -
+
+
+            select *
+            /*
+            Retriveing all column
+            data using
+            multi_line
+            comments*/
+            FROM darsh2; 
+
+                    <--
+
+    UNION
+    UNION All
+
+        select id FROM darsh1
+        UNION
+        select id FROM darsh2
+        ORDER BY id;        
+
+
+NSERT INTO SELECT Statement
+
+    Copy data from one table to another
+     INSERT INTO customer(id,Name)
+        SELECT id,name
+        FROM darsh2
+        ;

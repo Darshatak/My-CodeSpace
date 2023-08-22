@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Josefin+Sans&family=Poppins:ital,wght@0,300;0,400;1,300&family=REM&family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #506263;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator{
+    background: #3a4452;
+    padding: 20px;
+    border-radius: 20px;
+    border:solid 1px #9cdcd0;
+    box-shadow: -1px 2px 100px 10px rgba(200, 200, 241,0.5);
+
+}
+
+form div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.calculator form input{
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: -8px -8px 15px rgba(255,255,255,0.1),5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid rgb(195, 190, 190);
+    margin: 5px;
+}
+
+form .display{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+    
+}
+
+form .display input{
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+    border: none;
+    box-shadow: none;
+    width: 200px;
+        /* Set your desired width */
+        max-width: 100%;
+        /* Ensure it doesn't exceed the container width */
+        word-wrap: break-word;
+}
+form .display input:hover{
+    background-color: transparent;
+    border: none;
+    cursor: default;
+    scale: 1;
+}
+form input:hover{
+    background-color: rgb(77, 77, 224);
+    border: 1px solid rgb(201, 201, 236);
+    scale: 1.0923;
+}
+
+form input.equal{
+    width: 120px;
+    color: #33ffd8;
+    border-color: #33ffd8;
+}
+form input.equal:hover,form input.operator:hover{
+    color: black;
+    background-color: #33ffd8;
+}
+form input.operator{
+    border-color: #33ffd8;
+    color:#33ffd8
+}

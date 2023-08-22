@@ -1,0 +1,577 @@
+  body {
+      padding-left: 50px;
+      width: 80vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: rgba(250, 128, 114, 0.6);
+      padding-bottom: 100px;
+  }
+
+
+
+  .button.play {
+      border-style: solid;
+      transition: all 0.56s;
+      width: 74px;
+      height: 74px;
+      border-width: 37px 0px 37px 90px;
+      border-color: rgba(250, 128, 114, 0.6) rgba(250, 128, 114, 0.6) rgba(250, 128, 114, 0.6) rgb(7, 7, 7);
+  }
+
+  .dustbin {
+      height: 150px;
+      margin: 40px;
+      line-height: 0%;
+      padding: 0%;
+      margin: 0%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: all 0.45s;
+  }
+
+
+  .dustbin:hover ,.dustbin::before{
+    animation: ripple 1s ease-out 1;
+  }
+
+  .dustbin section:nth-child(2) {
+      height: 7px;
+      width: 30px;
+      border-bottom: 8px solid black;
+      position: absolute;
+      top: 18%;
+      border-bottom-left-radius: 5px;
+  }
+
+  .dustbin section:nth-child(1) {
+      height: 5px;
+      width: 70px;
+      border-bottom: 8px solid black;
+      position: absolute;
+      top: 22%;
+  }
+
+
+  .bin {
+      width: 25px;
+      height: 40px;
+      display: flex;
+      border: 5px solid black;
+      border-top: none;
+      justify-content: space-evenly;
+      padding: 10px;
+      transition: all 0.56s;
+      border-radius: 0px 0px 10px 10px;
+  }
+
+  .bin .line {
+      width: 5px;
+      background-color: rgb(0, 0, 0);
+  }
+
+  .pause {
+      margin: 20px;
+      width: 74px;
+      height: 74px;
+      display: flex;
+      justify-content: space-evenly;
+      padding: 10px;
+      transition: all 0.56s;
+  }
+
+  .pause .line {
+      width: 10px;
+      background-color: rgb(0, 0, 0);
+  }
+
+  .stop {
+      margin: 40px;
+      width: 74px;
+      height: 74px;
+      background-color: black;
+      border: 1px solid white;
+      border-radius: 5px;
+      transition: all 0.56s;
+  }
+
+
+  .search {
+      margin: 20px;
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      background-color: rgba(240, 243, 242, 0.6);
+      position: relative;
+      border: 2px black solid;
+      transition: all 0.56s;
+      cursor: pointer;
+
+  }
+
+  .hover:hover {
+      transform: scale(1.056);
+      cursor: pointer;
+  }
+
+  .search .circle {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      border: 5px solid rgb(0, 0, 0);
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      transform: translate(12.5%, 12.5%);
+  }
+
+  .search .Cline {
+      height: 20px;
+      width: 5px;
+      background-color: black;
+      position: absolute;
+      top: 56%;
+      right: 28%;
+      transform: translate(50%, 50%);
+      transform: rotate(140deg);
+  }
+
+  .nineDots {
+      width: 74px;
+      height: 74px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: wrap;
+      transition: all 0.56s;
+  }
+
+  .nineDots span {
+      margin: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgb(5, 5, 5);
+  }
+
+  .details {
+      margin: 20px;
+      width: 74px;
+      height: 74px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 2px solid black;
+      background-color: rgba(255, 255, 255, 0.6);
+      transition: all 0.56s;
+  }
+
+  .details span {
+      margin: 5px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: rgb(5, 5, 5);
+  }
+
+  .details .line {
+      margin: 5px;
+      width: 5px;
+      height: 30px;
+      background-color: rgb(5, 5, 5);
+  }
+
+  .lessThan {
+      width: 74px;
+      height: 74px;
+      background-color: aqua;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(90deg);
+      margin: 20px;
+      transition: all 0.56s;
+  }
+
+
+  .lessThan .line {
+      margin: 2px;
+      width: 5px;
+      height: 30px;
+      background-color: rgb(17, 17, 17);
+  }
+
+  .lessThan .line:nth-child(1) {
+      transform: rotate(-20deg);
+  }
+
+  .lessThan .line:nth-child(2) {
+      transform: rotate(20deg);
+  }
+
+
+  .greaterThan {
+      width: 74px;
+      height: 74px;
+      background-color: aqua;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(-90deg);
+      margin: 20px;
+      transition: all 0.56s;
+  }
+
+  .greaterThan .line {
+      margin: 2px;
+      width: 5px;
+      height: 30px;
+      background-color: rgb(17, 17, 17);
+  }
+
+  .greaterThan .line:nth-child(1) {
+      transform: rotate(-20deg);
+  }
+
+  .greaterThan .line:nth-child(2) {
+      transform: rotate(20deg);
+  }
+
+  .upArrow {
+      width: 74px;
+      height: 74px;
+      background-color: aqua;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(180deg);
+      margin: 20px;
+      transition: all 0.56s;
+  }
+
+  .upArrow .line {
+      margin: 2px;
+      width: 5px;
+      height: 30px;
+      background-color: rgb(17, 17, 17);
+  }
+
+  .upArrow .line:nth-child(1) {
+      transform: rotate(-20deg);
+  }
+
+  .upArrow .line:nth-child(2) {
+      transform: rotate(20deg);
+  }
+
+  .downArrow {
+      width: 74px;
+      height: 74px;
+      background-color: aqua;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(0deg);
+      margin: 20px;
+      transition: all 0.56s;
+  }
+
+  .downArrow .line {
+      margin: 2px;
+      width: 5px;
+      height: 30px;
+      background-color: rgb(17, 17, 17);
+  }
+
+  .downArrow .line:nth-child(1) {
+      transform: rotate(-20deg);
+  }
+
+  .downArrow .line:nth-child(2) {
+      transform: rotate(20deg);
+  }
+
+  .BOX {
+      height: 450px;
+      width: 450px;
+      display: flex;
+      z-index: -1;
+      justify-content: space-evenly;
+      align-items: center;
+      position: relative;
+      background-color: rgb(29, 18, 18);
+      top: 0%;
+      left: 0%;
+      overflow: hidden;
+      border-radius: 50%;
+  }
+
+  .BOX .item {
+      height: 200%;
+      width: 500%;
+      background: rgb(77, 209, 15);
+      margin: 5px;
+      scale: 0;
+      opacity: 0;
+      animation: m 6s linear infinite;
+      transform: rotate(-50deg);
+      animation-delay: calc(1.5s);
+  }
+
+  .BOX .item:nth-child(odd) {
+      height: 200%;
+      width: 500%;
+      background: rgb(77, 209, 15);
+      margin: 5px;
+      scale: 0;
+      opacity: 0;
+      transform: rotate(50deg);
+      animation: f 6s linear infinite;
+      animation-delay: calc(1.5s);
+  }
+
+
+
+  @keyframes m {
+
+      0% {
+          scale: 3;
+          opacity: 1;
+          transform: rotate(0deg);
+      }
+
+      50% {
+          scale: 1;
+          opacity: 1;
+          transform: rotate(60deg);
+      }
+
+      100% {
+          scale: 0;
+          opacity: 0;
+          transform: rotate(0deg);
+      }
+
+
+  }
+
+  @keyframes f {
+
+      0% {
+          scale: 3;
+          opacity: 1;
+          transform: rotate(0deg);
+      }
+
+      50% {
+          scale: 1;
+          opacity: 1;
+          transform: rotate(-60deg);
+      }
+
+      100% {
+          scale: 0;
+          opacity: 0;
+          transform: rotate(0deg);
+      }
+
+
+  }
+
+
+  .border {
+      height: 500px;
+      width: 500px;
+  }
+
+  .circlea {
+      height: 450px;
+      width: 450px;
+      margin: 50px;
+      border-radius: 50%;
+      animation: circle 0.2s ease infinite;
+      transition: all 0.5s;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+
+  @keyframes circle {
+      0% {
+          border-top: 10px solid rgba(0, 3, 0, 0.5);
+
+      }
+
+      25% {
+
+          border-right: 10px solid rgba(0, 3, 0, 0.5);
+      }
+
+      50% {
+
+          border-bottom: 10px solid rgba(0, 3, 0, 0.5);
+      }
+
+      100% {
+
+          border-left: 10px solid rgba(0, 3, 0, 0.5);
+      }
+
+
+  }
+
+
+  .nav{
+    width: 100%;
+
+  }
+
+  .navitems ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+  }
+  .navitems ul li{
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    filter: blur(5px);
+  }
+  
+  .navitems ul li:hover{
+    background-color: rgba(18, 18, 18,0.6);
+    color: white;
+    border-radius: 16px;
+    filter: blur(0px);
+  }
+
+  .home{
+    width: 20px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 20px;
+    transition: all 1s;
+    cursor: pointer;
+    position: relative;
+
+  }
+  .home:hover{
+    width: 40px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+  }
+  .home:hover i{
+    scale: 1.0;
+    display: none;
+  }
+
+  .home:hover a{
+    color: black;
+    scale: 1;
+  
+  }
+
+  .home i{
+    margin-right: 20px;
+    scale: 1.5;
+    transition: all 1s;
+  }
+  .home a{
+    position: absolute;
+    scale: 0;
+    color: salmon;
+    transition: all 0.1s ease-out;
+  }
+
+
+.container{
+    width: 400px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .itemh{
+    margin: 5px;
+    background:#976221 ;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    cursor: pointer;
+}
+
+.container:hover > .itemh:not(:hover){
+   opacity: 0.4;
+}
+
+.btn{
+    height: 50px;
+    width: 50px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    border:none;
+    position: relative;
+}
+.btn::before,.btn::after{
+    content: "";
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0%;
+   height: 50px;
+   width: 50px;
+   background-color: aqua;
+   opacity: 0.7;
+}
+
+.btn::before{
+    animation: ripple 1s ease-out infinite;
+    
+}
+.btn:after{
+    animation: ripple 1s 0.5s ease-out infinite;
+    
+}
+.btn:hover, .btn:after{
+    border:3px solid black;
+    
+}
+
+@keyframes ripple {
+    0%{
+        scale: 0;
+        opacity: 1;
+    }
+
+    100%{
+        scale: 2.5;
+        opacity: 0;
+    }
+    
+}

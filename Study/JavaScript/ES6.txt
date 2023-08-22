@@ -1,0 +1,108 @@
+New Features in ES6
+        let    
+            - can be reassigned
+            - can be accesible in specifc scope
+
+
+        const
+            - can't be reassigned
+            - can be accesible globally
+
+
+javascript Arrow Function
+        let greet = (name,age)=>{
+            return 'Hello' +name+age;
+        }
+            console.log(greet(Darsh,5))
+
+        let greet = name=>{
+            return 'Hello' +name;
+        }
+            console.log(greet(Darsh))
+
+        const sqr = num => num*num; //single line function
+        console.log(sqr(5))
+
+
+
+javascript Promise
+            -A promise in JS is similar to a promise in real life
+            -It is gurantee that we are going to do something in tha future
+                -3 states of Promise
+            - Pending : Initial state before succeeds or fails
+            - Resolved : Completed Promise
+            - Rejected : Failed Promise
+
+            Promise--> Try(Resolved) 0r Catch(Rejected)
+
+
+Template Literals 
+    De-structuring Assignment 
+
+    - it makes the assignment of the value of an array or object to the new variable order.
+
+
+
+import and export
+    -allow you to export a module to be used in another JS component.
+    -use this import to import that module to use it in our component.
+    -import {name} from 'path'
+
+
+Rest and Spread(...)
+rest:  
+    -Used to merge a list of function arguments into an array.
+    -function demo(...args){
+
+    }
+
+Spread: 
+        -Used to split up array or object properties
+
+        const oldArray =[0,1,2,3,4,5];
+        const newArray =["A","B",...oldArray,6,7,8,9];
+        console.log(newArray);
+
+
+Array Map Methods
+    -used to take every element of array and do some task.
+    -map()
+    -this method creates a new array populated with the results of calling a provided funciton on every element in the calling array.
+
+    eg:
+        const array1 =[1,4,9,1];
+
+        //pass a function to map
+        const map1 = array1.map(x=> x*2);
+
+        console.log(map1);
+        //expected output: Array[2,8,18,2]
+         
+    
+
+
+
+javascript class
+    -classes are template for creating objects. they encapsulated data with code to work on thar data. It is a special function.
+
+        class DemoClass{
+            constructor(){
+                properties
+            }
+
+            Methods
+        }
+
+
+
+
+
+
+
+
+        javascript Symbol
+        Array.find()
+        Array.findIndex()
+        New Number Properties
+        New Number Methods
+        New Global Methods

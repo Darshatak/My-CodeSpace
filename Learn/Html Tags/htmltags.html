@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="John Doe">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                background-color: aquamarine;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .red {
+                background-color: rgba(255, 0, 0, 0.8) !important;
+                color: aliceblue;
+            }
+
+            .container {
+                padding: 20px 40px;
+                margin: 30px;
+                background-color: aliceblue;
+                border-radius: 25px;
+                border: 2px solid black;
+                box-shadow: 0px 1px 26.562px rgb(8, 8, 8);
+                cursor: pointer;
+
+            }
+
+            .container:hover {
+                scale: 1.0534;
+                background-color: rgba(240, 248, 255, 0.8);
+            }
+
+            /* .container:hover .content {
+                opacity: 1;
+            } */
+
+            .heading {
+                width: 100px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 26pt;
+                font-weight: 600;
+                border-bottom: 2px solid salmon;
+                margin-bottom: 30px;
+
+            }
+
+            img {
+                width: 50%;
+                aspect-ratio: 4/3;
+                object-fit: contain;
+            }
+
+            span {
+                margin-left: 5px;
+                font-size: 16pt;
+                word-wrap: break-word;
+            }
+
+            .content {
+                font-size: 16pt;
+                /* opacity: 0; */
+            }
+
+            table,
+            th,
+            td {
+                border: 1px solid black;
+            }
+        </style>
+
+    </head>
+    <script>
+        document.write(`<h1 >Hello World With Javascript!</h1>`)
+    </script>
+
+    <noscript>
+        <h1>Your browser does not support JavaScript!</h1>
+    </noscript>
+    <body>
+        <!-- THis is comments-->
+        <div class="container">
+            <div class="heading">
+                abbr Tag
+            </div>
+            <div class="content">
+                The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="heading">
+                Address Tag
+            </div>
+            <div class="content">
+                <address>
+                    Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
+                    Visit us at:<br>
+                    Example.com<br>
+                    Box 564, Disneyland<br>
+                    USA
+                </address>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="heading">
+                Area Tag
+            </div>
+            <div class="content">
+                <img src="portfolio_943026.png" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+                <map name="workmap">
+                    <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://www.youtube.com/">
+                    <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://www.amazon.in/">
+                    <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="https://open.spotify.com/?">
+                </map>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                article Tag
+            </div>
+            <div class="content">
+                <article>
+                    <h2>Google Chrome</h2>
+                    <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most
+                        popular web
+                        browser today!</p>
+                </article>
+
+                <article>
+                    <h2>Mozilla Firefox</h2>
+                    <p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second
+                        most popular web
+                        browser since January, 2018.</p>
+                </article>
+
+                <article>
+                    <h2>Microsoft Edge</h2>
+                    <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge replaced
+                        Internet
+                        Explorer.</p>
+                </article>
+            </div>
+        </div>
+
+
+
+
+        <div class="container red">
+            <div class="heading">
+                aside Tag
+            </div>
+            <div class="content">
+                <p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I
+                    had a great
+                    summer together with my family!</p>
+
+                <aside>
+                    <h4>Epcot Center</h4>
+                    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international
+                        pavilions,
+                        award-winning fireworks and seasonal special events.</p>
+                </aside>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                audio Tag
+            </div>
+            <div class="content">
+                <audio controls loop>
+                    <source src="https://aac.saavncdn.com/972/187175fee7367f05037f395d06ba054d_160.mp4"
+                        type="audio/ogg">
+                </audio>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                base Tag - <span>Specify a default URL and a default target for all links on a page:</span>
+            </div>
+            <div class="content">
+                <base href="https://www.w3schools.com/" target="_blank">
+
+                <img src="images/stickman.gif" width="24" height="39" alt="Stickman">
+                <a href="tags/tag_base.asp">HTML base Tag</a>
+            </div>
+        </div>
+
+
+
+
+        <div class="container red">
+            <div class="heading">
+                bdi Tag - <span>Isolate the usernames from the surrounding text-direction settings:</span>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>User <bdi>hrefs</bdi>: 60 points</li>
+                    <li>User <bdi>jdoe</bdi>: 80 points</li>
+                    <li>User <bdi>إيان</bdi>: 90 points</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                bdo Tag - <span>Specify the text direction:</span>
+            </div>
+            <div class="content">
+                <bdo dir="rtl">
+                    This text will go right-to-left.
+                </bdo>
+                <br>
+                <bdo dir="ltr">
+                    This text will go left-to-right.
+                </bdo>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                blockquote Tag - <span>A section that is quoted from another source:</span>
+            </div>
+            <div class="content">
+                <p>Here is a quote from WWF's website:</p>
+
+                <blockquote cite="http://www.worldwildlife.org/who/index.html">
+                    For 50 years, WWF has been protecting the future of nature. The world's leading conservation
+                    organization, WWF works
+                    in 100 countries and is supported by 1.2 million members in the United States and close to 5 million
+                    globally.
+                </blockquote>
+                <p>Here is a quote from WWF's website:</p>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                canvas Tag - <span>Draw a red rectangle on the fly, and show it inside the canvas element:</span>
+            </div>
+            <div class="content">
+                <canvas id="myCanvas">
+                    Your browser does not support the canvas tag.
+                </canvas>
+
+                <script>
+                    let canvas = document.getElementById("myCanvas");
+                    let ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "#FF0000";
+
+                    // ctx.fillRect(x, y, height, width);
+                    ctx.fillRect(0, 50, 100, 100);
+                </script>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                caption Tag - <span>A table with a caption:</span>
+            </div>
+            <div class="content">
+                <table>
+                    <caption>Monthly savings</caption>
+                    <tr>
+                        <th>Month</th>
+                        <th>Savings</th>
+                    </tr>
+                    <tr>
+                        <td>January</td>
+                        <td>$100</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                cite Tag - <span> Define the title of a work with the cite tag:</span>
+            </div>
+            <div class="content">
+                <img src="https://www.w3schools.com/tags/img_the_scream.jpg" width="220" height="277" alt="The Scream">
+                <p><cite>The Scream</cite> by Edward Munch. Painted in 1893.</p>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                code Tag - <span>Define some text as computer code in a document:</span>
+            </div>
+            <div class="content">
+                Code Tag<p>The CSS <code>span {
+                margin-left: 5px;
+                font-size: 16pt;
+                word-wrap: break-word;
+                }</code> property defines the background color of an element.</p>
+
+                Without Code Tag<p>The CSS span {
+                    margin-left: 5px;
+                    font-size: 16pt;
+                    word-wrap: break-word;
+                    } property defines the background color of an element.</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                col and colgroup Tag- <span>Set the background color with the colgroup and col tags:</span>
+            </div>
+            <div class="content">
+                <table>
+                    <colgroup>
+                        <col span="1" style="background-color:red">
+                        <col style="background-color:yellow">
+                    </colgroup>
+                    <tr>
+                        <th>ISBN</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>3476896</td>
+                        <td>My first HTML</td>
+                        <td>$53</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                data Tag - <span>product names but also associates each name with a product number:</span>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><data value="21053">Cherry Tomato</data></li>
+                    <li><data value="21054">Beef Tomato</data></li>
+                    <li><data value="21055">Snack Tomato</data></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                datalist Tag - <span>datalist with pre-defined options (connected to an input element):</span>
+            </div>
+            <div class="content">
+                <label for="browser">Choose your browser from the list:</label>
+                <input list="browsers" name="browser" id="browser">
+
+                <datalist id="browsers">
+                    <option value="Edge">
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                </datalist>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                dd,dt,dl Tag - <span>A description list, with terms and descriptions:</span>
+            </div>
+            <div class="content">
+                (dl) is main tag under border
+                <dl style="border: 1px solid black; padding: 20px;">
+                    <dt>Coffee (dt)</dt>
+                    <dd>Black hot drink (dd)</dd>
+                    <dt>Milk</dt>
+                    <dd>White cold drink</dd>
+                </dl>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                del Tag - <span>A text with a deleted part, and a new, inserted part:</span>
+            </div>
+            <div class="content">
+                <p>My favorite color is <del>blue</del> <ins>red</ins>! (with del and ins tag)</p>
+                <p>My favorite color is <s>blue</s> red! (with strike tag)</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                details and summary Tag - <span>Specify details that the user can open and close on demand:</span>
+            </div>
+            <div class="content">
+                <details>
+                    <summary>Epcot Center</summary>
+                    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international
+                        pavilions,
+                        award-winning fireworks and seasonal special events.</p>
+                </details>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                dfn Tag - <span>Mark up a term with dfn:</span>
+            </div>
+            <div class="content">
+                <p><dfn>HTML</dfn> is the standard markup language for creating web pages. (with dfn tag)</p>
+                <p><i>HTML</i> is the standard markup language for creating web pages. (with i tag)</p>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                dialog Tag - <span>makes it easy to create popup dialogs</span>
+            </div>
+            <div class="content">
+                <p>This is some text.</p>
+
+                <p>This is some text.</p>
+
+                <dialog open>
+                    <p>This is some text.</p>
+
+                    <p>This is some text.</p>
+                    <p>This is some text.</p>
+
+                </dialog>
+
+                <p>This is some text.</p>
+
+                <p>This is some text.</p>
+
+            </div>
+        </div>
+
+
+
+
+        <div class=" container">
+            <div class="heading">
+                em Tag - <span>Mark up emphasized text in a document:</span>
+            </div>
+            <div class="content">
+                <p>You <em>have</em> to hurry up! (using em tag)</p>
+
+                <p>We <em>cannot</em> live like this. (using em tag)</p>
+                <p>We <i>cannot</i> live like this. (using i tag)</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                embed Tag
+            </div>
+            <div class="content">
+                <embed type="image/jpg" src="https://www.w3schools.com/images/img_bootcamp_gold_html_160.png"
+                    width="300" height="200">
+
+                <embed type="video/mp4" src="https://www.youtube.com/embed/2LsOyOaobrc" width="300" height="200">
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                fieldset and legend Tag
+            </div>
+            <div class="content">
+                <form action="/action_page.php">
+                    <fieldset>
+                        <legend>Personalia:</legend>
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname"><br><br>
+                        <label for="lname">Last name:</label>
+                        <input type="text" id="lname" name="lname"><br><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email"><br><br>
+                        <label for="birthday">Birthday:</label>
+                        <input type="date" id="birthday" name="birthday"><br><br>
+                        <input type="submit" value="Submit">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                figure and figCaption Tag
+            </div>
+            <div class="content">
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png"
+                        alt="Trulli" style="width:40%">
+                    <figcaption>Fig.1 - Trulli, Puglia, Italy. (with figcaption tag)</figcaption>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png"
+                        alt="Trulli" style="width:40%">
+                    <a>Fig.1 - Trulli, Puglia, Italy. (with a tag)</a>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png"
+                        alt="Trulli" style="width:40%">
+                    <p>Fig.1 - Trulli, Puglia, Italy. (with p tag)</p>
+                </figure>
+            </div>
+        </div>
+
+
+
+
+        <div class="container red">
+            <div class="heading">
+                kbd Tag
+            </div>
+            <div class="content">
+                <p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy text (Windows).</p>
+
+                <p>Press <kbd>Cmd</kbd> + <kbd>C</kbd> to copy text (Mac OS).</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                main Tag - <span>Specify the main content of the document:</span>
+            </div>
+            <div class="content">
+                <main>
+                    <h1>Most Popular Browsers</h1>
+                    <p>Chrome, Firefox, and Edge are the most used browsers today.</p>
+
+                    <article>
+                        <h2>Google Chrome</h2>
+                        <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's
+                            most popular web
+                            browser today!</p>
+                    </article>
+
+                    <article>
+                        <h2>Mozilla Firefox</h2>
+                        <p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the
+                            second most popular
+                            web browser since January, 2018.</p>
+                    </article>
+
+                    <article>
+                        <h2>Microsoft Edge</h2>
+                        <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge
+                            replaced Internet
+                            Explorer.</p>
+                    </article>
+                </main>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                map Tag - <span>An image map, with clickable areas:</span>
+            </div>
+            <div class="content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png"
+                    alt="Workplace" usemap="#workmap" width="400" height="379">
+
+                <map name="workmap">
+                    <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+                    <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+                    <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+                </map>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                mark Tag
+            </div>
+            <div class="content">
+                <p>Do not forget to buy <mark>milk</mark> today.</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                object Tag - <span>The object tag defines a container for an external resource.</span>
+            </div>
+            <div class="content">
+                <object
+                    data="https://avatars.mds.yandex.net/i?id=84dbd50839c3d640ebfc0de20994c30d-4473719-images-taas-consumers&n=27&h=480&w=480"
+                    width="300" height="200"></object>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                optgroup Tag
+            </div>
+            <div class="content">
+                <label for="cars">Choose a car:</label>
+                <select name="cars" id="cars">
+                    <optgroup label="Swedish Cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                    </optgroup>
+                    <optgroup label="German Cars">
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                option Tag
+            </div>
+            <div class="content">
+                <label for="cars">Choose a car:</label>
+
+                <select id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                output Tag - <span>Perform a calculation and show the result in an output element:</span>
+            </div>
+            <div class="content">
+                <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                    <input type="range" id="a" value="50">
+                    +
+                    <input type="number" id="b" value="25">
+                    =
+                    <output name="x" for="a b"></output>
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div class="container red">
+            <div class="heading">
+                param Tag
+            </div>
+            <div class="content">
+                <object data="https://aac.saavncdn.com/972/187175fee7367f05037f395d06ba054d_160.mp4">
+                    <param name="autoplay" value="true">
+                </object>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                picture Tag - <span>Resize the browser window to load different images.</span>
+            </div>
+            <div class="content">
+                <picture>
+                    <source media="(min-width:650px)"
+                        srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png">
+                    <source media="(min-width:465px)"
+                        srcset="https://avatars.mds.yandex.net/i?id=84dbd50839c3d640ebfc0de20994c30d-4473719-images-taas-consumers&n=27&h=480&w=480">
+                </picture>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                pre Tag
+            </div>
+            <div class="content">
+                <pre>
+                Text in a pre element
+                is displayed in a fixed-width
+                font, and it preserves
+                both      spaces and
+                line breaks
+                </pre>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                progress Tag
+            </div>
+            <div class="content">
+                <label for="file">Downloading progress:</label>
+                <progress id="a1" value="32" max="100"></progress>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                q Tag - <span>mark up small text ""</span>
+            </div>
+            <div class="content">
+                <p>WWF's goal is to:
+                    <q>Build a future where people live in harmony with nature.</q>
+                    We hope they succeed.
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <div class="container red">
+            <div class="heading">
+                ruby Tag - <span>A ruby annotation:</span>
+            </div>
+            <div class="content">
+                <ruby>
+                    漢 <rp>(</rp>
+                    <rt>ㄏㄢˋ</rt>
+                    <rp>)</rp>
+                </ruby>
+
+                <ruby>
+                    漢 <rt> ㄏㄢˋ </rt>
+                </ruby>
+
+                <ruby>
+                    漢 <rt> ㄏㄢˋ </rt>
+                </ruby>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                small Tag
+            </div>
+            <div class="content">
+                <p>This is some normal text.</p>
+                <p><small>This is some smaller text.</small></p>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                source Tag - <span>An audio player with two source files. The browser will choose the first source it
+                    supports:
+                </span>
+            </div>
+            <div class="content">
+                <audio controls>
+                    <source src="horse.ogg" type="audio/ogg">
+                    <source src="horse.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                samp Tag - <span>Define some text as sample output from a computer program in a document:</span>
+            </div>
+            <div class="content">
+                <p>Message from my computer:</p>
+                <p><samp>File not found.<br>Press F1 to continue</samp></p>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                svg Tag - <span>container for SVG graphics.</span>
+            </div>
+            <div class="content">
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                </svg>
+
+                <svg width="400" height="100">
+                    <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+                </svg>
+
+                <svg width="400" height="180">
+                    <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+                        style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                </svg>
+
+                <svg width="300" height="200">
+                    <polygon points="100,10 40,198 190,78 10,78 160,198"
+                        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+                </svg>
+
+                <svg height="130" width="500">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+
+                    <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+
+                    <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+                </svg>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="container red">
+            <div class="heading">
+                Time Tag
+            </div>
+            <div class="content">
+                <p>Open from <time>10:00</time> to <time>21:00</time> every weekday.</p>
+
+                <p>I have a date on <time datetime="2024-02-14 20:00">Valentines day</time>.</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                track Tag - <span>A video with subtitle tracks for two languages:</span>
+            </div>
+            <div class="content">
+                <video width="320" height="240" controls>
+                    <source src="forrest_gump.mp4" type="video/mp4">
+                    <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+                    <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
+                </video>
+            </div>
+        </div>
+
+
+
+
+        <div class="container red">
+            <div class="heading">
+                var Tag
+            </div>
+            <div class="content">
+                <p>The area of a triangle is: 1/2 x <var>b</var> x <var>h</var>, where <var>b</var> is the base, and
+                    <var>h</var> is the
+                    vertical height.
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                wbr Tag - <span>A text with word break opportunities: for longer word</span>
+            </div>
+            <div class="content">
+                <p>This is a
+                    veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryvery<wbr>longwordthatwillbreakatspecific<wbr>placeswhenthebrowserwindowisresized.
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="container">
+            <div class="heading">
+                template Tag
+            </div>
+            <div class="content">
+                <button onclick="showContent()">Show hidden content</button>
+
+                <template>
+                    <h2>Flower</h2>
+                    <img src="https://webbtelescope.org/files/live/sites/webb/files/home/news/first-images/gallery/_images/STScI-J-HeroERO-Gallery-Fallback-image-1920x1080.jpg?t=tn370"
+                        width="214" height="204">
+                </template>
+
+                <script>
+                    function showContent() {
+                        let temp = document.getElementsByTagName("template")[0];
+                        let clon = temp.content.cloneNode(true);
+                        document.body.appendChild(clon);
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
+
+</html>

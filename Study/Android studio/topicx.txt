@@ -1,0 +1,133 @@
+Chapters 👇
+00:00:00 - Introduction & Environment Setup
+00:17:23 - Android History
+00:34:56 - Android Versions/Flavors
+01:02:30 - What Is Ide?
+01:10:06 - Set Up Android Studio On Windows
+01:34:42 - Set Up Android Studio On MacOS
+01:44:30 - Set Up Android Studio On Linux
+01:56:24 - Frontend & Backend Languages(Java/Kotlin,XML)
+02:10:31 - Running App Process(Adb & Avd)
+02:18:34 - The Extension .Apk
+02:21:15 - Create First Android Studio Project
+03:06:02 - What Is Android Studio
+03:55:50 - Create Android Virtual Device
+04:20:50 - Execute Project On Android Screen(Avd)
+04:26:14 - Executive Project On Android Screen(ADB)
+04:36:34 - Debug Android Apps(Logcat, Toast, Breakpoints, Error Resolving)
+04:48:35 - What Is XML
+05:02:53 - Java Components| Introduction
+05:16:55 - Set Up Java In Command Prompt
+05:25:35 - Make First Java Class In Notepad(Hello World)
+05:35:57 - Packages And Classes
+05:45:19 - Datatypes
+05:51:18 - Variables
+05:59:24 - Methods
+06:15:22 - Encapsulation
+06:22:01 - Keyword & Identifiers
+06:29:45 - Method Overloading
+06:37:24 - Inheritance
+06:54:59 - Method Overriding
+07:08:22 - Objects And Calling
+07:16:47 - Constructors
+07:22:47 - Interface & Implements
+07:26:46 - This,Static & Final Keyword
+07:42:52 - Conditional Statements+
+07:50:45 - If,If Else & If-Else
+08:00:30 - Loops
+08:07:21 - For & For Each Loop
+08:16:03 - While & Do While
+08:22:05 - String Operations
+08:34:49 - Design In Android Apps(Layouts) Writing Code In XML
+09:39:10 - Design In Android Apps (View)
+10:15:40 - Design In Android Apps Using Drag And Drop
+10:50:06 - Android Architecture
+11:03:00 - Android Components
+11:13:07 - Activity Lifecycle
+11:22:57 - First Android App(Bmi)
+12:07:58 - Make Tic-Tac-Toe
+13:03:40 - Intent Passing
+13:24:35 - Bundle Passing
+13:42:29 - Make Splash Screen
+14:01:31 - Android Animations
+14:49:59 - Custom Animation(Lottie)
+15:10:58 - Listview,Spinner & Autocompletetextview
+15:48:04 - Styles And Themes
+16:02:32 - Make App Universal(Screen Compatible)
+16:12:43 - Material Ui(Card View)
+16:29:17 - Recycler View
+17:31:59 - Add/Delete And Update Items In Recycler View
+18:08:01 - Animating The Items Of Recycler View
+18:23:22 - Create Your Own Toolbar
+19:11:19 - Create Your Own Drawable
+20:01:58 - Toast
+20:14:59 - Custom Toast
+20:45:43 - Logcat
+21:03:24 - Alert Dialogs
+21:40:07 - Custom Dialogs
+21:58:45 - Status Bar Notifications
+22:30:45 - Customizing Notifications
+22:57:17 - Making Calls, Dailing, Sending Mails & Sharing App Installation Link
+23:34:48 - Introduction To Android Fragments
+24:33:04 - Tab Layout
+25:07:05 - Bottom Navigation View
+25:44:13 - Navigation Drawer
+26:30:01 - Data Passing In Fragment
+26:44:38 - Managing Fragment back stack
+26:54:30 - Implement Google Maps
+27:37:38 - Map Overlays
+27:49:58 - Geocoder
+28:11:12 - Introduction To Dynamic Apps
+28:27:23 - Receiving HTTP Response(JSON)
+28:35:17 - What Is JSON Response
+28:49:45 - Parsing Response
+29:17:02 - Parsing Response(Post API)
+29:47:41 - Webview
+30:08:34 - Shared Preferences
+30:41:53 - Database
+30:45:00 - Introducing Solite
+30:53:33 - Sqliteopenhelper & Create A Database
+31:15:56 - Open & Close Database
+31:19:41 - Insert Data In Database(Insert)
+31:29:51 - Fetch Data From A Database(Select)
+31:45:07 - Work With Cursors Update, And Delete
+32:09:00 - Database Room Library(Daily Expense App)
+32:41:32 - Taking Pictures
+32:43:55 - Get Pictures From Camera To App
+33:02:54 - Get Pictures From Gallery To App
+33:14:19 - Media Player(Audio)
+33:44:16 - Video View
+34:03:57 - How do Sensors work?
+34:20:21 - Accelerometer Sensor And Its Application
+34:33:20 - Proximity Sensor & Its Application
+34:41:53 - Ambient Light Sensor & Its Applications
+34:57:56 - Services And Receivers| Lifecycle
+35:14:33 - Implementing A Service
+35:27:46 - Alarm Manager
+35:55:01 - Send & Receive Messages
+36:18:02 - Introduction To Kotlin
+36:31:28 - Setting Up Kotlin
+36:38:29 - Classes In Kotlin
+36:42:13 - First Program In Kotlin
+36:45:30 - Variable & Types
+36:49:49 - Val & Var Kotlin
+36:54:37 - Methods In Kotlin
+37:01:37 - Conditional Statement In Kotlin
+37:09:05 - List In Kotlin
+37:29:24 - For And For Each Loop
+37:36:20 - While And Do While
+37:40:39 - Triple, Pair In Kotlin
+37:48:41 - Basic Syntax
+38:00:00 - Intent Passing In Kotlin
+38:05:11 - Recycler View In Kotlin
+38:15:59 - Maps In Kotlin
+38:20:37 - Introduction To Firebase
+38:36:04 - Create A Firebase Project On Console
+38:53:11 - Cloud Messaging(Push Notifications)
+39:16:38 - Firestore(Realtime Database)
+39:35:07 - What Are Ads?
+39:48:02 - Implement Banner Ads
+40:00:07 - Implement Interstitial Ads
+40:12:51 - What Is Playstore?
+40:19:03 - Creating Signed .Apk
+40:30:19 - Make App Live On Google Playstore

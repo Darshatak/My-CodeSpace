@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS</title>
+        <link href="2.css" rel="stylesheet" type="text/css">
+        </link>
+    </head>
+    <body style="background-image: url(../54693.jpg);">
+        <div class="container">
+            <div class="main">
+                <h3>String concatination</h3>
+            </div>
+            <div class="main">
+
+            </div>
+            <div class="main">
+
+            </div>
+            <div class="main">
+
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Calculator</h2>
+            <div>
+                <input type="number" name="1var" id="1var">
+                <select id="ops">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                </select>
+                <input type="number" name="2var" id="2var">
+                <h4 id="result"></h4>
+                <button onclick="calculate()" value="Evaluate" style="border-radius: 9px;">Evaluate</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Prompt Data</h2>
+            <div>
+                <h4 id="prompt"></h4><button onclick="promptdata()" value="Generate"
+                    style="border-radius: 9px;">Generate</button>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <h2>Percentage calculator</h2>
+            <div>
+                <h4 id="per"></h4>
+                <button onclick="percentage_grade()" value="Generate" style="border-radius: 9px;">Generate</button>
+            </div>
+        </div>
+        <div class="container">
+            <h2 id="res"></h2>
+            <button onclick="onpop()">Pop</button>
+            <button onclick="pushF()">Push</button>
+            <button onclick="reverseF()">reverse</button>
+            <button onclick="shiftF()">Shift</button>
+            <button onclick="sliceF()">Slice</button>
+            <button onclick="sortF()">Sort</button>
+        </div>
+
+        <div class="container">
+            <h2 id="date"></h2>
+            <button onclick="getDate()">Get Date</button>
+            <button onclick="year()">Get Year</button>
+            <button onclick="day()">Get Day</button>
+            <button onclick="month()">Get Month</button>
+            <button onclick="time()">Get Time</button>
+
+        </div>
+
+        <div class="container">
+            <h2>DOB Calculator</h2>
+            <h2 id="dob_input"></h2>
+            <input type="number" id="U_day" placeholder="Day">
+            <select id="U_month">
+                <option value="select">select month</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <input type="number" id="U_year" placeholder="Year">
+            <button onclick="dob()">Calculate</button>
+            <h2 id="DOB Calculator"></h2>
+
+        </div>
+
+        <div class="container">
+            <h2 id="timer1">
+                </h5>
+                <button onclick="stopT()">stop</button>
+
+
+        </div>
+
+    </body>
+
+    <script>
+
+        var timer = setInterval(startT, 1);
+        var c = 0;
+
+        function startT() {
+            document.getElementById("timer1").innerText = c + " milliseconds";
+            c++;
+        }
+
+
+        function stopT() {
+            clearInterval(timer);
+        }
+    </script>
+
+    <script src="1 (2).js"></script>
+</html>

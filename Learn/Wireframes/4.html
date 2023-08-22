@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>4</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            * {
+                margin: 0%;
+                padding: 0%;
+            }
+
+
+            .navBar {
+                display: flex;
+                width: 100%;
+            }
+
+            .nav-name {
+                padding: 10px;
+                padding-left: 30px;
+                width: 50%;
+                font-family: cursive;
+                font-weight: 600;
+                font-size: 18pt;
+            }
+
+            .nav-list {
+                display: flex;
+                justify-content: end;
+                padding-right: 30px;
+                width: 50%;
+            }
+
+            .nav-list li {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                list-style: none;
+                padding-right: 10px;
+            }
+
+            .nav-list li i {
+                color: black;
+                cursor: pointer;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 50vh;
+                background-color: aquamarine;
+            }
+
+            .container h1,
+            h2 {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .container h2 {
+                font-family: fantasy;
+                color: gray;
+                font-weight: 400;
+            }
+
+            .container button {
+                margin: 20px;
+                padding: 10px 20px 10px 20px;
+                background-color: darkslateblue;
+                color: aliceblue;
+                cursor: pointer;
+            }
+
+            .container button:hover {
+                transform: scale(1.012);
+            }
+
+            .rest {
+                font-family: cursive;
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            .rest h3 {
+                margin-top: 30px;
+            }
+
+            .imgs {
+                width: 100%;
+                margin-top: 50px;
+                display: flex;
+                overflow: hidden;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .product {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .product h5 {
+                padding: 5px;
+                width: 40%;
+            }
+
+            .product img {
+                margin-bottom: 10px;
+            }
+
+            @media screen and (max-width: 767px) {
+                .imgs {
+                    flex-direction: column;
+
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navBar">
+            <div class="nav-name">
+                <p>Moqups</p>
+            </div>
+            <div class="nav-list">
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-instagram"></i></li>
+                <li><i class="fa-brands fa-facebook"></i></li>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Clear Statement about<br> your Event</h1>
+            <h3>Secondary header providing additional information</h3>
+            <button>GET THE TICKIT</button>
+        </div>
+        <div class="rest">
+            <h1>The Speaker</h1>
+            <h3>Write a few lines about the event speaker to<br>highlight their expense in the field.</h3>
+        </div>
+        <div class="imgs">
+            <div class="product">
+                <img src="" alt="" height="120px" width="120px">
+                <h3>Ruby Jennings</h3>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo</h5>
+                <br>
+                <h5>@username</h5>
+            </div>
+            <div class="product">
+                <img src="" alt="" height="120px" width="120px">
+                <h3>Ruby Jennings</h3>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo</h5>
+                <br>
+                <h5>@username</h5>
+            </div>
+            <div class="product">
+                <img src="" alt="" height="120px" width="120px">
+                <h3>Ruby Jennings</h3>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo</h5>
+                <br>
+                <h5>@username</h5>
+            </div>
+            <div class="product">
+                <img src="" alt="" height="120px" width="120px">
+                <h3>Ruby Jennings</h3>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo</h5>
+                <br>
+                <h5>@username</h5>
+            </div>
+
+        </div>
+    </body>
+</html>
