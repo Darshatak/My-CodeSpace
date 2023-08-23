@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flex</title>
+    </head>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #181818;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .container {
+            width: 50%;
+            height: 300px;
+            display: flex;
+            justify-content: space-between;
+            /* Distribute child elements evenly */
+            align-items: center;
+            /* Center items vertically */
+            height: 200px;
+            /* Set a fixed height for the container */
+            padding: 10px;
+            background-color: rgb(76, 104, 181);
+            margin: 20px;
+        }
+
+        .item {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            background-color: aquamarine;
+            margin: 10px;
+            flex: 1;
+            text-align: center;
+            flex-wrap: wrap;
+
+
+        }
+
+        :is(.item, .grid-item):hover {
+            box-shadow: 2px 5px 15px 5px white;
+        }
+
+        .grid {
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        /* Style for grid items */
+        .grid-item {
+            flex-basis: calc(50% - 20px);
+            /* 50% width minus some margin */
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: aquamarine;
+            text-align: center;
+        }
+
+        .footer {
+            width: 100%;
+            display: flex;
+            background-color: #333;
+            color: #fff;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin: 50px;
+
+        }
+
+        /* Style for footer items */
+        .footer-item {
+            background-color: rgb(80, 86, 203);
+            flex: 500px;
+            margin: 30px;
+            /* Distribute available space equally among items */
+            text-align: center;
+            padding: 10px;
+
+        }
+
+        .footer-item1 {
+            background-color: rgb(80, 86, 203);
+            flex: 1;
+            margin: 10px;
+            /* Distribute available space equally among items */
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+
+        <div class="grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+        </div>
+
+
+        <footer class="footer">
+            <div class="footer-item">Copyright © 2023</div>
+            <div class="footer-item">Privacy Policy</div>
+            <div class="footer-item">Terms of Service</div>
+            <div class="footer-item">Copyright © 2023</div>
+            <div class="footer-item">Privacy Policy</div>
+            <div class="footer-item">Terms of Service</div>
+            <div class="footer-item">Copyright © 2023</div>
+            <div class="footer-item">Privacy Policy</div>
+            <div class="footer-item">Terms of Service</div>
+        </footer>
+        <footer class="footer">
+            <div class="footer-item1">Copyright © 2023</div>
+            <div class="footer-item1">Privacy Policy</div>
+            <div class="footer-item1">Terms of Service</div>
+            <div class="footer-item1">Copyright © 2023</div>
+            <div class="footer-item1">Privacy Policy</div>
+            <div class="footer-item1">Terms of Service</div>
+            <div class="footer-item1">Copyright © 2023</div>
+            <div class="footer-item1">Privacy Policy</div>
+            <div class="footer-item1">Terms of Service</div>
+        </footer>
+    </body>
+</html>
