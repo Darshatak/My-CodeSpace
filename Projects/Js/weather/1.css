@@ -11,8 +11,8 @@
 body{
     height: 100vh;
     width: 100vw;
-    background-color: rgb(33, 33, 33);
     display: flex;
+    background-color: rgb(33, 33, 33);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,6 @@ body{
 
 #sunrise,#sunset{
     font-size: 15pt;
-    background-color: rgb(33, 33, 33);
     color: white;
     margin: 20px 0px;
 }

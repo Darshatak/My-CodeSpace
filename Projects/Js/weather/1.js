@@ -10,20 +10,63 @@ const Weather = document.querySelector(".weather");
 
 lastLocationFinder();
 
+// var data = {
+//     "coord":
+//     {
+//         "lon": -0.1257,
+//         "lat": 51.5085
+//     },
+//     "weather": [
+//         {
+//             "id": 803,
+//             "main": "Clouds",
+//             "description": "broken clouds",
+//             "icon": "04n"
+//         }
+//     ],
+//     "base": "stations",
+//     "main": {
+//         "temp": 14.48,
+//         "feels_like": 14.28,
+//         "temp_min": 11.88,
+//         "temp_max": 16.57,
+//         "pressure": 1016,
+//         "humidity": 88
+//     },
+//     "visibility": 10000,
+//     "wind": {
+//         "speed": 1.41,
+//         "deg": 270,
+//         "gust": 2.9
+//     },
+//     "clouds": {
+//         "all": 71
+//     },
+//     "dt": 1692762640,
+//     "sys": {
+//         "type": 2,
+//         "id": 2075535,
+//         "country": "GB",
+//         "sunrise": 1692766694,
+//         "sunset": 1692817719
+//     },
+//     "timezone": 3600,
+//     "id": 2643743,
+//     "name": "London",
+//     "cod": 200
+// }
+
 async function checkWeather() {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     var data = await response.json();
 
     console.log(data);
-
-    
     
     if (data.cod === "404") {
         setTimeout(() => {
             NotFound.innerHTML = `City Not Found `;
             }, 500);
-
-            // Clear the timeout after 2000 milliseconds (2 seconds)
+           
         setTimeout(() => {
             NotFound.innerHTML = ``;
             }, 3000);
