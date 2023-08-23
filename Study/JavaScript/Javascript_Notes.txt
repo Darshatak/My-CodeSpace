@@ -20,11 +20,56 @@ The new Keyeord
 
 
 _________________________________________________________________________________________________________________________
+    alert("Welcome to my Website") 
+
+    confirm("Login to Website")
+
+    console.log("Darshatak Vyas")
+
+    document.write("Javascript")to write something on page
+
+    prompt("for asking something","to pre written something").
+_________________________________________________________________________________________________________________________
 
 Declaring Variable
     var - global variable
     let - Within Scope
     const - fixed Value
+
+_____________________________________________________________________________________________________________________________
+Declaring Function
+ 
+     function Darsh(){
+         body
+     }
+
+     function Darsh1(a,b){
+         //body
+     }
+
+    Arrow Function --ES6 Version
+        let greet = (name,age)=>{
+            return 'Hello' +name+age;
+        }
+            console.log(greet(Darsh,5))
+
+        let greet = name=>{
+            return 'Hello' +name;
+        }
+            console.log(greet(Darsh))
+
+        const sqr = num => num*num; //single line function
+        console.log(sqr(5))
+
+
+_____________________________________________________________________________________________________________________________
+
+this Keyword
+    this keyword is used to refer to the current object.
+    this keyword is used to access the properties and 
+        methods of the current object.
+    this refer to the owner object
+
 
 _____________________________________________________________________________________________________________________________
 
@@ -116,7 +161,7 @@ Operators
                 %= modulus and assignment
 
 
-            String operators
+            String operations
                 var a=5;
                 var b=10;
                 var d="darshatak";
@@ -124,27 +169,53 @@ Operators
 
                 var c=a+b;     // 15
                 var c=d+e;      //darshatakvyas
+                var a=5;
+                var d= document.getElementsByClassName("main")[1].innerHTML;
+                var e=document.getElementsByClassName("main")[2].innerHTML;
+                var f=document.getElementsByClassName("main")[3].innerHTML="<h2>"+d+e+"</h2>";
+                var c=a+d+b+e; //5darsh10vyas
+                var c=a+b+d+e; // 15darshvyas
+                var c=a+b+d+" "+e; // 15darshatakvyas
+                console.log(c);
 
 
             Type operators
-                typeof - Returns the type of a variable
-                instanceof - Returns true if an object is an instance of an object type.
+                typeof 
+                    - Returns the type of a variable
+                
+                instanceof 
+                    - Returns true if an object is an instance of an object type.
 
 _________________________________________________________________________________________________________________________
 DOM- Document Object Model
+    var id_name= document.getElementById("articaljs").innerHTML = "<h3>Changed through js</h3>";
+
+    var class_name= document.getElementsByClassName("main")[2].innerHTML="Javascript ";
+
+    console.log(class_name)
+    console.log(id_name)
+
 .window
+     
+    function openWin(){
+        win = window.open("https://www.google.com","width=500px","height=500px");
+    }
+    function closeWin(){
+        win.close();
+    }
+
 
 get Element
-.document.title
-.document.body
-.document.scripts
-.document.links
+    .document.title
+    .document.body
+    .document.scripts
+    .document.links
 
 Get attribute
-.document.getElementById("")
-.document.getElementsByName("")
-.document.getElementsByTagName("")
-.document.getElementsByClassName("")
+    .document.getElementById("")
+    .document.getElementsByName("")
+    .document.getElementsByTagName("")
+    .document.getElementsByClassName("")
 
 Events
     Mouse Event
@@ -236,13 +307,16 @@ ________________________________________________________________________________
 
 
 Template Literal (``)
-    let name ="Code"
+    De-structuring Assignment 
+    - it makes the assignment of the value of an array or object to the new variable order.
+        let name ="Code"
 
-    const another= `THis is my
-    '${name}' for Js and sum is ${5+9}`
+        const another= `THis is my
+        '${name}' for Js and sum is ${5+9}`
 
-            Output-- This is my
-                    'Code' for Js and sum is 14
+        Output
+            -- This is my
+                'Code' for Js and sum is 14
 
 
 
@@ -300,10 +374,44 @@ Arrays
     - convert an array into a string
 
 
+    
+    example
+    var cars=["car1","car2","car3"];
+
+    var vegitable=["corriander","carrot","cabbage"];
+
+    document.write(cars.valueOf())
+    //return all value of array
+
+    document.write(Array.isArray(cars))
+    //return true or false
+
+    document.write(cars.concat(vegitable).join("  "))
+
+    document.write(cars.indexOf("car3"))
+
+    document.write(cars.join(" "))
+
+
 
 Array Iteration : 8 Methods
     forEach
+
     map
+        -used to take every element of array and do some task.
+        -map()
+        -this method creates a new array populated with the results of calling a provided funciton on every element in the calling array.
+
+        eg:
+            const array1 =[1,4,9,1];
+
+            //pass a function to map
+            const map1 = array1.map(x=> x*2);
+
+            console.log(map1);
+            //expected output: Array[2,8,18,2]
+         
+    
     filter
     reduce
     some
@@ -398,6 +506,12 @@ List of date and time methods
 
 
 
+_________________________________________________________________________________________________________________________
+
+Number Validation 
+    Number.isInteger()
+    Number.isFinite()
+    Number.isNaN()
 _________________________________________________________________________________________________________________________
 
 
@@ -536,6 +650,159 @@ Datatype:
                 Flaws : null,
                 Education:["10th","12th","BVOC SD",]
             }
+
+_________________________________________________________________________________________________________________________
+
+
+setInterval()
+    -repeat a given function at every given time-interval
+    syntex = window.setInterval(function,milliseconds)
+
+    eg:
+    setInterval(function () {
+        alert("HI")
+    },3000)
+
+
+setTimeout()
+    -execute a function after waiting a specified number of milliseconds
+    syntex = window.setInterval(function,milliseconds)
+
+    eg:
+    setTimeout(function () {
+        alert("HI")
+    },3000)
+
+
+clearTimeout()
+    need an variable for clear
+    syntex = window.clearTimeout(function,milliseconds)
+
+    eg:
+    clearTimeout(function () {
+        alert("HI")
+    },3000)
+
+
+clearInterval()
+    need an variable for clear
+    syntex = window.clearInterval(function,milliseconds)
+
+    eg:
+    clearInterval(function () {
+        alert("HI")
+    },3000)
+
+
+
+
+
+
+
+_________________________________________________________________________________________________________________________
+
+
+
+history Object
+    contains the urls visited by the user (within the browser).
+    window.history.back()
+    window.history.forward()
+    window.history.go(n)
+
+
+
+_________________________________________________________________________________________________________________________
+
+
+window screen Object
+    contains the screen size and resolution of the device in pixels.
+    screen.availHeight
+    screen.availWidth
+    screen.colorDepth
+    screen.height
+    screen.width
+    screen.orientation
+    screen.pixelDepth
+
+
+_________________________________________________________________________________________________________________________
+
+
+window.print()
+
+
+
+_________________________________________________________________________________________________________________________
+
+Set and Get Attribute method
+    -Set Attribute method is used to set the value of the attribute
+    -Get Attribute method is used to get the value of the attribute
+
+_________________________________________________________________________________________________________________________
+
+
+Exceptional handling
+    -An Exception signifies the presence of an abnormal 
+     condition which requries special operable techniques
+        try and catch
+        throw
+        finally - will print definitly in end
+
+
+_________________________________________________________________________________________________________________________
+
+RegExp - Regular Expression
+    -A regular expression is a sequence of characters that defines a search pattern.
+        syntex:-
+                /pattern/modifier ----var pattern = /darsh/i     i= case insensitive
+                or
+                new RegExp(pattern,modifier) ----var pattern = new RegExp('Darsh',i)
+
+    exec() - Tests for a match in a string. Retrun the First match
+    test() - Tests for a match in a String. Returns True or false
+    toString() - Returns the String value of the regular Expressions
+
+
+    regex101.com
+_________________________________________________________________________________________________________________________
+
+import and export
+    -allow you to export a module to be used in another JS component.
+    -use this import to import that module to use it in our component.
+    -import {name} from 'path'
+
+_________________________________________________________________________________________________________________________
+
+
+Rest and Spread(...)
+rest:  
+    -Used to merge a list of function arguments into an array.
+    -function demo(...args){
+
+    }
+
+Spread: 
+        -Used to split up array or object properties
+
+        const oldArray =[0,1,2,3,4,5];
+        const newArray =["A","B",...oldArray,6,7,8,9];
+        console.log(newArray);
+
+
+_________________________________________________________________________________________________________________________
+javascript class
+    -classes are template for creating objects. they encapsulated data with code to work on thar data. It is a special function.
+
+        class DemoClass{
+            constructor(){
+                properties
+            }
+
+            Methods
+        }
+_________________________________________________________________________________________________________________________
+
+
 
 _________________________________________________________________________________________________________________________
 
