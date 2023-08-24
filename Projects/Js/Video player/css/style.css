@@ -28,8 +28,11 @@ body{
     align-items: center;
     border-radius: 20px;
     position: absolute;
-    box-shadow: 2px 5px 15px rgb(115, 112, 112);
     text-align: center;
+}
+.select:hover{
+    box-shadow: 2px 5px 15px rgb(223, 26, 26);
+   
 }
 
 
@@ -89,7 +92,7 @@ body{
 }
 
 .video-container{
-    
+    visibility: hidden;
     border-radius: 10px;
     max-height: 600px;
     max-width: 900px;
