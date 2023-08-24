@@ -1,1 +1,7 @@
 Weather.js
+
+*.txt
+*.pdf
+*.csv
+
+/study
