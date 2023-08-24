@@ -89,10 +89,10 @@ body{
 }
 
 .video-container{
-    visibility: hidden;
+    
     border-radius: 10px;
-    height: 50%;
-    width: 50%;
+    max-height: 600px;
+    max-width: 900px;
     aspect-ratio: 4/3;
     object-fit: contain;
     text-align: center;
@@ -101,7 +101,6 @@ body{
     align-items: center;
     position: relative;
     overflow: hidden;
-    border: #f7f6f6 1px solid; 
     cursor: pointer;
     
 }
@@ -119,8 +118,8 @@ body{
 }
 
 .video-container video{
-    height: 100%;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     aspect-ratio: 4/3;
     object-fit: contain;
 }

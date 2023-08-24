@@ -166,10 +166,12 @@ function toggleFullScreenMode() {
     videoContainer.requestFullscreen()
       videoContainer.classList.add("close")
       controls.style.color = "white"
-      controls.style.background = "transparent"
+    controls.style.background = "transparent"
   } else {
       document.exitFullscreen()
-      videoContainer.classList.add("open");
+    videoContainer.classList.add("open"); 
+    controls.style.color = "black";
+    controls.style.background = "white";
   }
 }
 
@@ -216,24 +218,5 @@ function formatDuration(time) {
       minutes
     )}:${leadingZeroFormatter.format(seconds)}`
   }
-}
-
-
-
-
-function toggleScrubbing(e) {
-  const rect = timelineContainer.getBoundingClientRect()
-  const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width
-  isScrubbing = (e.buttons & 1) === 1
-  videoContainer.classList.toggle("scrubbing", isScrubbing)
-  if (isScrubbing) {
-    wasPaused = video.paused
-    video.pause()
-  } else {
-    video.currentTime = percent * video.duration
-    if (!wasPaused) video.play()
-  }
-
-  handleTimelineUpdate(e)
 }
 
