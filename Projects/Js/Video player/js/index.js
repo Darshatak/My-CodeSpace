@@ -27,12 +27,11 @@ fileInput.addEventListener("change", function () {
         selectContainer.style.display = "block"
         fileInput.style.display = "block"
         videoContainer.style.visibility = "visible"
-        select.style.bottom="0%"
+        select.style.bottom="5%"
         // Display the video container
-
         // Set the video source to the selected file
         video.src = URL.createObjectURL(selectedFile);
-
+        
         // Play the video
         video.play();
     } else {
@@ -40,6 +39,7 @@ fileInput.addEventListener("change", function () {
         video.src = "";
         selectContainer.style.display = "block"
         videoContainer.style.display = "none"
+        
     }
 });
 
@@ -103,10 +103,12 @@ function togglePlay() {
 }
 
 video.addEventListener("play", () => {
+  document.title="Video is playing"
     videoContainer.classList.remove("paused")
 })
 
 video.addEventListener("pause", () => {
+  document.title="Video Player"
     videoContainer.classList.add("paused")
 })
 
@@ -215,3 +217,23 @@ function formatDuration(time) {
     )}:${leadingZeroFormatter.format(seconds)}`
   }
 }
+
+
+
+
+function toggleScrubbing(e) {
+  const rect = timelineContainer.getBoundingClientRect()
+  const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width
+  isScrubbing = (e.buttons & 1) === 1
+  videoContainer.classList.toggle("scrubbing", isScrubbing)
+  if (isScrubbing) {
+    wasPaused = video.paused
+    video.pause()
+  } else {
+    video.currentTime = percent * video.duration
+    if (!wasPaused) video.play()
+  }
+
+  handleTimelineUpdate(e)
+}
+
