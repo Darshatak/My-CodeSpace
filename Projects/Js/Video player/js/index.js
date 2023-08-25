@@ -1,4 +1,5 @@
 // Get references to DOM elements
+
 const fileInput = document.getElementById("fileInput");
 const text = document.getElementById("text");
 const video = document.getElementById("videoPlayer");
@@ -18,16 +19,15 @@ const select = document.querySelector(".select")
 // Listen for changes in the file input
 fileInput.addEventListener("change", function () {
     const selectedFile = fileInput.files[0];
-    
+    let top = document.querySelector(".top");
+    let bottom = document.querySelector(".bottom");
     // Check if a file is selected
     if (selectedFile) {
         // Hide the select container
-        selectContainer.style = `width:600px; height:100px; margin-top:50px`;
-        text.style = `font-size: 30px;font-weight: 500;`;
+        text.style = `font-size: 30px;font-weight: 800;`;
         selectContainer.style.display = "block"
-        fileInput.style.display = "block"
         videoContainer.style.visibility = "visible"
-        select.style.bottom="5%"
+        top.style.height ="70%"
         // Display the video container
         // Set the video source to the selected file
         video.src = URL.createObjectURL(selectedFile);
