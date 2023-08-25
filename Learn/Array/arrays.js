@@ -274,13 +274,32 @@ console.log(arr1.map((ele,index) => {
 
 
 
-//! Reduce Method
+//! Reduce Method(When u want single data)
 //! Flatten an array means to convert the 3d array into a single dimentional array
 //! The reduce() method executes reducer function (that you provide)
 //! on each element of the resulting in single value.
 
 //! The reducer function takes four arguments
-//! Accumulator
-//! Current Value
+//! Accumulator (collect all ) --this is extra added 
+//! Current Value or element 
 //! Current Index
-//! Source Array
+//! Source Array                            
+
+let arr2 = [5, 6];
+
+let sum = arr2.reduce((accumulator, currentVal, index, arr) => {
+    return accumulator += currentVal;
+});
+
+console.log("the sum is : " + sum);
+
+
+//! using all at once
+let arr3 = arr2.map((ele) => ele * ele)
+    .filter((ele) => ele > 10)
+    .reduce((accumulator, currentVal) => {
+    return accumulator += currentVal;
+});
+
+
+console.log( arr3);
