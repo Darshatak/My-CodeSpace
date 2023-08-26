@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Josefin+Sans&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&family=REM&family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(127, 255, 212);
+}
+
+#expense-form {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    background-color: #fc5959;
+}
+
+#expense-form .items{
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#expense-form .items .innerItem{
+    display: flex;
+    align-items: center;
+}
+#expense-form .items .innerItem label{
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#expense-form button {
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#expense-form button:hover {
+    background-color: #f4c1c1;
+    scale: 1.05;
+}
+
+table td {
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: black;
+    background-color: bisque;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    background-color: #6759d1;
+    color: white;
+    font-weight: 300;
+    padding: 10px;
+}
