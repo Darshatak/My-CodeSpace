@@ -12,7 +12,7 @@ function addUser() {
     }
     else {
         users.push(userName);
-        console.log(users);
+        // console.log(users);
         
         UserNameInput.value = "";
         updateExpenseTable();
@@ -66,7 +66,7 @@ function updateExpenseTable() {
                 const row = document.createElement('tr');
                 let totalAmountPerUser = expense.amount / users.length;
 
-                row.innerHTML = `<td>${expense.name}</td>`;
+                row.innerHTML = `<td>${expense.name} rs</td>`;
 
                 users.forEach(user => {
                     row.innerHTML += `<td>${totalAmountPerUser}</td>`;
