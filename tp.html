@@ -23,29 +23,17 @@
         </style>
     </head>
     <body>
-        <button onclick="move()">Click me</button><br><br>
+        <!-- <button onclick="move()">Click me</button><br><br>
         <div class="yellow">
             <div id="red">
             </div>
-        </div>
+        </div> -->
+
+
+        <input type="text" class="total">
+        <input type="text" class="total">
+        <input type="text" class="total">
+        <button id="submit">Submit</button>
     </body>
-    <script type="text/JavaScript">
-    function move() {
-        var redElem = document.getElementById('red');
-        var poe = 0;
-        var anim = setInterval(animate,5);
-        
-        function animate() {
-            if (poe==350){
-                clearInterval(anim);
-            }
-            else{
-                poe++;
-                redElem.style.top = poe+"px";
-                redElem.style.left = poe+"px";
-            }
-            
-        }
-    }
-</script>
+    <script src="ty.js"></script>
 </html>
