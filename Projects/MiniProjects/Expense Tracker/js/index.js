@@ -42,7 +42,7 @@ function addExpense() {
         document.getElementById('expenseName').value = '';
         document.getElementById('amount').value = '';
     } else { 
-         alert(" Please Add users");
+        alert(" Please Add users");
     }
 
     
@@ -50,7 +50,7 @@ function addExpense() {
 
 
 function updateExpenseTable() {
-            const expenseTable = document.getElementById('expense-table');
+    const expenseTable = document.getElementById('expense-table');
             const thead = expenseTable.querySelector('thead tr');
             const tbody = expenseTable.querySelector('tbody');
             let count = 0;
@@ -60,6 +60,7 @@ function updateExpenseTable() {
             users.forEach(user => {
                 thead.innerHTML += `<th>${user}</th>`;
             });
+    
             thead.innerHTML += '<th>Total Amount</th>';
 
             ExpenseList.forEach(expense => {
@@ -69,7 +70,7 @@ function updateExpenseTable() {
                 row.innerHTML = `<td>${expense.name} rs</td>`;
 
                 users.forEach(user => {
-                    row.innerHTML += `<td>${totalAmountPerUser}</td>`;
+                    row.innerHTML += `<td>${totalAmountPerUser.toFixed(2)}</td>`;
                     count++;
                 });
 
