@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/employee.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="leftSection " id="LftSec">
+                <img src="https://jupiterbiolabs.in/wp-content/uploads/2023/06//jupiter-logo-228x120.png" alt="">
+
+                <div class="tabs">
+                    <div class="search">
+                        <input type="text" name="" id="">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="item active" id="dashboard">
+                        <i class="fa-solid fa-gauge"></i>
+                        <p>Dashboard</p>
+                    </div>
+                    <div class="item" id="profile">
+                        <i class="fa-solid fa-id-card"></i>
+                        <p>My Account</p>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <p>Attendence</p>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-gear"></i>
+                        <p>Settings</p>
+                    </div>
+
+                </div>
+
+                <div class="Lbottom">
+
+
+                    <div class="item">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <p>Raise a Request </p>
+                    </div>
+                    <p style="text-align: center;
+                                margin-top: 20px;
+                                cursor: pointer;">
+                        <i class="fa-solid fa-power-off" id="logout">&nbsp&nbspLogout</i>
+                    </p>
+                </div>
+
+
+
+            </div>
+            <div class="rightSection">
+                <div class="topNav">
+                    <i class="fa-solid fa-bars" id="hambutton"></i>
+                    <div class="profile" id="NavProfile">
+                        <p id="AccName"></p>
+                        <div class="img" id="profileIMG">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="MainContainer">
+
+                    <div class="dashboard">
+                        <div class="section1">
+                            <h2>Important</h2>
+                            <div class="heading">
+                                <div class="info">
+                                    <div class="card">
+                                        <div class="item">
+                                            <p>Info</p>
+                                            <p>Discription</p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="item">
+                                            <p>Info</p>
+                                            <p>Discription</p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="item">
+                                            <p>Info</p>
+                                            <p>Discription</p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="item">
+                                            <p>Info</p>
+                                            <p>Discription</p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="item">
+                                            <p>Info</p>
+                                            <p>Discription</p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="item">
+                                            <p>Info</p>
+                                            <p>Discription</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="https://cdn1.byjus.com/wp-content/uploads/2020/01/Statistics-1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="EmployeForm">
+                        <h1>Employee Information Form</h1>
+                        <form action="#" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="aadharCard">Upload Aadhar Card:</label>
+                                <input type="file" id="aadharCard" name="aadharCard" accept=".jpg, .jpeg, .png, .pdf"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="panCard">Upload PAN Card:</label>
+                                <input type="file" id="panCard" name="panCard" accept=".jpg, .jpeg, .png, .pdf"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedin">LinkedIn Profile:</label>
+                                <input type="url" id="linkedin" name="linkedin"
+                                    placeholder="https://www.linkedin.com/in/yourprofile" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="currentSalary">Current Salary(in lacks):</label>
+                                <input type="number" id="currentSalary" name="currentSalary" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="currentRole">Current Role:</label>
+                                <input type="text" id="currentRole" name="currentRole" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address:</label>
+                                <textarea id="address" name="address" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="profilePhoto">Upload Profile Photo:</label>
+                                <input type="file" id="profilePhoto" name="profilePhoto" accept=".jpg, .jpeg, .png"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="profileP">
+
+                        <h1>User Profile</h1>
+                        <div class="profile-info">
+                            <p>
+                                <strong>First Name:</strong>
+                                <span id="ProfileFname"></span>
+                            </p>
+                            <p>
+                                <strong>Last Name:</strong>
+                                <span id="ProfileLname"></span>
+                            </p>
+                            <p>
+                                <strong>Email:</strong>
+                                <span id="ProfileEmail"></span>
+                            </p>
+                            <p>
+                                <strong>Number:</strong>
+                                <span id="ProfileNumber"></span>
+                            </p>
+                            <p>
+                                <strong>LinkedIn Profile:</strong>
+                                <span id="ProfileLinkedin"></span>
+                            </p>
+                            <p>
+                                <strong>Current Salary:</strong>
+                                <span id="ProfilecCurrentSalary"></span>
+                            </p>
+                            <p>
+                                <strong>Current Role:</strong>
+                                <span id="ProfileCurrentRole"></span>
+                            </p>
+                            <p>
+                                <strong>Address:</strong>
+                                <span id="ProfileAddress"></span>
+                            </p>
+                        </div>
+                        <div class="profile-actions">
+                            <button id="editProfile">Edit Profile</button>
+                        </div>
+                        <div class="profile-actions">
+                            <p id="account">Complete your profile Now</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+    <script src="js/employee.js"></script>
+</html>

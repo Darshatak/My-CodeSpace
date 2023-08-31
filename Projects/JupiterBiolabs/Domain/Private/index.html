@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+
+
+            </div>
+
+            <div class="wrapper">
+
+                <div class="form-box" id="LoginForm">
+                    <h2 id="heading">Login</h2>
+
+                    <form id="loginForm">
+                        <div class="input-box">
+                            <span>
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <input type="email" name="email" id="email" placeholder="Email">
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span>
+                                <i class="fa-solid fa-eye" id="eye"></i>
+                            </span>
+                            <input type="password" name="password" id="password" placeholder="Password">
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forget">
+                            <label><input type="checkbox" name="remember" id="remember"> Remember me</label>
+                            <a id="ForgetPassBtn">Forget Password</a>
+                        </div>
+
+                        <div class="submit">
+                            <button id="RBtn" onclick="login(event)">Sign In</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="form-box forget">
+                    <h2>Reset <br> Passwrod</h2>
+
+                    <form id="loginForm 1">
+                        <div class="input-box">
+                            <span>
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <input type="email" name="email" id="Remail" placeholder="Email">
+                            <label>Email</label>
+                        </div>
+
+                        <div class="submit" id="GenerateBox">
+                            <button id="GenerateOtp">Generate Otp</button>
+                        </div>
+                        <div class="submit" id="OtpBox">
+                            <div class="input-box">
+                                <input type="number" name="password" id="OtpInput" placeholder="Enter Otp">
+                                <label>Enter Otp</label>
+                            </div>
+                            <button id="validate">Submit</button>
+                        </div>
+                        <div id="SubmitBox">
+                            <div class="input-box">
+                                <input type="password" name="password" id="OtpInputPass" placeholder="Enter Password">
+                                <label>Enter Otp</label>
+                            </div>
+                            <div class="input-box">
+                                <input type="password" name="password" id="OtpInputConfirmPass"
+                                    placeholder="Confirm Password">
+                                <label>Enter Otp</label>
+                            </div>
+                            <div class="submit" id="SubmitBox">
+                                <button id="ResetSignin">Sign In</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <section class="hero">
+                <div class="hero-content">
+                    <img src="https://jupiterbiolabs.in/wp-content/uploads/2023/06//jupiter-logo-228x120.png" alt="">
+                    <h2>Welcome to Jupiter BIOLABS</h2>
+                    <p>FOR HEALTHY WELBEING</p>
+                    <a href="https://jupiterbiolabs.in/" class="cta-button">Visit Website</a>
+                </div>
+            </section>
+
+
+
+            <footer>
+                <p>&copy; Copyright 2023, All rights reserved. Jupiter Biolabs Pvt. Ltd</p>
+            </footer>
+
+        </div>
+
+    </body>
+    <script src="js/index.js"></script>
+    <script src="js/reset.js"></script>
+</html>
