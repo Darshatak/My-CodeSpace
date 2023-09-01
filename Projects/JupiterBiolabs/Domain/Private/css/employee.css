@@ -132,8 +132,6 @@ input[type="number"]::-webkit-outer-spin-button,
     border-radius: 20px;
     cursor: pointer;
     background-color: #007BFF;
-   
-    
 }
 
 
@@ -156,6 +154,7 @@ input[type="number"]::-webkit-outer-spin-button,
 
 .rightSection{
     width: 100%;
+    position: relative;
     
 }
 
@@ -174,7 +173,7 @@ input[type="number"]::-webkit-outer-spin-button,
 }
 
 .topNav .profile{
-    padding: 5px 20px;
+    height: 50px;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -185,11 +184,15 @@ input[type="number"]::-webkit-outer-spin-button,
 
 
 .topNav  .profile img{
-    height: 50px;
-    margin-left: 20px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 20px;
     border-radius: 50%;
+    padding: 2px;
 }
-
+.topNav  .profile img:hover{
+    background-color: rgba(18,18,18,0.5);
+}
 .MainContainer{
     height: 95%;
     margin: 20px 10px;
@@ -205,6 +208,11 @@ input[type="number"]::-webkit-outer-spin-button,
 }
 .MainContainer > p:hover{
     color: rgb(239, 24, 24);
+}
+
+.section{
+    height: 100%;
+    width: 100%;
 }
 
 .dashboard{
@@ -348,7 +356,7 @@ h1 {
     cursor: pointer;
 }
 .profile-actions p:hover{
-   color: red;
+    color: red;
 }
 
 button#editProfile {
@@ -361,5 +369,218 @@ button#editProfile {
 }
 
 button#editProfile:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+.wrapper {
+    display: none;
+    width: 300px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    position: absolute;
+    border-radius: 30px;
+    bottom: 0%;
+    left: 3%;
+    border: white 1px solid;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 999;
+
+}
+
+
+
+
+.issue-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.hide {
+    width: 0%;
+    height: 0%;
+    scale: 0;
+}
+
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    z-index: 999;
+}
+
+.close:hover {
+    color: rgb(255, 0, 0);
+}
+
+.issue-box h2 {
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.input-box {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.input-box label {
+    position: absolute;
+    top: -50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+
+
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 0px 30px 0px 7px;
+
+
+}
+
+input:-webkit-autofill {
+    background: transparent !important;
+}
+
+
+.input-box input::placeholder {
+    color: black;
+
+}
+
+.input-box input:not(:placeholder-shown)~label {
+    top: 5px;
+}
+
+.input-box input:invalid~label {
+    top: 5px;
+    /* Add any other styling you want for focused labels here */
+}
+
+.wrapper .issue-box .input-box span {
+    position: absolute;
+    right: 7px;
+    top: 25%;
+}
+
+.wrapper .issue-box .input-box span i {
+    cursor: pointer;
+}
+
+.wrapper .issue-box .submit {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.wrapper .issue-box .submit button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid white;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.5s;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.wrapper .issue-box .submit button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 1);
+}
+
+
+
+
+.Settings{
+    display: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CSetting{
+    margin: 50px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.5);
+    text-align: center;
+
+}
+
+
+.CSetting h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.CSetting .settings-option {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.CSetting label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.CSetting select,
+.CSetting input[type="checkbox"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.CSetting button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.CSetting button:hover {
     background-color: #0056b3;
 }
