@@ -305,8 +305,12 @@ a:hover {
 
 
 .hero {
-    margin-top: 15%;
-    margin-left: -40%;
+    width: 60%;
+    max-width: 1000px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url('https: //jupiterbiolabs.in/wp-content/uploads/2023/06//jupiter-logo-228x120.png');
     background-size: cover;
     text-align: center;

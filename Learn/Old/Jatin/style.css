@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.jupiter{
+    height: 1500px;
+}
+.navbar{
+    margin: 0px;
+    padding: 6px;
+    height: 50px;
+    display: flex;
+    background-color: beige;
+}
+
+
+.nav-l, ul{
+    width: 80%;
+    text-align: left;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ul li:hover {
+    padding: 3px;
+    border-radius: 5px;
+    transition: all .5s;
+    background-color: rgb(170, 170, 134);
+}
+.nav-l img{
+    height: 35px;
+    margin: 0px 5px;;
+    padding: 0px 10px;
+}
+.nav-r{
+    width: 20%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.nav-r a, .nav-l a{
+    padding: 0px 7px;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container{
+    margin: 50px;
+    padding: 50px 0px;
+    display: flex;
+}
+.container img{
+    height: 250px;
+    border-radius: 10px;
+
+}
+.cont-l h2, .cont-l p{
+    padding: 10px 20px;
+}
+.cont-l p{
+    padding: 40px 20px;
+}
+
+
+.container2{
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+
+}
+.box1{
+    height: 50px;
+}
+.quotes{
+    margin: 30px;
+    text-align: center;
+    height: 45vh;
+}
+
+.slider {
+    height: 40vh;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.slider img{
+    height: 40vh;
+    width: 80vw;
+}
+
+.contact{
+    width: 100%;
+    text-align: center;
+    
+}
+
+.incontact{
+    height: auto;
+    width: 100%;
+    padding: 30px 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.contact-l{
+    padding: 30px 10px;
+    width: 40%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+.contact-l input{
+    /* background: none; */
+    border: 0;
+}
+.contact-r{
+    width: 60%;
+}
+
+
+
+.footer {
+	display: flex;
+	margin: 35px 5px;    
+}
+
+.foot-l {
+	display: flex;
+	width: 50%;
+	margin: 0 10px;
+	padding: 10px;
+}
+
+.foot-r {
+	width: 50%;
+	text-align: end;
+	padding: 10px;
+}
+
+.company p,
+.community p {
+	padding: 2px 15px;
+	text-align: left;
+}
+
+.copy{
+    height: 30px;
+    padding: 8px;
+    text-align: center;
+    font-size: larger;
+}
+
+.text-big{
+    font-size: large;
+    font-weight: 700;
+}

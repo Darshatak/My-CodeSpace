@@ -9,7 +9,7 @@ const ForgetPassBtn = document.getElementById("ForgetPassBtn");
 
 const ResetSignin = document.getElementById("ResetSignin");
 
-let OtpStorarage = OtpGenerator();
+let OtpStorarage = "";
 
 OtpBox.style.display = "none";
 SubmitBox.style.display = "none";
@@ -35,8 +35,10 @@ ResetSignin.addEventListener("click", () => {
     let OtpInputPass = document.getElementById("OtpInputPass").value;
     let OtpInputConfirmPass = document.getElementById("OtpInputConfirmPass").value;
 
-     if (OtpInputPass === OtpInputConfirmPass) {
+    if (OtpInputPass === OtpInputConfirmPass) {
+        window.location.href = 'employee.html';
         alert('Successfully Resetted Password');
+        
     } else {
         alert('Password Does not Match');
     }
@@ -61,11 +63,13 @@ GenerateOtp.addEventListener("click", (e) => {
     e.preventDefault(); 
 
     var email = document.getElementById('Remail').value;
-    console.log(OtpStorarage);
+    
     
 
     if (email === employeeCredentials.email) {
         OtpBox.style.display = "flex";
+        OtpStorarage = OtpGenerator();  
+        console.log(OtpStorarage);
     } else {
         alert('Invalid login credentials');
     }
