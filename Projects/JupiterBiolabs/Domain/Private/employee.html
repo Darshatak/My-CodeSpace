@@ -17,7 +17,7 @@
 
                 <div class="tabs">
                     <div class="search">
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="searchInput" placeholder="Search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <div class="item active" id="dashboard">
@@ -28,10 +28,22 @@
                         <i class="fa-solid fa-id-card"></i>
                         <p>Profile</p>
                     </div>
-                    <!-- <div class="item">
-                        <i class="fa-solid fa-briefcase"></i>
+                    <div class="item" id="attendence">
+                        <i class="fa-regular fa-calendar-days"></i>
                         <p>Attendence</p>
-                    </div> -->
+                    </div>
+                    <div class="item" id="documentsNav">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <p>Documents</p>
+                    </div>
+                    <div class="item" id="salaryNav">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <p>Salary</p>
+                    </div>
+                    <div class="item" id="notificationsNav">
+                        <i class="fa-solid fa-gear"></i>
+                        <p>Notifications</p>
+                    </div>
                     <div class="item" id="SettingNav">
                         <i class="fa-solid fa-gear"></i>
                         <p>Settings</p>
@@ -68,7 +80,7 @@
                 </div>
 
                 <div class="MainContainer">
-                    <marquee direction="left" id="notices" style="cursor: pointer;color: rebeccapurple;"></marquee>
+                    <marquee direction="left" id="notices"></marquee>
 
                     <div class="dashboard">
                         <div class="section1">
@@ -215,6 +227,44 @@
 
                     </div>
 
+                    <div class="Attendance" id="AttendanceSec">
+
+
+                        <div id="panel">
+                            <div id="pTop">
+                                <div class="element">
+                                    <h4>Date</h4>
+                                    <div class="box">
+                                        <p id="date"></p>
+                                        <button onclick="markAttendance()"><i class="fa-solid fa-check"></i></button>
+                                    </div>
+
+                                </div>
+                                <div class="element">
+                                    <h4>Attendace Marked</h4>
+                                    <div class="box" id="AttendaceMarker">No</div>
+
+                                </div>
+
+
+                            </div>
+
+                            <div id="pBtm">
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="Documents" id="DocumentsSec">
+
+                    </div>
+
                     <div class="Settings">
                         <div class="CSetting">
                             <h1>Employee Panel Settings</h1>
@@ -227,7 +277,7 @@
                             </div>
                             <div class="settings-option">
                                 <label for="notifications">Notifications:</label>
-                                <input type="checkbox" id="notifications">
+                                Email <input type="checkbox" id="notifications">
                             </div>
                             <div class="settings-option">
                                 <label for="language">Select Language:</label>
@@ -237,8 +287,19 @@
                                     <option value="french">French</option>
                                 </select>
                             </div>
+                            <div class="settings-option">
+                                <label for="font-size">Font Size:</label>
+                                <select id="font-size">
+                                    <option value="small">Small</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="large">Large</option>
+                                </select>
+                            </div>
+
+
                             <button id="save-settings">Save Settings</button>
                         </div>
+
 
                     </div>
 
@@ -272,6 +333,7 @@
         </div>
 
     </body>
+
     <script src="js/employee.js"></script>
 
 </html>

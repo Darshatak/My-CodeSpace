@@ -7,6 +7,8 @@
     font-family: 'Poppins', sans-serif;
     user-select: none;
     overflow: hidden;
+    filter: brightness(.9999);
+    
 }
 
 
@@ -19,17 +21,22 @@ input[type="number"]::-webkit-outer-spin-button,
     height: 100vh;
     width: 100vw;
     display: flex;
+    background-color: rgba(53, 153, 132, 0.9);
 
 }
 
 .LftSec{
     width: 0px;
+    
 }
 
 .leftSection{
+    height: 100%;
     max-width: 350px;
     position: relative;
-    border-right: 1px solid black;
+    background-color: rgba(255, 255, 255,0.8);
+    backdrop-filter: blur(60px);
+    border-right:1px solid #162938 ;
     
 }
 .leftSection img{
@@ -38,60 +45,69 @@ input[type="number"]::-webkit-outer-spin-button,
     
 }
 
-.leftSection .tabs{
+.tabs{
+    height: 68%;
+    /* max-height: 40%; */
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 0px;
+    padding-left: 20px;
+    overflow-y: auto;
 }
 
 .leftSection .tabs .item.active{
-    margin-top: 20px;
-    padding: 20px 10px;
-    background-color:rgba(20, 20, 20,0.5);
-    width: 100%;
+    width: 95%;
+    margin-top: 10px;
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(50px);
     display: flex;
     justify-content: start;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px 0px black;
     cursor: pointer;
-
 }
 
 .leftSection .tabs .item{
-    margin-top: 20px;
-    padding: 20px 10px;
-    width: 100%;
+    margin-top: 10px;
+    padding: 20px 30px;
+    width: 95%;
     display: flex;
     justify-content: start;
     align-items: center;
     border-radius: 20px;
-    cursor: pointer;
+    cursor: pointer; 
 
 }
 
-.leftSection .tabs .item:hover{
-    background-color: rgba(20, 20, 20, 0.5);
+.leftSection .tabs .item:hover
+{
+    background-color: rgba(20, 20, 20, 0.1);
 }
 
 .leftSection .tabs .item i{
+    padding: 5px;
     font-size: 15pt;
-    margin-right: 10px;
-    color: rgb(0, 0, 0);
+    margin-right: 5px;
+    color: rgb(8, 8, 8);
 
 }
 .leftSection .tabs .item p{
     color: black;
-    font-size: 13pt;
+    
     font-weight: 500;
+    text-align: end;
     text-transform: uppercase;
 
 }
 
 .leftSection .tabs .search{
-    width: 100%;
+    width: 90%;
     position: relative;
     border: 1px solid black;
     border-radius: 8px;
     cursor: pointer;
+
 }
 
 .leftSection .tabs .search:hover{
@@ -155,13 +171,15 @@ input[type="number"]::-webkit-outer-spin-button,
 .rightSection{
     width: 100%;
     position: relative;
+    /* background-color: White; */
+    /* background-color: rgba(53, 153, 132,0.9); */
+    
     
 }
 
 .topNav{
     height: 50px;
-    border-bottom: 2px solid black;
-    background-color: aliceblue;
+    background-color: rgba(224, 221, 221, 0.8);
     display: flex;
     justify-content: space-between ;
     align-items: center;
@@ -195,8 +213,13 @@ input[type="number"]::-webkit-outer-spin-button,
 }
 .MainContainer{
     height: 95%;
-    margin: 20px 10px;
     
+    flex-direction: column;
+    margin: 20px 10px;
+    position: relative;
+    display: flex;
+    justify-self: center;
+    align-items: center;
 } 
 
 .MainContainer > p{
@@ -218,7 +241,7 @@ input[type="number"]::-webkit-outer-spin-button,
 .dashboard{
     width: 100%;
     height: 90%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .section1 .heading{
@@ -231,7 +254,7 @@ input[type="number"]::-webkit-outer-spin-button,
 
 .section1{
     padding: 20px;
-    background-color: rgb(117, 215, 186);
+    background-color: rgba(255, 255, 255,.8);
     margin: 20px;
     border-radius: 8px;
 
@@ -313,13 +336,17 @@ input[type="submit"]:hover {
 
 .profileP {
     display: none;
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255,0.8);
+    backdrop-filter: blur(20px);
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-transform: uppercase;
 }
 
 h1 {
@@ -329,14 +356,16 @@ h1 {
 
 .profile-info {
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    /* background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(20px); */
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 .profile-info p {
     margin-bottom: 10px;
+    margin-left: 50px;
 }
 .profile-info p span a{
     text-decoration: underline;
@@ -345,24 +374,29 @@ h1 {
 }
 
 .profile-info strong {
-    font-weight: bold;
+    font-weight: 300;
 }
 
 .profile-actions {
-    text-align: right;
+    text-align: center;
 }
 .profile-actions p{
     text-align: center;
     cursor: pointer;
+
 }
 .profile-actions p:hover{
     color: red;
 }
 
+#link{
+        color: #0056b3;
+}
+
 button#editProfile {
     background-color: #007BFF;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -385,6 +419,22 @@ button#editProfile:hover {
     backdrop-filter: blur(20px);
     position: absolute;
     border-radius: 30px;
+    bottom: 3%;
+    left: 3%;
+    border: white 1px solid;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 999;
+
+}
+.dark {
+    display: none;
+    width: 300px;
+    height: 350px;
+    background-color: #1F2833;
+    backdrop-filter: blur(20px);
+    position: absolute;
+    border-radius: 30px;
     bottom: 0%;
     left: 3%;
     border: white 1px solid;
@@ -393,6 +443,7 @@ button#editProfile:hover {
     z-index: 999;
 
 }
+
 
 
 
@@ -429,8 +480,8 @@ button#editProfile:hover {
     color: rgb(255, 0, 0);
 }
 
-.issue-box h2 {
-    font-size: 40px;
+.issue-box h3 {
+    font-size: 20px;
     color: rgb(0, 0, 0);
     text-transform: uppercase;
     text-align: center;
@@ -468,7 +519,6 @@ button#editProfile:hover {
     font-size: 1.2rem;
     padding: 0px 30px 0px 7px;
 
-
 }
 
 input:-webkit-autofill {
@@ -480,6 +530,8 @@ input:-webkit-autofill {
     color: black;
 
 }
+
+
 
 .input-box input:not(:placeholder-shown)~label {
     top: 5px;
@@ -532,18 +584,18 @@ input:-webkit-autofill {
     display: none;
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 600px;
 }
 
 .CSetting{
     margin: 50px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255,0.8);
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    border: 1px solid #ccc;
+
 
 }
 
@@ -555,7 +607,7 @@ input:-webkit-autofill {
 
 .CSetting .settings-option {
     margin-bottom: 10px;
-    text-align: left;
+    text-align: center;
 }
 
 .CSetting label {
@@ -563,9 +615,15 @@ input:-webkit-autofill {
     margin-bottom: 5px;
 }
 
+.CSetting select{
+    width: 100%;
+
+}
+
+
 .CSetting select,
 .CSetting input[type="checkbox"] {
-    width: 100%;
+    text-align: center;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -583,4 +641,143 @@ input:-webkit-autofill {
 
 .CSetting button:hover {
     background-color: #0056b3;
+}
+
+#logout:hover{
+    color: red;
+}
+#RequestBtn:hover{
+    background-color: #0056b3;
+}
+
+#notices{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    transition: .3 color linear;
+}
+#notices:hover{
+    color: rgb(222, 219, 219);
+}
+
+
+
+
+.Attendance{
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#panel {
+    width: 90%;
+    max-width: 850px;
+    height: 90%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+#pTop {
+    width: 100%;
+    height: 80px;
+    background: #476b9e;
+    display: flex;
+    color: #fff;
+    padding: 0px 10%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.box {
+    padding: 10px;
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    font-family: 700;
+    font-size: 20px;
+    color: black;
+}
+
+.box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.box button {
+    border: none;
+    outline: none;
+    background-color: #476b9e;
+    color: #fff;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 1s;
+}
+.box button i{
+   font-size: 15pt;
+}
+
+.box button:hover {
+    background-color: rgb(13, 222, 73);
+    color: #000000;
+}
+
+
+#pBtm {
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.pBtmitem {
+    height: 80px;
+    width: 80px;
+    border-radius: 10%;
+    background-color: rgb(232, 195, 191);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    margin: 20px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 15px;
+    text-align: center;
+}
+
+.pBtmitem:hover {
+    border: #476b9e 2px solid;
+}
+
+.present {
+    background-color: rgb(27, 238, 31);
+}
+
+.absent {
+    background-color: rgb(238, 83, 27);
+}
+
+.notMarked {
+    background-color: rgb(149, 148, 148);
 }

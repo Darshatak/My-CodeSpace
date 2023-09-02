@@ -2,9 +2,14 @@
 const LftSec = document.querySelector("#LftSec");
 const logout = document.getElementById("logout");
 
+
 //navigation
-const ProfileP = document.querySelector("#profile");
 const dashboardSection = document.querySelector("#dashboard");
+const ProfileP = document.querySelector("#profile");
+const AttendenceNav = document.querySelector("#attendence");
+const documentsNav = document.querySelector("#documentsNav");
+const salaryNav = document.querySelector("#salaryNav");
+const notificationsNav = document.querySelector("#notificationsNav");
 const SettingNav = document.querySelector("#SettingNav");
 
 //Top Nav Bar
@@ -13,12 +18,17 @@ const hamBtn = document.querySelector("#hambutton");
 const AccName = document.querySelector("#AccName");
 const profileIMG = document.querySelector("#profileIMG");
 
+const searchInput = document.getElementById('searchInput');
+const tabs = document.querySelectorAll('.item');
+
+
 
 //sections in container
 const dashboard = document.querySelector(".dashboard");
 const EmployeForm = document.querySelector(".EmployeForm");
 const SettingsSection = document.querySelector(".Settings");
 const noticesMarquee = document.querySelector("#notices");
+const AttendanceSec = document.querySelector("#AttendanceSec");
 
 
 const RequestWrapper = document.querySelector("#RequestWrapper");
@@ -45,7 +55,7 @@ const item = document.querySelector(".item");
 
 var employeeCredentials = {
     FirstName:'Darshatak',
-    LastName:'1',
+    LastName:'vyas',
     email: 'employee@employee.com',
     password: 'employee123',
     profile: 'https://www.mecgale.com/wp-content/uploads/2017/08/dummy-profile.png',
@@ -56,9 +66,11 @@ var employeeCredentials = {
     Phone_number:'1598764324',
 };
 
+var dateinput =  document.getElementById('date').innerText =getCurrentDate();
+
 
 window.onload = function () {
-    UserPage.style.display = "none";
+    selectNav();
     //Assigning Static Details
     noticesMarquee.innerHTML = `Notice: <a id="account">Please Update Your Profile</a>`;
     // AccName.innerText = employeeCredentials.FirstName;
@@ -68,10 +80,13 @@ window.onload = function () {
     ProfileLname.innerText = employeeCredentials.LastName;
     ProfileEmail.innerText = employeeCredentials.email;
     ProfileNumber.innerText = employeeCredentials.Phone_number;
-    ProfileLinkedin.innerHTML = `<a href="${employeeCredentials.Linkedin}">${employeeCredentials.FirstName}</a>`;;
+    ProfileLinkedin.innerHTML = `<a href="${employeeCredentials.Linkedin}" id="link">${employeeCredentials.FirstName}</a>`;;
     ProfilecCurrentSalary.innerText = employeeCredentials.Current_Salary;
     ProfileCurrentRole.innerText = employeeCredentials.Current_Role;
     ProfileAddress.innerText = employeeCredentials.Address;
+    makeDate();
+    markAttendance();
+    document.getElementById('date').innerText =getCurrentDate();
 };
 
 
@@ -102,53 +117,159 @@ noticesMarquee.addEventListener("click", () => {
 })
 
 ProfileP.addEventListener("click", () => { 
+    localStorage.setItem("nav", "ProfileP");
     dashboard.style.display = "none";
     UserPage.style.display = "block";
     EmployeForm.style.display = "none";
     SettingsSection.style.display = "none";
+    AttendanceSec.style.display = "none";
 
     ProfileP.classList.add("active")
-    dashboardSection.classList.remove("active")
+
     SettingNav.classList.remove("active")
+    notificationsNav.classList.remove("active")
+    salaryNav.classList.remove("active")
+    documentsNav.classList.remove("active")
+    AttendenceNav.classList.remove("active")
+    dashboardSection.classList.remove("active")
 })
 
 NavProfile.addEventListener("click", () => { 
+    localStorage.setItem("nav", "ProfileP");
     dashboard.style.display = "none";
     UserPage.style.display = "block";
     EmployeForm.style.display = "none";
+    SettingsSection.style.display = "none";
+    AttendanceSec.style.display = "none";
 
     ProfileP.classList.add("active")
+
+    SettingNav.classList.remove("active")
+    notificationsNav.classList.remove("active")
+    salaryNav.classList.remove("active")
+    documentsNav.classList.remove("active")
+    AttendenceNav.classList.remove("active")
     dashboardSection.classList.remove("active")
 })
 
 
 dashboardSection.addEventListener("click", () => { 
+    localStorage.setItem("nav", "dashboardSection");
     dashboard.style.display = "block";
     UserPage.style.display = "none";
     EmployeForm.style.display = "none";
     SettingsSection.style.display = "none";
+    AttendanceSec.style.display = "none";
 
     dashboardSection.classList.add("active")
-    ProfileP.classList.remove("active")
+
     SettingNav.classList.remove("active")
+    notificationsNav.classList.remove("active")
+    salaryNav.classList.remove("active")
+    documentsNav.classList.remove("active")
+    AttendenceNav.classList.remove("active")
+    ProfileP.classList.remove("active")
+    
 })
 
 
 SettingNav.addEventListener("click", () => { 
+    localStorage.setItem("nav", "SettingNav");
     dashboard.style.display = "none";
     UserPage.style.display = "none";
     EmployeForm.style.display = "none";
     SettingsSection.style.display = "block";
+    AttendanceSec.style.display = "none";
 
     SettingNav.classList.add("active")
+    
+    notificationsNav.classList.remove("active")
+    salaryNav.classList.remove("active")
+    documentsNav.classList.remove("active")
+    AttendenceNav.classList.remove("active")
+    ProfileP.classList.remove("active")
+    dashboardSection.classList.remove("active")
+})
+
+AttendenceNav.addEventListener("click", () => { 
+    localStorage.setItem("nav", "AttendenceNav");
+    dashboard.style.display = "none";
+    UserPage.style.display = "none";
+    EmployeForm.style.display = "none";
+    SettingsSection.style.display = "none";
+    AttendanceSec.style.display = "block";
+
+    AttendenceNav.classList.add("active")
+
+    SettingNav.classList.remove("active")
+    notificationsNav.classList.remove("active")
+    salaryNav.classList.remove("active")
+    documentsNav.classList.remove("active")
+    ProfileP.classList.remove("active")
+    dashboardSection.classList.remove("active")
+})
+
+documentsNav.addEventListener("click", () => {
+    localStorage.setItem("nav", "documentsNav");
+    dashboard.style.display = "none";
+    UserPage.style.display = "none";
+    EmployeForm.style.display = "none";
+    SettingsSection.style.display = "none";
+    AttendanceSec.style.display = "none";
+
+    documentsNav.classList.add("active")
+
+    SettingNav.classList.remove("active")
+    notificationsNav.classList.remove("active")
+    salaryNav.classList.remove("active")
+    AttendenceNav.classList.remove("active")
+    ProfileP.classList.remove("active")
+    dashboardSection.classList.remove("active")
+})
+
+salaryNav.addEventListener("click", () => { 
+    localStorage.setItem("nav", "salaryNav");
+    dashboard.style.display = "none";
+    UserPage.style.display = "none";
+    EmployeForm.style.display = "none";
+    SettingsSection.style.display = "none";
+    AttendanceSec.style.display = "none";
+
+    salaryNav.classList.add("active")
+
+    SettingNav.classList.remove("active")
+    notificationsNav.classList.remove("active")
+    documentsNav.classList.remove("active")
+    AttendenceNav.classList.remove("active")
+    ProfileP.classList.remove("active")
+    dashboardSection.classList.remove("active")
+})
+notificationsNav.addEventListener("click", () => { 
+    localStorage.setItem("nav", "notificationsNav");
+    dashboard.style.display = "none";
+    UserPage.style.display = "none";
+    EmployeForm.style.display = "none";
+    SettingsSection.style.display = "none";
+    AttendanceSec.style.display = "none";
+
+    notificationsNav.classList.add("active")
+
+    SettingNav.classList.remove("active")
+    salaryNav.classList.remove("active")
+    documentsNav.classList.remove("active")
+    AttendenceNav.classList.remove("active")
     ProfileP.classList.remove("active")
     dashboardSection.classList.remove("active")
 })
 
 
+
+
+
 hamBtn.addEventListener("click", () => { 
     LftSec.classList.toggle("LftSec")
 })
+
 
 
 
@@ -181,48 +302,64 @@ logout.addEventListener("click", () => {
 });
 
 
-// script.js
-
-// script.js
-
 document.addEventListener("DOMContentLoaded", function () {
     const themeSelect = document.getElementById("theme");
     const notificationsCheckbox = document.getElementById("notifications");
     const languageSelect = document.getElementById("language");
     const saveButton = document.getElementById("save-settings");
     const body = document.body;
+    const fontSizeSelect = document.getElementById("font-size");
 
-    // Load saved settings from local storage (if available)
+
     themeSelect.value = localStorage.getItem("theme") || "light";
     notificationsCheckbox.checked = JSON.parse(localStorage.getItem("notifications")) || false;
     languageSelect.value = localStorage.getItem("language") || "english";
+    fontSizeSelect.value = localStorage.getItem("Font-size") || "medium";
 
-    // Apply the theme on page load
+
     applyTheme(themeSelect.value);
 
-    // Event listener for the "Save Settings" button
+
     saveButton.addEventListener("click", function () {
-        // Save settings to local storage
+
         localStorage.setItem("theme", themeSelect.value);
         localStorage.setItem("notifications", notificationsCheckbox.checked);
         localStorage.setItem("language", languageSelect.value);
-
-        alert("Settings saved successfully!");
+        localStorage.setItem("Font-size", fontSizeSelect.value);
+        window.location.reload();
     });
 
-    // Function to apply the selected theme
+
     function applyTheme(selectedTheme) {
         if (selectedTheme === "dark") {
-                $(document).ready(function () {
-                    $("*").css("color", "white");
-                    $("body").css("background-color", "#333");
-                    $(".topNav").css("background-color", "#3353");
-                    $(".profileP").css("background-color", "#3353");
-                    $(".profile-info").css("background-color", "#3353");
-                    $(".profile-info").css("color", "white");
+            $(document).ready(function () {
+                $("*").css("color", "white");
+                $("body").css("background-color", "#0B0C10");
+                $(".topNav").css({
+                    "background-color": "#2C3231",
+                    "border-bottom": "1px solid #ccc"
+                });
+                $(".leftSection").css({
+                    "background-color": "#202123"
+                });
+                $(".active").css({
+                    "background-color": "rgba(20, 20, 20, 0.5)",
+                    "border-right": "1px solid #ccc"
+                });
+                    $(".rightSection").css("background-color", "#202024");
+                    $(".section1").css("background-color", "#333");
+                    $(".profileP").css("background-color", "#333");
+                    $(".EmployeForm").css("background-color", "#333");
+                    $(".profile-info").css("background-color", "#333");
+                    $(".profile-info").css("color", "#333");
+                    $("#link").css("color", "#0056b3");
                     $(".CSetting").css("background-color", "#333");
-                    $(".CSetting select").css("color", "#333");
+                    $(".CSetting select").css("color", "#1F2833");
                     $(".CSetting select option").css("color", "#333");
+                    $(".issue-box h3").css("color", "black");
+                    $("input,textarea").css("color", "black");
+                    $(".close i").css("color", "black");
+
                 });
             
         } else {
@@ -230,6 +367,122 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-  
 });
 
+searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const matchingTabs = [];
+
+    tabs.forEach(tab => {
+        const tabText = tab.querySelector('p').textContent.toLowerCase();
+        if (tabText.includes(searchTerm)) {
+            matchingTabs.push(tab);
+            tab.style.display = 'flex';
+        } else {
+            tab.style.display = 'none';
+        }
+    });
+
+    if (matchingTabs.length === 1) {
+        matchingTabs[0].click();
+    }
+});
+
+
+// Attendance Panel
+var attendance = {
+    "2023-09-01": "absent",
+    "2023-09-02": "present",
+    "2023-09-03": "present",
+    "2023-09-04": "present",
+    "2023-09-20": "present",
+    "2023-09-29": "present"
+};
+
+function makeDate() { 
+    var clutter = "";
+
+    for (var i = 1; i <= 31; i++) {
+        var date = "2023-09-" + (i < 10 ? "0" : "") + i;
+        var status = attendance[date] || "";
+        if (status == "") {
+            clutter += `<div class="pBtmitem notMarked" id="${date}">${i}</div>`;
+        } else if(status == "absent") { 
+            clutter += `<div class="pBtmitem absent" id="${date}">${i}</div>`;
+        }else { 
+            clutter += `<div class="pBtmitem present" id="${date}">${i}</div>`;
+        }
+        
+    }
+
+
+
+    document.getElementById("pBtm").innerHTML = clutter;
+}
+
+
+function getCurrentDate() { 
+var currentDate = new Date();
+var currentYear = currentDate.getFullYear(); // Get the current year (e.g., 2023)
+var currentMonth = currentDate.getMonth() + 1; // Get the current month (January is 0, so add 1)
+    var currentDay = currentDate.getDate();
+    
+    if (currentDay < 10) { 
+        currentDay= "0"+(currentDay);
+    }
+    if (currentMonth < 10) { 
+        currentMonth= "0"+(currentMonth);
+    }
+    
+    return `${currentYear}-${currentMonth}-${currentDay}`;
+
+}
+
+
+function markAttendance() {
+    var date = dateinput;
+
+
+            if (!date) {
+                alert("Please select a date.");
+                return;
+            }
+
+            if (attendance[date]) {
+                document.getElementById('AttendaceMarker').innerText = "Yes"
+                return;
+            } else {
+                document.getElementById('AttendaceMarker').innerText = "Yes"
+                attendance[date] = "Present";
+                makeDate();
+                    
+            }
+        }
+
+
+
+function selectNav() { 
+    var tab = localStorage.getItem("nav");
+    console.log(tab);
+    if (tab == "dashboardSection") {
+        dashboardSection.click();
+    }
+    else if (tab == "ProfileP") { 
+        ProfileP.click();
+    }
+    else if (tab == "AttendenceNav") { 
+        AttendenceNav.click();
+    }
+    else if (tab == "documentsNav") { 
+        documentsNav.click();
+    }
+    else if (tab == "salaryNav") { 
+        salaryNav.click();
+    }
+    else if (tab == "notificationsNav") { 
+        notificationsNav.click();
+    }
+    else if (tab == "SettingNav") { 
+        SettingNav.click();
+    }
+}
