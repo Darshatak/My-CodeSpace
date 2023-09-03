@@ -27,8 +27,9 @@ input[type="number"]::-webkit-outer-spin-button,
 
 .LftSec{
     width: 0px;
-    
 }
+
+
 
 .leftSection{
     height: 100%;
@@ -55,23 +56,25 @@ input[type="number"]::-webkit-outer-spin-button,
 }
 
 .leftSection .tabs .item.active{
-    width: 95%;
+    width: 105%;
     margin-top: 10px;
-    padding: 20px 30px;
+    padding: 10px 15px;
     background-color: rgba(255, 255, 255, 1);
     backdrop-filter: blur(50px);
     display: flex;
     justify-content: start;
     align-items: center;
-    border-radius: 16px;
-    box-shadow: 0px 0px 5px 0px black;
+    border-radius: 6px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    box-shadow: 0px 0px 3px 0px black;
     cursor: pointer;
 }
 
 .leftSection .tabs .item{
     margin-top: 10px;
-    padding: 20px 30px;
-    width: 95%;
+    padding: 10px 15px;
+    width: 105%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -81,7 +84,9 @@ input[type="number"]::-webkit-outer-spin-button,
 }
 
 .leftSection .tabs .item:hover
-{
+{   border-radius: 6px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
     background-color: rgba(20, 20, 20, 0.1);
 }
 
@@ -101,34 +106,6 @@ input[type="number"]::-webkit-outer-spin-button,
 
 }
 
-.leftSection .tabs .search{
-    width: 90%;
-    position: relative;
-    border: 1px solid black;
-    border-radius: 8px;
-    cursor: pointer;
-
-}
-
-.leftSection .tabs .search:hover{
-    border: 1px solid rgb(185, 115, 115);
-}
-
-.leftSection .tabs .search input{
-    width: 100%;
-    height: 36px;
-    position: relative;
-    border-radius: 6px;
-    padding: 0px 35px 0px 10px;
-    border: none;
-    outline: none;
-}
-
-.leftSection .search i{
-    position: absolute;
-    right: 10px;
-    top: 25%;
-}
 
 .Lbottom{
     width: 100%;
@@ -173,52 +150,87 @@ input[type="number"]::-webkit-outer-spin-button,
     position: relative;
     /* background-color: White; */
     /* background-color: rgba(53, 153, 132,0.9); */
+    background-color: rgb(45, 128, 111);
     
     
 }
 
 .topNav{
-    height: 50px;
-    background-color: rgba(224, 221, 221, 0.8);
+    width: 100%;
+    /* background-color: rgba(224, 221, 221, 0); */
     display: flex;
     justify-content: space-between ;
     align-items: center;
     padding-left: 20px;
 }
-.topNav i{
-    scale: 1.5;
+
+.topNav i:nth-child(1){
+    font-size: 25px;
+    color: #1F2833;
     cursor: pointer;
 }
 
 .topNav .profile{
-    height: 50px;
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     font-weight: 700;
     cursor: pointer;
+    margin-right: 20px;
 }
-
-
 
 .topNav  .profile img{
-    height: 40px;
-    margin-left: 10px;
-    margin-right: 20px;
+    width: 50px;
     border-radius: 50%;
-    padding: 2px;
+    padding-top: 5px;
 }
-.topNav  .profile img:hover{
+.topNav  .profile:hover{
+    border-radius: 25px;
     background-color: rgba(18,18,18,0.5);
 }
-.MainContainer{
-    height: 95%;
+
+.item1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.item1 .search {
+    width: 450px;
+    border-radius: 32px;
+    cursor: pointer;
+    background-color: white;
+
+}
+
+
+.item1 .search input{
+    width: 100%;
+    position: relative;
+    border-radius: 32px;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    background-color: white;
     
+}
+
+.item1 .search i {
+    position: absolute;
+    right: 10px;
+    top: 35%;
+}
+
+.MainContainer{
+    height: 90%;
     flex-direction: column;
     margin: 20px 10px;
     position: relative;
     display: flex;
-    justify-self: center;
+
     align-items: center;
 } 
 
@@ -233,26 +245,21 @@ input[type="number"]::-webkit-outer-spin-button,
     color: rgb(239, 24, 24);
 }
 
-.section{
-    height: 100%;
-    width: 100%;
-}
 
-.dashboard{
+
+.MainContainer .dashboard{
     width: 100%;
-    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     overflow-y: auto;
 }
 
-.section1 .heading{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-}
+
 
 .section1{
+    width: 350px;
     padding: 20px;
     background-color: rgba(255, 255, 255,.8);
     margin: 20px;
@@ -260,27 +267,21 @@ input[type="number"]::-webkit-outer-spin-button,
 
 }
 
-.section1 .heading .info{
-    width: 70%;
+.section1 .item{
     display: flex;
-    flex-direction: row;
-    justify-content: start;
-    flex-wrap: wrap;
-}
-
-.section1 .heading .info .card{
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0056b3;
+    color: white;
     padding: 10px 20px;
-    background-color: rgb(226, 110, 110);
-    color: aliceblue;
-    margin: 10px;
-    border-radius: 16px;
-    
+    margin: 5px;
+    border-radius: 4px;
 }
-
 
 
 
 .EmployeForm {
+    display: none;
     width: 100%;
     max-width: 850px;
     height: 90%;
@@ -337,7 +338,7 @@ input[type="submit"]:hover {
 .profileP {
     display: none;
     width: 100%;
-    max-width: 600px;
+    max-width: 850px;
     margin: 0 auto;
     padding: 20px;
     background-color: rgba(255, 255, 255,0.8);
@@ -355,18 +356,24 @@ h1 {
 }
 
 .profile-info {
+    display: flex;
+    justify-content: center;
     padding: 10px;
     border-radius: 5px;
     /* background-color: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(20px); */
     margin-bottom: 20px;
-    text-align: justify;
 }
 
 .profile-info p {
     margin-bottom: 10px;
     margin-left: 50px;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    
 }
+
 .profile-info p span a{
     text-decoration: underline;
     color: #000000;
@@ -584,7 +591,7 @@ input:-webkit-autofill {
     display: none;
     height: 100%;
     width: 100%;
-    max-width: 600px;
+    max-width: 850px;
 }
 
 .CSetting{
@@ -661,35 +668,37 @@ input:-webkit-autofill {
 
 
 
-
 .Attendance{
-
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     display: none;
+    height: 100%;
 }
 
 #panel {
     width: 90%;
+    height: 95%;
     max-width: 850px;
-    height: 90%;
     background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    overflow: hidden;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 
 #pTop {
     width: 100%;
     height: 80px;
-    background: #476b9e;
+    /* background: #476b9e; */
+    background: rgb(241, 241, 250);
     display: flex;
-    color: #fff;
+    color: #000000;
     padding: 0px 10%;
     align-items: center;
+    font-weight: 600;
     justify-content: space-between;
+}
+
+#pTop h4{
+    font-weight: 100;
 }
 
 .element {
@@ -703,20 +712,20 @@ input:-webkit-autofill {
 .box {
     padding: 10px;
     display: flex;
-    background-color: #fff;
+    background-color: #c7c1c1;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
-    font-family: 700;
+    border-radius: 32px;
     font-size: 20px;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
-.box input {
+.box p {
     width: 100%;
     height: 100%;
     border: none;
     outline: none;
+    
 }
 
 .box button {
@@ -731,7 +740,7 @@ input:-webkit-autofill {
     transition: all 1s;
 }
 .box button i{
-   font-size: 15pt;
+    font-size: 15pt;
 }
 
 .box button:hover {
@@ -754,7 +763,6 @@ input:-webkit-autofill {
     height: 80px;
     width: 80px;
     border-radius: 10%;
-    background-color: rgb(232, 195, 191);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -762,7 +770,7 @@ input:-webkit-autofill {
     margin: 20px;
     cursor: pointer;
     font-weight: 800;
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -775,9 +783,128 @@ input:-webkit-autofill {
 }
 
 .absent {
-    background-color: rgb(238, 83, 27);
+    background-color: rgb(255, 0, 0);
 }
 
 .notMarked {
-    background-color: rgb(149, 148, 148);
+    
+}
+
+
+.Documents{
+    width: 100%;
+    max-width: 850px;
+    height: 90%;
+    display: none;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.DocumentTopNav{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding-left: 10px;
+}
+
+
+.DocumentTopNav p:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+
+.DocumentContainer{
+    background-color: #007BFF;
+    
+}
+
+.DocItem{
+    margin: 10px 5px;
+    color: #f5f5f5;
+    /* background-color: #476b9e; */
+    background-color: #384455;
+    padding: 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    z-index: 55;
+}
+
+.DocItem p:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+
+.DocItem p button {
+    padding: 10px 12px;
+    text-align: start;
+    border-radius: 16px;
+    border: none;
+    outline: none;
+    margin: 10px;
+    transition: all 0.3 linear;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.DocItem p button i{
+    font-size: 11pt;
+}
+.DocItem p button:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+.Add{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+
+}
+
+.Add button{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    cursor: pointer;
+    background-color: #0056b3;
+    color: #fff;
+}
+.Add button:hover{
+    background-color: #0a498d;
+    color: #f5f5f5;
+}
+
+@media only screen and (max-width: 1000px) {
+    .leftSection {
+        height: 100%;
+        width: 0px;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(60px);
+        border-right: 1px solid #162938;
+
+    }
+
+        .Attendance {
+            display: none;
+            height: 100%;
+            width: 100%;
+            max-width: 900px;
+            position: absolute;
+            top: 0%;
+            left: 5%;
+        }
 }

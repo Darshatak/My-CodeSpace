@@ -29,8 +29,10 @@ const EmployeForm = document.querySelector(".EmployeForm");
 const SettingsSection = document.querySelector(".Settings");
 const noticesMarquee = document.querySelector("#notices");
 const AttendanceSec = document.querySelector("#AttendanceSec");
+const DocumentsSec = document.querySelector("#DocumentsSec");
 
 
+const DocumentContainer = document.querySelector(".DocumentContainer");
 const RequestWrapper = document.querySelector("#RequestWrapper");
 const closeWrapper = document.querySelector(".close");
 const RequestBtn = document.querySelector("#RequestBtn");
@@ -66,10 +68,19 @@ var employeeCredentials = {
     Phone_number:'1598764324',
 };
 
+
+var attendance = {
+    "2023-09-01": "absent",
+    "2023-09-02": "present",
+    "2023-09-04": "present"
+};
+
+
 var dateinput =  document.getElementById('date').innerText =getCurrentDate();
 
 
 window.onload = function () {
+    UpdateDoc();
     selectNav();
     //Assigning Static Details
     noticesMarquee.innerHTML = `Notice: <a id="account">Please Update Your Profile</a>`;
@@ -85,7 +96,6 @@ window.onload = function () {
     ProfileCurrentRole.innerText = employeeCredentials.Current_Role;
     ProfileAddress.innerText = employeeCredentials.Address;
     makeDate();
-    markAttendance();
     document.getElementById('date').innerText =getCurrentDate();
 };
 
@@ -121,6 +131,7 @@ ProfileP.addEventListener("click", () => {
     dashboard.style.display = "none";
     UserPage.style.display = "block";
     EmployeForm.style.display = "none";
+    DocumentsSec.style.display = "none";
     SettingsSection.style.display = "none";
     AttendanceSec.style.display = "none";
 
@@ -141,6 +152,7 @@ NavProfile.addEventListener("click", () => {
     EmployeForm.style.display = "none";
     SettingsSection.style.display = "none";
     AttendanceSec.style.display = "none";
+    DocumentsSec.style.display = "none";
 
     ProfileP.classList.add("active")
 
@@ -155,11 +167,12 @@ NavProfile.addEventListener("click", () => {
 
 dashboardSection.addEventListener("click", () => { 
     localStorage.setItem("nav", "dashboardSection");
-    dashboard.style.display = "block";
+    dashboard.style.display = "flex";
     UserPage.style.display = "none";
     EmployeForm.style.display = "none";
     SettingsSection.style.display = "none";
     AttendanceSec.style.display = "none";
+    DocumentsSec.style.display = "none";
 
     dashboardSection.classList.add("active")
 
@@ -180,6 +193,7 @@ SettingNav.addEventListener("click", () => {
     EmployeForm.style.display = "none";
     SettingsSection.style.display = "block";
     AttendanceSec.style.display = "none";
+    DocumentsSec.style.display = "none";
 
     SettingNav.classList.add("active")
     
@@ -198,6 +212,7 @@ AttendenceNav.addEventListener("click", () => {
     EmployeForm.style.display = "none";
     SettingsSection.style.display = "none";
     AttendanceSec.style.display = "block";
+    DocumentsSec.style.display = "none";
 
     AttendenceNav.classList.add("active")
 
@@ -216,6 +231,7 @@ documentsNav.addEventListener("click", () => {
     EmployeForm.style.display = "none";
     SettingsSection.style.display = "none";
     AttendanceSec.style.display = "none";
+    DocumentsSec.style.display = "block";
 
     documentsNav.classList.add("active")
 
@@ -234,6 +250,7 @@ salaryNav.addEventListener("click", () => {
     EmployeForm.style.display = "none";
     SettingsSection.style.display = "none";
     AttendanceSec.style.display = "none";
+    DocumentsSec.style.display = "none";
 
     salaryNav.classList.add("active")
 
@@ -244,6 +261,7 @@ salaryNav.addEventListener("click", () => {
     ProfileP.classList.remove("active")
     dashboardSection.classList.remove("active")
 })
+
 notificationsNav.addEventListener("click", () => { 
     localStorage.setItem("nav", "notificationsNav");
     dashboard.style.display = "none";
@@ -251,6 +269,8 @@ notificationsNav.addEventListener("click", () => {
     EmployeForm.style.display = "none";
     SettingsSection.style.display = "none";
     AttendanceSec.style.display = "none";
+    DocumentsSec.style.display = "none";
+
 
     notificationsNav.classList.add("active")
 
@@ -390,14 +410,6 @@ searchInput.addEventListener('input', () => {
 
 
 // Attendance Panel
-var attendance = {
-    "2023-09-01": "absent",
-    "2023-09-02": "present",
-    "2023-09-03": "present",
-    "2023-09-04": "present",
-    "2023-09-20": "present",
-    "2023-09-29": "present"
-};
 
 function makeDate() { 
     var clutter = "";
@@ -442,13 +454,8 @@ var currentMonth = currentDate.getMonth() + 1; // Get the current month (January
 function markAttendance() {
     var date = dateinput;
 
-
-            if (!date) {
-                alert("Please select a date.");
-                return;
-            }
-
-            if (attendance[date]) {
+    if (attendance[date]) {
+                alert("Attendance is marked")
                 document.getElementById('AttendaceMarker').innerText = "Yes"
                 return;
             } else {
@@ -463,7 +470,6 @@ function markAttendance() {
 
 function selectNav() { 
     var tab = localStorage.getItem("nav");
-    console.log(tab);
     if (tab == "dashboardSection") {
         dashboardSection.click();
     }
@@ -486,3 +492,102 @@ function selectNav() {
         SettingNav.click();
     }
 }
+
+var Documents = {
+    1: {
+        name: "AadharCard",
+        link: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9kZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60",
+        date: "02/09/2023"
+    },
+    2: {
+        name: "Pancard",
+        link: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+        date: "02/09/2023"
+    },
+    3: {
+        name: "Pancard",
+        link: "https://plus.unsplash.com/premium_photo-1669704098750-7cd22c35422b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80",
+        date: "02/09/2023"
+    }
+}
+
+function AddDoc() {
+
+    const documentUrl = "https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png";
+
+    var newName = prompt("Enter the name of the new document:");
+    var newLink = prompt("Enter the link for the new document:");
+    var newDate = getCurrentDate();
+
+    var newDocument = {
+    name: newName,
+    link: newLink,
+    date: newDate
+    };
+    if (newName == null && newLink == null) {
+        console.log("failed to add files")
+    } else { 
+
+        var nextKey = Object.keys(Documents).length + 1;
+        Documents[nextKey] = newDocument;
+
+        console.log(Documents);
+
+        var clutter = "";
+        for (var key in Documents) {
+            console.log(Documents[key]);
+                clutter += `<div class="DocItem">
+                                <p>${key}</p>
+                                <p>${Documents[key].name}</p>
+                                <p>${Documents[key].date}</p>
+                                <p><button  onclick="ViewDoc(${key})"><i class="fa-solid fa-eye"></i></button>
+                                    <button  onclick="DeleteDoc(${key})"><i class="fa-solid fa-trash"></i></button>
+                                </p>
+                            </div>`;
+        }
+        document.getElementById('DocumentContainer').innerHTML = clutter;
+    }
+    
+}
+
+
+
+function UpdateDoc() {
+
+    var clutter = "";
+    for (var key in Documents) {
+        console.log(Documents[key]);
+            clutter += `<div class="DocItem">
+                            <p>${key}</p>
+                            <p>${Documents[key].name}</p>
+                            <p>${Documents[key].date}</p>
+                            <p><button  onclick="ViewDoc(${key})"><i class="fa-solid fa-eye"></i></button>
+                                <button  onclick="DeleteDoc(${key})"><i class="fa-solid fa-trash"></i></button>
+                            </p>
+                        </div>`;
+    }
+    document.getElementById('DocumentContainer').innerHTML = clutter;
+}
+
+
+
+
+function ViewDoc(key) { 
+    var numberOfDocuments = Object.keys(Documents).length;
+    for (var i = 1; i <= numberOfDocuments; i++) { 
+        if (`${i}` == `${key}`) {
+            window.location = Documents[key].link;
+        }
+    }
+}
+
+function DeleteDoc(key) { 
+    if (Documents.hasOwnProperty(key)) {
+        delete Documents[key];
+        console.log(`Document with key ${key} has been deleted.`);
+        UpdateDoc();
+    } else {
+        console.log(`Document with key ${key} does not exist.`);
+    }
+}
+

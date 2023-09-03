@@ -79,34 +79,92 @@
                 font-size: 9pt;
                 z-index: 99;
             }
+
+
+            /* Style for the dropdown container */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            /* Style for the button that triggers the dropdown */
+            .dropbtn {
+                background-color: #3498db;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+            }
+
+            /* Style for the dropdown content */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 200px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            /* Style for each dropdown item */
+            .dropdown-content .item {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            /* Style for the icon in each dropdown item */
+            .dropdown-content .item i {
+                margin-right: 10px;
+            }
+
+            /* Show the dropdown content when hovering over the dropdown button */
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            /* Change background color of dropdown button on hover */
+            .dropdown:hover .dropbtn {
+                background-color: #2980b9;
+            }
         </style>
     </head>
     <body>
-        <div class="contianer">
-            <div class="left">
-                <div class="item">
-                    <input type="text">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <div class="item active" id="dashboard">
+                    <i class="fa-solid fa-gauge"></i>
+                    <p>Dashboard</p>
                 </div>
-            </div>
-            <div class="right">
-                <div class="TopNav">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni eligendi aspernatur officia qui
-                    doloribus, aut sequi sit molestias deleniti numquam, libero iure quos nihil. Ipsam repellat minus
-                    eligendi ad cupiditate.
+                <div class="item" id="profile">
+                    <i class="fa-solid fa-id-card"></i>
+                    <p>Profile</p>
                 </div>
-
-                <div class="MainContainer">
-                    <div class="sec1"></div>
-                    <div class="sec1"></div>
-                    <div class="sec1"></div>
-                    <div class="sec1"></div>
-
-
+                <div class="item" id="attendence">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <p>Attendance</p>
                 </div>
-
+                <div class="item" id="documentsNav">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <p>Documents</p>
+                </div>
+                <div class="item" id="salaryNav">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <p>Salary</p>
+                </div>
+                <div class="item" id="notificationsNav">
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Notifications</p>
+                </div>
+                <div class="item" id="SettingNav">
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Settings</p>
+                </div>
             </div>
         </div>
+
     </body>
     <script src="ty.js"></script>
 </html>
