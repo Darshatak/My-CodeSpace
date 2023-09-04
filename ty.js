@@ -1,31 +1,90 @@
-const btn = document.getElementById("submit");
+const restemail = document.getElementById('restemail');
+const restpass = document.getElementById('restotp');
+
+const newpass = document.getElementById('newpass');
+const conpass = document.getElementById('conpass');
+
+const otpsection = document.getElementById('otpsec');
+
+const otpbtn = document.getElementById('OTPbtn');
+const savebtn = document.getElementById('savebtn');
+const resetcontainer = document.querySelector('#resetpass');
+
+// let otp = parseInt(document.getElementById('loginotp').value);
+var num = "";
+function checkotp(){
+    const otp = parseInt(document.getElementById('loginotp').value);
+    console.log(otp); 
+        if(otp == num){
+            alert("aap ek crore jeet gye hai");
+            resetcontainer.style.display= "block";
+        }else{
+            alert("Wrong");
+        }
+    return otp;
+}
 
 
-btn.addEventListener("click", () => { 
-    let inputBtn1 = document.getElementsByClassName("total")[0].value;
-    let inputBtn2 = document.getElementsByClassName("total")[1].value;
-    let inputBtn3 = document.getElementsByClassName("total")[2].value;
-    console.log(inputBtn1);
-    console.log(inputBtn2);
-    console.log(inputBtn3);
-})
 
+function genOTP() {
+    if(restemail.value === ""){
+        document.getElementById('err1').innerText = "Enter Email first";
+    }
+    else{
+        document.getElementById('err1').innerText = "";
+            const num = Math.round(100000*Math.random());
+            console.log(num);
+            // resetlogin();
+            // let otp = parseInt(prompt("Enter Your OTP:"));
+            otpsection.style.display= "block";
+            // if(checkotp()){
 
-
-// function move() {
-//         var redElem = document.getElementById('red');
-//         var poe = 0;
-//         var anim = setInterval(animate,5);
-        
-//         function animate() {
-//             if (poe==350){
-//                 clearInterval(anim);
-//             }
-//             else{
-//                 poe++;
-//                 redElem.style.top = poe+"px";
-//                 redElem.style.left = poe+"px";
-//             }
+            //     if(otp === num){
+            //         alert("aap ek crore jeet gye hai");
+            //         resetcontainer.style.display= "block";
+            //     }else{
+            //         alert("Wrong");
+            //     }
+            // }
+            // else{
+            //     // alert("Invalid");
+            // }
             
-//         }
-//     }
+    }
+}
+
+function resetlogin() {
+    if(newpass === ""){
+        document.getElementById('err4').innerText = "Enter a new Password first";
+    }
+    else{
+        document.getElementById('err4').innerText = "";
+        if(conpass === ""){
+            document.getElementById('err5').innerText = "Please enter confirm pass"
+        }
+        else{
+            document.getElementById('err5').innerText = "";
+            if(newpass.value.length && conpass.value.length < 4){
+                alert("enter password greater than 4");
+            }else{
+                if(newpass.value === conpass.value){
+                    alert("Password is changed !");
+                    window.location.href='Employee.html';
+                }
+                else{
+                    alert("error");
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// otpbtn.addEventListener('click', ()=>{
+//     resetcontainer.style.display= "block";
+// });
+// savebtn.addEventListener('click', () =>{
+//     resetcontainer.style.display = "none";
+// })

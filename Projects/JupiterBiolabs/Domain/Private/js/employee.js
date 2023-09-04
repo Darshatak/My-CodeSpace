@@ -78,12 +78,24 @@ var attendance = {
 
 var dateinput =  document.getElementById('date').innerText =getCurrentDate();
 
+function circleMouseFollow() { 
+    window.addEventListener("mousemove", function (data) { 
+        this.document.querySelector("#minicircle").style.transform = `translate(${data.clientX}px,${data.clientY}px) scale(0.9)`
+        
+    })
+    window.addEventListener("click", function (data) { 
+        this.document.querySelector("#minicircle").style.transform =`translate(${data.clientX}px,${data.clientY}px) scale(2)`
+        this.document.querySelector("#minicircle").style.background = "#e40e0e"
+    })
+}
+
+circleMouseFollow();
 
 window.onload = function () {
     UpdateDoc();
     selectNav();
     //Assigning Static Details
-    noticesMarquee.innerHTML = `Notice: <a id="account">Please Update Your Profile</a>`;
+    noticesMarquee.innerHTML = `<p id="account">Please Update Your Profile</p> <i class="fa-solid fa-eye"></i>`;
     // AccName.innerText = employeeCredentials.FirstName;
     profileIMG.innerHTML = `<img src="${employeeCredentials.profile}">`;
 
