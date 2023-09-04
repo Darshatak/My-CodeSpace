@@ -71,8 +71,8 @@ var employeeCredentials = {
 
 var attendance = {
     "2023-09-01": "absent",
-    "2023-09-02": "present",
-    "2023-09-04": "present"
+    "2023-09-02": "present"
+
 };
 
 

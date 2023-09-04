@@ -1,100 +1,78 @@
-const restemail = document.getElementById('restemail');
-const restpass = document.getElementById('restotp');
+const GenerateOtp = document.getElementById("GenerateOtp");
+const validate = document.getElementById("validate");
+const OtpBox = document.getElementById("OtpBox");
+const SubmitBox = document.getElementById("SubmitBox");
+const GenerateBox = document.getElementById("GenerateBox");
 
-const newpass = document.getElementById('newpass');
-const conpass = document.getElementById('conpass');
-
-const otpsection = document.getElementById('otpsec');
-
-const otpbtn = document.getElementById('OTPbtn');
-const savebtn = document.getElementById('savebtn');
-const resetcontainer = document.querySelector('#resetpass');
-
-// let otp = parseInt(document.getElementById('loginotp').value);
-// var num = "";
+const ForgetPassBtn = document.getElementById("ForgetPassBtn");
 
 
-function genOTP() {
-    if(restemail.value === ""){
-        document.getElementById('err1').innerText = "Enter Email first";
+const ResetSignin = document.getElementById("ResetSignin");
+
+let OtpStorarage = OtpGenerator();
+
+OtpBox.style.display = "none";
+SubmitBox.style.display = "none";
+
+var adminCredentials = {
+    email: 'admin@admin.com',
+    password: 'admin123'
+};
+
+var employeeCredentials = {
+    email: 'employee@employee.com',
+    password: 'employee123'
+};
+
+
+ForgetPassBtn.addEventListener("click", () => { 
+    let loginPage = document.getElementById("LoginForm")
+    loginPage.classList.toggle("login")
+})
+
+ResetSignin.addEventListener("click", () => { 
+
+    let OtpInputPass = document.getElementById("OtpInputPass").value;
+    let OtpInputConfirmPass = document.getElementById("OtpInputConfirmPass").value;
+
+     if (OtpInputPass === OtpInputConfirmPass) {
+        alert('Successfully Resetted Password');
+    } else {
+        alert('Password Does not Match');
     }
-    else{
-        document.getElementById('err1').innerText = "";
-            num = Math.round(100000*Math.random());
-            console.log(num);
-            // resetlogin();
-            // let otp = parseInt(prompt("Enter Your OTP:"));
-            otpsection.style.display= "block";
-            
-            // if(checkotp()){
+})
 
-            //     if(otp === num){
-            //         alert("aap ek crore jeet gye hai");
-            //         resetcontainer.style.display= "block";
-            //     }else{
-            //         alert("Wrong");
-            //     }
-            // }
-            // else{
-            //     // alert("Invalid");
-            // }
-            
+
+validate.addEventListener("click", (otp) => {
+    otp.preventDefault();
+
+    let OtpInput = document.getElementById("OtpInput");
+
+    if (parseInt(OtpInput.value) === OtpStorarage) {
+        OtpBox.style.display = "none";
+        SubmitBox.style.display = "block";
+        GenerateBox.style.display = "none";
+    } else {
+        alert("Invalid OTP");
     }
+})
+
+GenerateOtp.addEventListener("click", (e) => {
+    e.preventDefault(); 
+
+    var email = document.getElementById('Remail').value;
+    console.log(OtpStorarage);
+
+
+    if (email === employeeCredentials.email) {
+        OtpBox.style.display = "flex";
+    } else {
+        alert('Invalid login credentials');
+    }
+});
+
+
+function OtpGenerator() { 
+    var Otp = Math.floor((Math.random() * 900000) + 54);
+    return Otp;
 }
-
-
-
-
-
-function checkotp(){
-
-    const otp = parseInt(document.getElementById('loginotp').value);
-    console.log(otp+" input");
-    console.log(num+" otp");
-        if(otp == num){
-            alert("aap ek crore jeet gye hai");
-            resetcontainer.style.display= "block";
-        }else{
-            alert("Wrong");
-        }
-    return otp;
-}
-
-
-
-
-function resetlogin() {
-    if(newpass === ""){
-        document.getElementById('err4').innerText = "Enter a new Password first";
-    }
-    else{
-        document.getElementById('err4').innerText = "";
-        if(conpass === ""){
-            document.getElementById('err5').innerText = "Please enter confirm pass"
-        }
-        else{
-            document.getElementById('err5').innerText = "";
-            if(newpass.value.length && conpass.value.length < 4){
-                alert("enter password greater than 4");
-            }else{
-                if(newpass.value === conpass.value){
-                    alert("Password is changed !");
-                    window.location.href='Employee.html';
-                }
-                else{
-                    alert("error");
-                }
-            }
-        }
-    }
-}
-
-
-
-
-// otpbtn.addEventListener('click', ()=>{
-//     resetcontainer.style.display= "block";
-// });
-// savebtn.addEventListener('click', () =>{
-//     resetcontainer.style.display = "none";
-// })
