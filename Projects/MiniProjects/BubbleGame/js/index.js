@@ -4,6 +4,7 @@ var attendance = {
     "2023-09-03": "present",
     "2023-09-04": "present",
     "2023-09-20": "present",
+    "2023-09-15": "present",
     "2023-09-29": "present"
 };
 
@@ -69,8 +70,14 @@ function markAttendance() {
 
     function markAttendanceForDate(date) {
         if (attendance[date]) {
-            alert("Attendance for this date has already been marked.");
-            return;
+            var status = prompt("Mark attendance for " + date + " (absent/present):");
+            if (status === "absent" || status === "present") {
+                attendance[date] = status;
+                makeDate();
+                console.log(attendance);
+            } else {
+                alert("Invalid attendance status. Please enter 'absent' or 'present'.");
+            }
         } else { 
             var status = prompt("Mark attendance for " + date + " (absent/present):");
             if (status === "absent" || status === "present") {
