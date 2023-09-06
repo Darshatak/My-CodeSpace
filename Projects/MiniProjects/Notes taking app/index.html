@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Property Examples</title>
+        <style>
+            /* align-content */
+            .flex-container {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                height: 200px;
+                border: 2px solid #ccc;
+            }
+
+            /* align-self */
+            .flex-item {
+                flex: 1;
+                align-self: flex-end;
+                text-align: center;
+                padding: 10px;
+            }
+
+            /* backface-visibility */
+            .rotated-element {
+                width: 100px;
+                height: 100px;
+                background-color: #f00;
+                transform: rotateY(180deg);
+                backface-visibility: hidden;
+            }
+
+            /* border-collapse */
+            table {
+                border-collapse: collapse;
+            }
+
+            table,
+            th,
+            td {
+                border: 1px solid #ccc;
+            }
+
+            /* border-image */
+            .bordered-element {
+                border: 10px solid;
+                border-image: url(https://images.unsplash.com/photo-1692678421419-eb41ae0a7aa0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80) 30 30 round;
+                width: 200px;
+                height: 200px;
+
+
+
+            }
+
+            /* border-image-outset */
+            .bordered-element-outset {
+                border-image-outset: 10px 20px;
+            }
+
+            /* border-image-repeat */
+            .bordered-element-repeat {
+                border-image-repeat: stretch;
+            }
+
+            /* border-image-slice */
+            .bordered-element-slice {
+                border-image-slice: 10% 20%;
+            }
+
+            /* border-image-source */
+            .bordered-element-source {
+                border-image-source: url(border.png);
+            }
+
+            /* border-image-width */
+            .bordered-element-width {
+                border-image-width: 10px 20px;
+            }
+
+            /* border-spacing */
+            .border-spacing-table {
+                border-spacing: 10px 20px;
+            }
+
+            /* caption-side */
+            .caption-side-table {
+                caption-side: top;
+            }
+
+            /* clear */
+            .cleared-div {
+                clear: both;
+            }
+
+            /* clip */
+            .clipped-element {
+                position: absolute;
+                clip: rect(20px, 100px, 100px, 20px);
+                background-color: #00f;
+                width: 100px;
+                height: 100px;
+            }
+
+            /* counter-increment */
+            .counter-example {
+                counter-increment: section;
+            }
+
+            /* counter-reset */
+            .counter-example {
+                counter-reset: section;
+            }
+
+            /* flex-basis */
+            .flex-item {
+                flex-basis: 50%;
+            }
+
+            /* flex-flow */
+            .flex-container {
+                flex-flow: row-reverse wrap;
+            }
+
+            /* flex-grow */
+            .flex-item {
+                flex-grow: 2;
+            }
+
+            /* flex-shrink */
+            .flex-item {
+                flex-shrink: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS Property Examples</h1>
+
+        <!-- align-content -->
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <!-- align-self -->
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item" style="align-self: flex-start;">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <!-- backface-visibility -->
+        <div class="rotated-element"></div>
+
+        <!-- border-collapse -->
+        <table>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+            </tr>
+            <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+            </tr>
+            <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+            </tr>
+        </table>
+
+        <!-- border-image -->
+        <div class="bordered-element"></div>
+
+        <!-- border-image-outset -->
+        <div class="bordered-element bordered-element-outset"></div>
+
+        <!-- border-image-repeat -->
+        <div class="bordered-element bordered-element-repeat"></div>
+
+        <!-- border-image-slice -->
+        <div class="bordered-element bordered-element-slice"></div>
+
+        <!-- border-image-source -->
+        <div class="bordered-element bordered-element-source"></div>
+
+        <!-- border-image-width -->
+        <div class="bordered-element bordered-element-width"></div>
+
+        <!-- border-spacing -->
+        <table class="border-spacing-table">
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+            </tr>
+            <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+            </tr>
+            <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+            </tr>
+        </table>
+
+        <!-- caption-side -->
+        <table class="caption-side-table">
+            <caption>Table Caption</caption>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+            </tr>
+            <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+            </tr>
+            <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+            </tr>
+        </table>
+
+        <!-- clear -->
+        <div class="cleared-div">This is a cleared div.</div>
+
+        <!-- clip -->
+        <div class="clipped-element"></div>
+
+        <!-- counter-increment -->
+        <p class="counter-example">Item 1</p>
+        <p class="counter-example">Item 2</p>
+        <p class="counter-example">Item 3</p>
+
+        <!-- counter-reset -->
+        <p class="counter-example">Item 1</p>
+        <p class="counter-example">Item 2</p>
+        <p class="counter-example">Item 3</p>
+
+        <!-- flex-basis -->
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+        </div>
+
+        <!-- flex-flow -->
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <!-- flex-grow -->
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <!-- flex-shrink -->
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+    </body>
+</html>
