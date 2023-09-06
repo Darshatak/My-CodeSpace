@@ -41,6 +41,7 @@ const Issue = document.querySelector("#issue");
 const SubmitBtn = document.querySelector("#RequestSubmitBtn");
 
 const UserPage = document.querySelector(".profileP");
+    const ProfilePhoto= document.getElementById("profilePhotos");
     const ProfileFname = document.getElementById("ProfileFname");
     const ProfileLname = document.getElementById("ProfileLname");
     const ProfileEmail = document.getElementById("ProfileEmail");
@@ -55,60 +56,147 @@ const UserPage = document.querySelector(".profileP");
 
 const item = document.querySelector(".item");
 
-var employeeCredentials = {
-    FirstName:'Darshatak',
-    LastName:'vyas',
-    email: 'employee@employee.com',
-    password: 'employee123',
-    profile: 'https://www.mecgale.com/wp-content/uploads/2017/08/dummy-profile.png',
-    Linkedin:'https://www.github.com/Darshatak',
-    Current_Salary:'4.3',
-    Current_Role:'Software Developer',
-    Address:'922 Vikaz Extension',
-    Phone_number:'1598764324',
-};
 
 
-var attendance = {
-    "2023-09-01": "absent",
-    "2023-09-02": "present"
+const employeeCredentials = [
+    {
+        email: 'admin@admin.com',
+        password: 'admin123',
+        role:1
+    },
+    {
+        email: 'employee@employee.com',
+        password: 'Employee$123',
+        role: 0,
+        Details: {
+            FirstName:'Emily',
+            LastName:'rock',
+            email: 'employee@employee.com',
+            password: 'employee123',
+            profile: 'https://plus.unsplash.com/premium_photo-1664464229692-44046bfd6b7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80',
+            Linkedin:'https://www.github.com/Darshatak',
+            Current_Salary:4.3,
+            Current_Role:'Software Developer',
+            Address:'Street: 123 Fake Street, Faketown, Fakeland, 12345, Imaginaria',
+            Phone_number: '9326335961'
+        },
+        Attendance: {
+            "2023-09-01": "absent",
+            "2023-09-02": "present"
+        }
+    },
+    {
+        email: 'employee2@employee.com',
+        password: 'employee123',
+        role:0
+    },
+    {
+        email: 'employee3@employee.com',
+        password: 'employee123',
+        role:0
+    },
+    {
+        email: 'employee4@employee.com',
+        password: 'employee123',
+        role:0
+    },
+    {
+        email: 'employee5@employee.com',
+        password: 'employee123',
+        role:0
+    }
+];
 
-};
+
+// function ProfileLoad() { 
+// const xhr = new XMLHttpRequest();
+
+//     //!open the obj
+//     xhr.open('GET', 'js/EmployeeDetails.json', true); 
+//     //above true or false is for making functiion code synchronous or asynchronous
+
+//     //!what to do on progress (optional)
+//     xhr.onprogress = function() {
+//         console.log('on progress');
+//     }
+    
+//      //!what to do when response is ready.....Here, 200 is HTTP code sayin all okay
+//     xhr.onload = function() {
+//         if (this.status === 200) {
+//             const response = JSON.parse(this.responseText);
+//             // Access the FirstName property
+//             profileIMG.innerHTML = `<img src="${response.profile}">`;
+//             ProfilePhoto.setAttribute("src",response.profile);
+//             ProfileFname.innerText = response.FirstName;
+//             ProfileLname.innerText = response.LastName;
+//             ProfileEmail.innerText = response.email;
+//             ProfileNumber.innerText = response.Phone_number;
+//             ProfileLinkedin.innerHTML = `<a href="${response.Linkedin}" id="link">view</a>`;;
+//             ProfilecCurrentSalary.innerText = response.Current_Salary;
+//             ProfileCurrentRole.innerText = response.Current_Role;
+//             ProfileAddress.innerText = response.Address;
+//         } else {
+//             console.error("error occurred")
+//         }
+        
+//     }
+
+//     //sendthe request
+//     xhr.send();
+// }
+
 
 
 var dateinput =  document.getElementById('date').innerText =getCurrentDate();
 
-function circleMouseFollow() { 
-    window.addEventListener("mousemove", function (data) { 
-        this.document.querySelector("#minicircle").style.transform = `translate(${data.clientX}px,${data.clientY}px) scale(0.9)`
+// function circleMouseFollow() { 
+//     window.addEventListener("mousemove", function (data) { 
+//         this.document.querySelector("#minicircle").style.transform = `translate(${data.clientX}px,${data.clientY}px) scale(0.9)`
         
-    })
-    window.addEventListener("click", function (data) { 
-        this.document.querySelector("#minicircle").style.transform =`translate(${data.clientX}px,${data.clientY}px) scale(2)`
-        this.document.querySelector("#minicircle").style.background = "#e40e0e"
-    })
-}
+//     })
+//     window.addEventListener("click", function (data) { 
+//         this.document.querySelector("#minicircle").style.transform =`translate(${data.clientX}px,${data.clientY}px) scale(2)`
+//         this.document.querySelector("#minicircle").style.background = "#e40e0e"
+//     })
+// }
 
-circleMouseFollow();
+// circleMouseFollow();
 
 window.onload = function () {
-    UpdateDoc();
-    selectNav();
+    
+    if (localStorage.getItem("loginStatus") == "true") { 
+        document.querySelector(".container").style.display = "flex";
+        UpdateDoc();
+        employeeCredentials.forEach((e) => {
+            if (localStorage.getItem("loginUser") == e.email) {
+                profileIMG.innerHTML = `<img src="${e.Details.profile}">`;
+                ProfilePhoto.setAttribute("src", e.Details.profile);
+                ProfileFname.innerText = e.Details.FirstName;
+                ProfileLname.innerText = e.Details.LastName;
+                ProfileEmail.innerText = e.Details.email;
+                ProfileNumber.innerText = e.Details.Phone_number;
+                ProfileLinkedin.innerHTML = `<a href="${e.Details.Linkedin}" id="link">view</a>`;;
+                ProfilecCurrentSalary.innerText = e.Details.Current_Salary;
+                ProfileCurrentRole.innerText = e.Details.Current_Role;
+                ProfileAddress.innerText = e.Details.Address;
+            }
+        });
+       
+        selectNav();
+        // ProfileLoad();
+        
+        
     //Assigning Static Details
     noticesMarquee.innerHTML = `<p id="account">Please Update Your Profile</p> <i class="fa-solid fa-eye"></i>`;
     // AccName.innerText = employeeCredentials.FirstName;
-    profileIMG.innerHTML = `<img src="${employeeCredentials.profile}">`;
-
-    ProfileFname.innerText = employeeCredentials.FirstName;
-    ProfileLname.innerText = employeeCredentials.LastName;
-    ProfileEmail.innerText = employeeCredentials.email;
-    ProfileNumber.innerText = employeeCredentials.Phone_number;
-    ProfileLinkedin.innerHTML = `<a href="${employeeCredentials.Linkedin}" id="link">${employeeCredentials.FirstName}</a>`;;
-    ProfilecCurrentSalary.innerText = employeeCredentials.Current_Salary;
-    ProfileCurrentRole.innerText = employeeCredentials.Current_Role;
-    ProfileAddress.innerText = employeeCredentials.Address;
+    
     makeDate();
     document.getElementById('date').innerText =getCurrentDate();
+}else
+    {
+        window.location.href = 'index.html';
+}
+
 };
 
 
@@ -306,17 +394,44 @@ hamBtn.addEventListener("click", () => {
 
 
 editButton.addEventListener("click", function () {
-    // Use prompt to get user input for each field.
-    var editedFirstName = prompt("Enter your First Name:", employeeCredentials.FirstName);
-    var editedLastName = prompt("Enter your Last Name:", employeeCredentials.LastName);
-    var editedEmail = prompt("Enter your Email:", employeeCredentials.email);
-    var editedNumber = prompt("Enter your Number:", employeeCredentials.Phone_number);
-    var editedLinkedin = prompt("Enter your LinkedIn Profile:", employeeCredentials.Linkedin);
-    var editedCurrentSalary = prompt("Enter your Current Salary:", employeeCredentials.Current_Salary);
-    var editedCurrentRole = prompt("Enter your Current Role:", employeeCredentials.Current_Role);
-    var editedAddress = prompt("Enter your Address:", employeeCredentials.Address);
+    dashboard.style.display = "none";
+    UserPage.style.display = "none";
+    EmployeForm.style.display = "block";
+    noticesMarquee.style.display = "none";
+    employeeCredentials.forEach((e) => { 
+            if (localStorage.getItem("loginUser") == e.email) { 
+                document.getElementById("firstName").value = e.Details.FirstName;
+                document.getElementById("lastName").value= e.Details.LastName;
+                document.getElementById("email").value= e.Details.email;
+                document.getElementById("Mnumber").value= e.Details.Phone_number;
+                document.getElementById("linkedin").value= e.Details.Linkedin;
+                document.getElementById("currentSalary").value= e.Details.Current_Salary;
+                document.getElementById("currentRole").value= e.Details.Current_Role;
+                document.getElementById("address").value= e.Details.Address;
+            }
+        })
+    
+
+   
+});
+
+
+
+document.getElementById("FormSubmit").addEventListener("click", (e) => {
+
+
+    var editedFirstName = document.getElementById("firstName").value;
+    var editedLastName = document.getElementById("lastName").value;
+    var editedEmail = document.getElementById("email").value;
+    var editedNumber = document.getElementById("Mnumber").value;
+    var editedLinkedin = document.getElementById("linkedin").value;
+    var editedCurrentSalary = document.getElementById("currentSalary").value;
+    var editedCurrentRole = document.getElementById("currentRole").value;
+    var editedAddress = document.getElementById("address").value;
+    
 
     // Update the displayed data in the form.
+
     document.getElementById("ProfileFname").innerText = editedFirstName;
     document.getElementById("ProfileLname").innerText = editedLastName;
     document.getElementById("ProfileEmail").innerText = editedEmail;
@@ -325,10 +440,28 @@ editButton.addEventListener("click", function () {
     document.getElementById("ProfilecCurrentSalary").innerText = editedCurrentSalary;
     document.getElementById("ProfileCurrentRole").innerText = editedCurrentRole;
     document.getElementById("ProfileAddress").innerText = editedAddress;
+
+    localStorage.setItem("nav", "ProfileP");
+    dashboard.style.display = "none";
+    UserPage.style.display = "block";
+    EmployeForm.style.display = "none";
+    DocumentsSec.style.display = "none";
+    SettingsSection.style.display = "none";
+    AttendanceSec.style.display = "none";
+
+    ProfileP.classList.add("active")
+
+    SettingNav.classList.remove("active")
+    notificationsNav.classList.remove("active")
+    salaryNav.classList.remove("active")
+    documentsNav.classList.remove("active")
+    AttendenceNav.classList.remove("active")
+    dashboardSection.classList.remove("active")
 });
 
 
 logout.addEventListener("click", () => {
+    localStorage.setItem("loginStatus", "false")
     window.location.href = 'index.html';
 
 });
@@ -425,19 +558,23 @@ searchInput.addEventListener('input', () => {
 
 function makeDate() { 
     var clutter = "";
-
-    for (var i = 1; i <= 31; i++) {
-        var date = "2023-09-" + (i < 10 ? "0" : "") + i;
-        var status = attendance[date] || "";
-        if (status == "") {
-            clutter += `<div class="pBtmitem notMarked" id="${date}">${i}</div>`;
-        } else if(status == "absent") { 
-            clutter += `<div class="pBtmitem absent" id="${date}">${i}</div>`;
-        }else { 
-            clutter += `<div class="pBtmitem present" id="${date}">${i}</div>`;
-        }
+employeeCredentials.forEach((e) => { 
+            if (localStorage.getItem("loginUser") == e.email) { 
+              for (var i = 1; i <= 31; i++) {
+                var date = "2023-09-" + (i < 10 ? "0" : "") + i;
+                var status = e.Attendance[date] || "";
+                if (status == "") {
+                    clutter += `<div class="pBtmitem notMarked" id="${date}">${i}</div>`;
+                } else if(status == "absent") { 
+                    clutter += `<div class="pBtmitem absent" id="${date}">${i}</div>`;
+                }else { 
+                    clutter += `<div class="pBtmitem present" id="${date}">${i}</div>`;
+                }
         
     }
+            }
+        })
+    
 
 
 
@@ -465,17 +602,21 @@ var currentMonth = currentDate.getMonth() + 1; // Get the current month (January
 
 function markAttendance() {
     var date = dateinput;
-
-    if (attendance[date]) {
+employeeCredentials.forEach((e) => { 
+            if (localStorage.getItem("loginUser") == e.email) { 
+                if (e.Attendance[date]) {
                 alert("Attendance is marked")
                 document.getElementById('AttendaceMarker').innerText = "Yes"
                 return;
             } else {
                 document.getElementById('AttendaceMarker').innerText = "Yes"
-                attendance[date] = "Present";
+                e.Attendance[date] = "Present";
                 makeDate();
                     
             }
+            }
+        })
+    
         }
 
 
@@ -507,25 +648,23 @@ function selectNav() {
 
 var Documents = {
     1: {
-        name: "AadharCard",
+        name: "Aadhar Card",
         link: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9kZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60",
         date: "02/09/2023"
     },
     2: {
         name: "Pancard",
-        link: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+        link: null,
         date: "02/09/2023"
     },
     3: {
-        name: "Pancard",
+        name: "Driving License",
         link: "https://plus.unsplash.com/premium_photo-1669704098750-7cd22c35422b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80",
         date: "02/09/2023"
     }
 }
 
 function AddDoc() {
-
-    const documentUrl = "https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png";
 
     var newName = prompt("Enter the name of the new document:");
     var newLink = prompt("Enter the link for the new document:");
@@ -537,13 +676,13 @@ function AddDoc() {
     date: newDate
     };
     if (newName == null && newLink == null) {
-        console.log("failed to add files")
+        // console.log("failed to add files")
     } else { 
 
         var nextKey = Object.keys(Documents).length + 1;
         Documents[nextKey] = newDocument;
 
-        console.log(Documents);
+        // console.log(Documents);
 
         var clutter = "";
         for (var key in Documents) {
@@ -551,13 +690,13 @@ function AddDoc() {
                 clutter += `<div class="DocItem">
                                 <p>${key}</p>
                                 <p>${Documents[key].name}</p>
-                                <p>${Documents[key].date}</p>
-                                <p><button  onclick="ViewDoc(${key})"><i class="fa-solid fa-eye"></i></button>
-                                    <button  onclick="DeleteDoc(${key})"><i class="fa-solid fa-trash"></i></button>
-                                </p>
+                                <p>${Documents[key].name}</p>
+                            </p>
                             </div>`;
         }
+
         document.getElementById('DocumentContainer').innerHTML = clutter;
+        UpdateDoc();
     }
     
 }
@@ -565,20 +704,42 @@ function AddDoc() {
 
 
 function UpdateDoc() {
-
+    
     var clutter = "";
     for (var key in Documents) {
-        console.log(Documents[key]);
+        if (Documents[key].link != null) {
+            // console.log(Documents[key]);
             clutter += `<div class="DocItem">
                             <p>${key}</p>
                             <p>${Documents[key].name}</p>
-                            <p>${Documents[key].date}</p>
-                            <p><button  onclick="ViewDoc(${key})"><i class="fa-solid fa-eye"></i></button>
+                            <p  id="upload"><button  onclick="ViewDoc(${key})"><i class="fa-solid fa-eye"></i></button>
                                 <button  onclick="DeleteDoc(${key})"><i class="fa-solid fa-trash"></i></button>
                             </p>
                         </div>`;
+        } else {
+            clutter += `<div class="DocItem">
+                            <p>${key}</p>
+                            <p>${Documents[key].name}</p>
+                            <p id=""><button onclick="updateDocAgain(${key})">upload</button>
+                                </p>
+                        </div>`;
+        }
     }
     document.getElementById('DocumentContainer').innerHTML = clutter;
+    
+}
+
+function updateDocAgain(key) { 
+
+    for (var keys in Documents) {
+        if (keys == key) {
+            var link = prompt("Enter Link");
+            Documents[keys].link = link;
+            UpdateDoc();
+        }
+        }
+
+
 }
 
 
@@ -594,12 +755,13 @@ function ViewDoc(key) {
 }
 
 function DeleteDoc(key) { 
-    if (Documents.hasOwnProperty(key)) {
-        delete Documents[key];
-        console.log(`Document with key ${key} has been deleted.`);
-        UpdateDoc();
-    } else {
-        console.log(`Document with key ${key} does not exist.`);
+    var numberOfDocuments = Object.keys(Documents).length;
+    for (var i = 1; i <= numberOfDocuments; i++) { 
+        if (`${i}` == `${key}`) {
+            Documents[key].link = "";
+            console.log(Documents[key].link);
+            UpdateDoc();
+        }
     }
 }
 

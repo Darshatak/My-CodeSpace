@@ -192,8 +192,8 @@
                     </div>
 
                     <div class="EmployeForm">
-                        <h1>Employee Information Form</h1>
-                        <form action="#" method="POST" enctype="multipart/form-data">
+                        <h1>Edit Profile</h1>
+                        <form enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="firstName">First Name:</label>
                                 <input type="text" id="firstName" name="firstName" required>
@@ -203,14 +203,8 @@
                                 <input type="text" id="lastName" name="lastName" required>
                             </div>
                             <div class="form-group">
-                                <label for="aadharCard">Upload Aadhar Card:</label>
-                                <input type="file" id="aadharCard" name="aadharCard" accept=".jpg, .jpeg, .png, .pdf"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="panCard">Upload PAN Card:</label>
-                                <input type="file" id="panCard" name="panCard" accept=".jpg, .jpeg, .png, .pdf"
-                                    required>
+                                <label for="lastName">Mobile Number:</label>
+                                <input type="number" id="Mnumber" name="Mnumber" required>
                             </div>
                             <div class="form-group">
                                 <label for="linkedin">LinkedIn Profile:</label>
@@ -239,77 +233,63 @@
                                     required>
                             </div>
 
+
                             <div class="form-group">
-                                <input type="submit" value="Submit">
+                                <input type="button" value="Submit" id="FormSubmit">
                             </div>
                         </form>
                     </div>
 
                     <div class="profileP">
-
-                        <h1>User Profile</h1>
-                        <div class="profile-info">
-                            <div class="left">
-                                <p>
-                                    <strong>First Name:</strong>
-                                </p>
-                                <p>
-                                    <strong>Last Name:</strong>
-                                </p>
-                                <p>
-                                    <strong>Email:</strong>
-                                </p>
-                                <p>
-                                    <strong>Number:</strong>
-                                </p>
-                                <p>
-                                    <strong>LinkedIn Profile:</strong>
-                                </p>
-                                <p>
-                                    <strong>Current Salary:</strong>
-
-                                </p>
-                                <p>
-                                    <strong>Current Role:</strong>
-
-                                </p>
-                                <p>
-                                    <strong>Address:</strong>
-
-                                </p>
-                            </div>
-                            <div class="right">
-                                <p>
-                                    <span id="ProfileFname"></span>
-                                </p>
-                                <p>
-                                    <span id="ProfileLname"></span>
-                                </p>
-                                <p>
-                                    <span id="ProfileEmail"></span>
-                                </p>
-                                <p>
-                                    <span id="ProfileNumber"></span>
-                                </p>
-                                <p>
-                                    <span id="ProfileLinkedin"></span>
-                                </p>
-                                <p>
-                                    <span id="ProfilecCurrentSalary"></span>
-                                </p>
-                                <p>
-                                    <span id="ProfileCurrentRole"></span>
-                                </p>
-                                <p>
-                                    <span id="ProfileAddress"></span>
-                                </p>
-                            </div>
-
-                        </div>
-                        <div class="profile-actions">
+                        <div class="profile-header">
+                            <h1>User Profile</h1>
                             <button id="editProfile">Edit Profile</button>
                         </div>
+                        <div class="Profile-img">
+                            <img src="" alt="" id="profilePhotos">
+                        </div>
+                        <div class="profile-info">
+                            <p>Basic Information</p>
+                            <div class="info-item">
+                                <span class="label">First Name:</span>
+                                <span id="ProfileFname"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Last Name:</span>
+                                <span id="ProfileLname"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Email:</span>
+                                <span id="ProfileEmail"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Number:</span>
+                                <span id="ProfileNumber"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Address:</span>
+                                <span id="ProfileAddress"></span>
+                            </div>
+                            <div class="header">
+                                <p>Social Information</p>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">LinkedIn Profile:</span>
+                                <span id="ProfileLinkedin"></span>
+                            </div>
+                            <div class="header">
+                                <p>Job Information</p>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Current Salary:</span>
+                                <span id="ProfilecCurrentSalary"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Current Role:</span>
+                                <span id="ProfileCurrentRole"></span>
+                            </div>
 
+                        </div>
 
                     </div>
 
@@ -352,7 +332,6 @@
                         <div class="DocumentTopNav">
                             <p>Sr.No.</p>
                             <p>Name</p>
-                            <p>Date</p>
                             <p>Action</p>
                         </div>
                         <div class="DocumentContainer" id="DocumentContainer">

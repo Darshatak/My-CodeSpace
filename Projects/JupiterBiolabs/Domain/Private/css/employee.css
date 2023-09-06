@@ -69,6 +69,7 @@ input[type="number"]::-webkit-outer-spin-button,
     z-index: 99999;
     border-radius: 50%;
     background-color: #e40e0e;
+    display: none;
 }
 
 .container{
@@ -230,21 +231,19 @@ input[type="number"]::-webkit-outer-spin-button,
 .topNav .profile{
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
     cursor: pointer;
     margin-right: 20px;
+    padding: 2px;
+    
 }
 
 .topNav  .profile img{
     width: 50px;
+    height: 50px;
+    object-fit: cover;
     border-radius: 50%;
-    padding-top: 5px;
 }
 .topNav  .profile:hover{
-    border-radius: 25px;
     background-color: rgba(18,18,18,0.5);
 }
 
@@ -305,7 +304,7 @@ input[type="number"]::-webkit-outer-spin-button,
 
 .MainContainer .dashboard{
     width: 100%;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -391,87 +390,93 @@ input[type="submit"]:hover {
 
 
 
+
 .profileP {
-    display: none;
     width: 100%;
-    max-width: 850px;
-    margin: 0 auto;
+    display: none;
+    flex-direction: column;
+    background-color: #f8f8f8;
     padding: 20px;
-    background-color: rgba(255, 255, 255,0.8);
-    backdrop-filter: blur(20px);
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+.profileP p{
+    font-weight: bold;
     text-align: center;
-    text-transform: uppercase;
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.profile-info {
+.profileP .Profile-img{
     display: flex;
     justify-content: center;
-    padding: 10px;
-    border-radius: 5px;
-    /* background-color: rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(20px); */
-    margin-bottom: 20px;
-}
-
-.profile-info p {
-    margin-bottom: 10px;
-    margin-left: 50px;
-    display: flex;
-    justify-content:start;
     align-items: center;
-    
+    height: 200px;
 }
-
-.profile-info p span a{
-    text-decoration: underline;
-    color: #000000;
-    
-}
-
-.profile-info strong {
-    font-weight: 300;
-}
-
-.profile-actions {
-    text-align: center;
-}
-.profile-actions p{
-    text-align: center;
+.profileP .Profile-img img{
+    padding: 5px ;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
     cursor: pointer;
-
 }
-.profile-actions p:hover{
-    color: red;
+.profileP .Profile-img img:hover{
+    background-color: #a0a9af;
+    border-radius: 50%;
 }
 
-#link{
-        color: #0056b3;
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-header h1 {
+    font-size: 24px;
+    color: #333;
 }
 
 button#editProfile {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 30px;
+    background-color: #007bff;
+    color: white;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button#editProfile:hover {
-    background-color: #0056b3;
+.profile-info {
+    margin-top: 20px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    width: 140px;
+    color: #555;
+}
+
+.info-item span:nth-child(2){
+    font-size: 12pt;
+    word-wrap:break-word;
+    margin-left: 50px;
+    text-align: end;
+}
+
+.header{
+    margin-top: 50px;
+    font-weight: bold;
+    text-align: center;
 }
 
 
 
-
+/* Add more CSS to style as desired */
 
 
 .wrapper {
@@ -851,7 +856,7 @@ input:-webkit-autofill {
     width: 100%;
     max-width: 850px;
     height: 90%;
-    display: none;
+    display: block;
     overflow-y: auto;
     border-radius: 10px;
 }
@@ -866,11 +871,15 @@ input:-webkit-autofill {
 }
 
 
-.DocumentTopNav p:nth-child(4) {
+.DocumentTopNav p:nth-child(3) {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 15%;
+}
+
+#uploadHide{
+    display: none;
 }
 
 .DocumentContainer{
@@ -891,7 +900,7 @@ input:-webkit-autofill {
     z-index: 55;
 }
 
-.DocItem p:nth-child(4) {
+.DocItem p:nth-child(3) {
     display: flex;
     justify-content: center;
     align-items: center;

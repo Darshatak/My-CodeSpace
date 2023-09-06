@@ -165,6 +165,74 @@
             </div>
         </div>
 
+
+
+
+
+        <p id="data"></p>
+
+        <button onclick="printfilter()">filter data</button>
+        <p id="res"></p>
+
+
+
+
     </body>
     <script src="ty.js"></script>
+    <script>
+        var users = [
+            {
+                id: 382981,
+                name: 'John',
+                age: 33, job: 'Electrician'
+            },
+            { id: 123784, name: 'Sandy', age: 45, job: 'Archaeologist' },
+            { id: 984727, name: 'Jane', age: 38, job: 'Chef' },
+            { id: 483820, name: 'Bob', age: 57, job: 'Nurse' },
+            { id: 539382, name: 'Cora', age: 29, job: 'Teacher' }
+        ];
+
+        //document.getElementById('res').innerText = users;
+
+
+        //     for(i=0; i<6; i++){
+        //     document.getElementById('data').innerText = users[i];
+        // }
+
+        // users.forEach(element => {
+        //     console.log(element);
+        //     document.getElementById('data').innerText = element;
+        // });
+
+        // for (const key in users) {
+        //     document.getElementById('res').innerHTML = users[key];
+        //     console.log(users[key]);
+        // }
+
+        //filter
+        function printfilter() {
+            var cluter = "";
+            var olderThan40 = users.filter((user) => {
+                return user.age >= 40;
+            })
+
+            olderThan40.forEach((element) => {
+                // cluter += element;
+                document.getElementById('res').innerHTML += `<a id="data">${element.name}</a>   `;
+                document.getElementById('res').innerHTML += `<a id="data">${element.age}</a>    `;
+                document.getElementById('res').innerHTML += `<a id="data">${element.job}</a>  <br>  `;
+                // console.log(element);
+            })
+
+            console.log(olderThan40);
+            cluter;
+        }
+
+                // function printfilter() {
+                //     document.getElementById('res').innerText = olderThan40;
+                // }
+
+
+
+    </script>
 </html>
