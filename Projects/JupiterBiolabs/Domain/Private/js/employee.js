@@ -83,6 +83,23 @@ const employeeCredentials = [
         Attendance: {
             "2023-09-01": "absent",
             "2023-09-02": "present"
+        },
+        Documents : {
+                1: {
+                    name: "Aadhar Card",
+                    link: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9kZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60",
+                    date: "02/09/2023"
+                },
+                2: {
+                    name: "Pancard",
+                    link: null,
+                    date: "02/09/2023"
+                },
+                3: {
+                    name: "Driving License",
+                    link: "https://plus.unsplash.com/premium_photo-1669704098750-7cd22c35422b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80",
+                    date: "02/09/2023"
+            }
         }
     },
     {
@@ -107,43 +124,6 @@ const employeeCredentials = [
     }
 ];
 
-
-// function ProfileLoad() { 
-// const xhr = new XMLHttpRequest();
-
-//     //!open the obj
-//     xhr.open('GET', 'js/EmployeeDetails.json', true); 
-//     //above true or false is for making functiion code synchronous or asynchronous
-
-//     //!what to do on progress (optional)
-//     xhr.onprogress = function() {
-//         console.log('on progress');
-//     }
-    
-//      //!what to do when response is ready.....Here, 200 is HTTP code sayin all okay
-//     xhr.onload = function() {
-//         if (this.status === 200) {
-//             const response = JSON.parse(this.responseText);
-//             // Access the FirstName property
-//             profileIMG.innerHTML = `<img src="${response.profile}">`;
-//             ProfilePhoto.setAttribute("src",response.profile);
-//             ProfileFname.innerText = response.FirstName;
-//             ProfileLname.innerText = response.LastName;
-//             ProfileEmail.innerText = response.email;
-//             ProfileNumber.innerText = response.Phone_number;
-//             ProfileLinkedin.innerHTML = `<a href="${response.Linkedin}" id="link">view</a>`;;
-//             ProfilecCurrentSalary.innerText = response.Current_Salary;
-//             ProfileCurrentRole.innerText = response.Current_Role;
-//             ProfileAddress.innerText = response.Address;
-//         } else {
-//             console.error("error occurred")
-//         }
-        
-//     }
-
-//     //sendthe request
-//     xhr.send();
-// }
 
 
 
@@ -183,7 +163,6 @@ window.onload = function () {
         });
        
         selectNav();
-        // ProfileLoad();
         
         
     //Assigning Static Details
@@ -646,23 +625,7 @@ function selectNav() {
     }
 }
 
-var Documents = {
-    1: {
-        name: "Aadhar Card",
-        link: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9kZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60",
-        date: "02/09/2023"
-    },
-    2: {
-        name: "Pancard",
-        link: null,
-        date: "02/09/2023"
-    },
-    3: {
-        name: "Driving License",
-        link: "https://plus.unsplash.com/premium_photo-1669704098750-7cd22c35422b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80",
-        date: "02/09/2023"
-    }
-}
+
 
 function AddDoc() {
 
@@ -678,25 +641,33 @@ function AddDoc() {
     if (newName == null && newLink == null) {
         // console.log("failed to add files")
     } else { 
+        employeeCredentials.forEach((e) => { 
+            if (localStorage.getItem("loginUser") == e.email) { 
 
-        var nextKey = Object.keys(Documents).length + 1;
-        Documents[nextKey] = newDocument;
+            var nextKey = Object.keys(e.Documents).length + 1;
+        e.Documents[nextKey] = newDocument;
 
         // console.log(Documents);
 
-        var clutter = "";
-        for (var key in Documents) {
-            console.log(Documents[key]);
-                clutter += `<div class="DocItem">
-                                <p>${key}</p>
-                                <p>${Documents[key].name}</p>
-                                <p>${Documents[key].name}</p>
-                            </p>
-                            </div>`;
-        }
+            var clutter = "";
+            for (var key in e.Documents) {
+                // console.log(e.Documents[key]);
+                    clutter += `<div class="DocItem">
+                                    <p>${key}</p>
+                                    <p>${e.Documents[key].name}</p>
+                                    <p>${e.Documents[key].name}</p>
+                                </p>
+                                </div>`;
+            }
 
-        document.getElementById('DocumentContainer').innerHTML = clutter;
-        UpdateDoc();
+            document.getElementById('DocumentContainer').innerHTML = clutter;
+            UpdateDoc();
+                
+                
+            }
+        })
+
+        
     }
     
 }
@@ -706,38 +677,57 @@ function AddDoc() {
 function UpdateDoc() {
     
     var clutter = "";
-    for (var key in Documents) {
-        if (Documents[key].link != null) {
-            // console.log(Documents[key]);
-            clutter += `<div class="DocItem">
-                            <p>${key}</p>
-                            <p>${Documents[key].name}</p>
-                            <p  id="upload"><button  onclick="ViewDoc(${key})"><i class="fa-solid fa-eye"></i></button>
-                                <button  onclick="DeleteDoc(${key})"><i class="fa-solid fa-trash"></i></button>
-                            </p>
-                        </div>`;
-        } else {
-            clutter += `<div class="DocItem">
-                            <p>${key}</p>
-                            <p>${Documents[key].name}</p>
-                            <p id=""><button onclick="updateDocAgain(${key})">upload</button>
-                                </p>
-                        </div>`;
-        }
-    }
+    employeeCredentials.forEach((e) => { 
+            if (localStorage.getItem("loginUser") == e.email) { 
+
+                for (var key in e.Documents) {
+                    if (e.Documents[key].link != null) {
+                        // console.log(Documents[key]);
+                        clutter += `<div class="DocItem">
+                                        <p>${key}</p>
+                                        <p>${e.Documents[key].name}</p>
+                                        <p  id="upload"><button  onclick="ViewDoc(${key})"><i class="fa-solid fa-eye"></i></button>
+                                            <button  onclick="DeleteDoc(${key})"><i class="fa-solid fa-trash"></i></button>
+                                        </p>
+                                    </div>`;
+                    } else {
+                        clutter += `<div class="DocItem">
+                                        <p>${key}</p>
+                                        <p>${e.Documents[key].name}</p>
+                                        <p id=""><button onclick="updateDocAgain(${key})">upload</button>
+                                            </p>
+                                    </div>`;
+                    }
+                }
+                
+                
+            }
+        })
+    
     document.getElementById('DocumentContainer').innerHTML = clutter;
     
 }
 
 function updateDocAgain(key) { 
 
-    for (var keys in Documents) {
-        if (keys == key) {
-            var link = prompt("Enter Link");
-            Documents[keys].link = link;
-            UpdateDoc();
-        }
-        }
+        employeeCredentials.forEach((e) => { 
+            if (localStorage.getItem("loginUser") == e.email) { 
+
+                for (const chavi in e.Documents) {
+                    // console.log(chavi)
+                    if (chavi == key) {
+                        var link = prompt("Enter Link");
+                        e.Documents[chavi].link = link;
+                        UpdateDoc();
+                }
+                
+        
+
+                }
+                
+                
+            }
+        })
 
 
 }
@@ -746,22 +736,39 @@ function updateDocAgain(key) {
 
 
 function ViewDoc(key) { 
-    var numberOfDocuments = Object.keys(Documents).length;
-    for (var i = 1; i <= numberOfDocuments; i++) { 
-        if (`${i}` == `${key}`) {
-            window.location = Documents[key].link;
-        }
-    }
+    employeeCredentials.forEach((e) => { 
+            if (localStorage.getItem("loginUser") == e.email) { 
+                    var numberOfDocuments = Object.keys(e.Documents).length;
+                        for (var i = 1; i <= numberOfDocuments; i++) { 
+                            if (`${i}` == `${key}`) {
+                                window.location = e.Documents[key].link;
+                            }
+                        }
+                }
+                
+                
+            
+        })
+   
 }
 
 function DeleteDoc(key) { 
-    var numberOfDocuments = Object.keys(Documents).length;
-    for (var i = 1; i <= numberOfDocuments; i++) { 
-        if (`${i}` == `${key}`) {
-            Documents[key].link = "";
-            console.log(Documents[key].link);
-            UpdateDoc();
-        }
-    }
+    employeeCredentials.forEach((e) => { 
+            if (localStorage.getItem("loginUser") == e.email) { 
+
+                    var numberOfDocuments = Object.keys(e.Documents).length;
+            for (var i = 1; i <= numberOfDocuments; i++) { 
+                if (`${i}` == `${key}`) {
+                    e.Documents[key].link = "";
+                    UpdateDoc();
+                }
+            }
+                }
+                
+                
+            
+        })
+
+    
 }
 
