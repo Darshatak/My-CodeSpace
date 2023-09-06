@@ -169,6 +169,12 @@ input[type="number"]::-webkit-outer-spin-button,
     padding: 20px;
     
 }
+.Lbottom p{
+    text-align: center;
+        margin-top: 20px;
+        cursor: pointer;
+    
+}
 
 .Lbottom .item{
     width: 100%;
@@ -191,6 +197,7 @@ input[type="number"]::-webkit-outer-spin-button,
 
 .Lbottom .item p {
     color: rgb(255, 255, 255);
+    margin-top: 0px;
     font-size: 11pt;
     font-weight: 500;
     text-align: start;
@@ -393,14 +400,16 @@ input[type="submit"]:hover {
 
 .profileP {
     width: 100%;
+    height: 80%;
     display: none;
     flex-direction: column;
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 1200px;
     margin: 0 auto;
+
 }
 .profileP p{
     font-weight: bold;
@@ -437,6 +446,18 @@ input[type="submit"]:hover {
     color: #333;
 }
 
+.split{
+    width: calc(100% / 3);
+    padding: 0px 20px;
+    
+}
+.split p {
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: #333 2px solid;
+
+}
+
 button#editProfile {
     background-color: #007bff;
     color: white;
@@ -447,7 +468,16 @@ button#editProfile {
 }
 
 .profile-info {
-    margin-top: 20px;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    border-left: #555353 2px solid;
+    border-right: #555353 2px solid;
+    border-bottom: #555353 2px solid;
+    border-radius: 20px;
+
 }
 
 .info-item {
@@ -466,10 +496,11 @@ button#editProfile {
     word-wrap:break-word;
     margin-left: 50px;
     text-align: end;
+    line-height: 1.3rem;
 }
 
 .header{
-    margin-top: 50px;
+    
     font-weight: bold;
     text-align: center;
 }
@@ -767,6 +798,7 @@ input:-webkit-autofill {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    
 }
 
 
@@ -904,7 +936,8 @@ input:-webkit-autofill {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15%;
+    width: 25%;
+    max-width: 450px;
 }
 
 .DocItem p button {
@@ -953,22 +986,146 @@ input:-webkit-autofill {
 }
 
 @media only screen and (max-width: 1000px) {
-    .leftSection {
-        height: 100%;
-        width: 0px;
-        position: relative;
-        background-color: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(60px);
-        border-right: 1px solid #162938;
-    }
+.leftSection {
+    height: 100%;
+    width: 100px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(60px);
+    border-right: 1px solid #162938;
+}
 
-        .Attendance {
-            display: none;
-            height: 100%;
-            width: 100%;
-            max-width: 900px;
-            position: absolute;
-            top: 0%;
-            left: 5%;
-        }
+#hambutton{
+    display: none;
+}
+
+.leftSection img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    /* padding: 20px 40px; */
+
+}
+
+
+
+
+.leftSection .tabs .item p {
+    display: none;
+}
+
+
+.Lbottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    padding: 20px;
+
+}
+
+.Lbottom p i:nth-child(2) {
+    display: none;
+
+}
+
+.Lbottom .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 26%;
+    cursor: pointer;
+    background-color: #007BFF;
+}
+
+
+.Lbottom .item p {
+    display: none;
+}
+
+
+
+
+.Attendance {
+    display: none;
+    height: 100%;
+    width: 100%;
+    max-width: 900px;
+    position: absolute;
+    top: 0%;
+    left: 5%;
+}
+
+
+.split {
+    width: 100%;
+    padding: 0px 20px;
+}
+.split p{
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: #333 2px solid;
+}
+
+.profile-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileP {
+    width: 80%;
+    height: 95%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-item span:nth-child(2) {
+    font-size: 12pt;
+    word-wrap: break-word;
+    margin-left: 50px;
+    text-align: end;
+    line-height: 1.3rem;
+}
+.item1 .search {
+    width: 250px;
+    border-radius: 32px;
+    cursor: pointer;
+    background-color: white;
+
+}
+
+#pTop {
+    width: 100%;
+    height: 150px;
+    /* background: #476b9e; */
+    background: rgb(241, 241, 250);
+    display: flex;
+    color: #000000;
+    padding: 0px 10%;
+    align-items: center;
+    font-weight: 600;
+    justify-content: space-between;
+}
+
+#pBtm {
+    width: 100%;
+    height: calc(100% - 150px);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.element{
+    flex-direction: column;
+}
 }

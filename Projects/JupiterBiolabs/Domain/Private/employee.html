@@ -34,11 +34,11 @@
                         <p>Documents</p>
                     </div>
                     <div class="item" id="salaryNav">
-                        <i class="fa-solid fa-briefcase"></i>
+                        <i class="fa-solid fa-receipt"></i>
                         <p>Salary</p>
                     </div>
                     <div class="item" id="notificationsNav">
-                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-solid fa-bell"></i>
                         <p>Notifications</p>
                     </div>
                     <div class="item" id="SettingNav">
@@ -55,10 +55,9 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <p>Raise a Request </p>
                     </div>
-                    <p style="text-align: center;
-                                margin-top: 20px;
-                                cursor: pointer;">
-                        <i class="fa-solid fa-power-off" id="logout">&nbsp&nbspLogout</i>
+                    <p>
+                        <i class="fa-solid fa-power-off" id="logout"></i>
+                        <i class="fa-solid" id="logout">&nbsp&nbspLogout</i>
                     </p>
                 </div>
 
@@ -249,44 +248,53 @@
                             <img src="" alt="" id="profilePhotos">
                         </div>
                         <div class="profile-info">
-                            <p>Basic Information</p>
-                            <div class="info-item">
-                                <span class="label">First Name:</span>
-                                <span id="ProfileFname"></span>
+                            <div class="split">
+                                <p>Basic Information</p>
+                                <div class="info-item">
+                                    <span class="label">First Name:</span>
+                                    <span id="ProfileFname"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Last Name:</span>
+                                    <span id="ProfileLname"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Email:</span>
+                                    <span id="ProfileEmail"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Number:</span>
+                                    <span id="ProfileNumber"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Address:</span>
+                                    <span id="ProfileAddress"></span>
+                                </div>
                             </div>
-                            <div class="info-item">
-                                <span class="label">Last Name:</span>
-                                <span id="ProfileLname"></span>
+
+                            <div class="split">
+                                <div class="header">
+                                    <p>Social Information</p>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">LinkedIn Profile:</span>
+                                    <span id="ProfileLinkedin"></span>
+                                </div>
                             </div>
-                            <div class="info-item">
-                                <span class="label">Email:</span>
-                                <span id="ProfileEmail"></span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">Number:</span>
-                                <span id="ProfileNumber"></span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">Address:</span>
-                                <span id="ProfileAddress"></span>
-                            </div>
-                            <div class="header">
-                                <p>Social Information</p>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">LinkedIn Profile:</span>
-                                <span id="ProfileLinkedin"></span>
-                            </div>
-                            <div class="header">
-                                <p>Job Information</p>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">Current Salary:</span>
-                                <span id="ProfilecCurrentSalary"></span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">Current Role:</span>
-                                <span id="ProfileCurrentRole"></span>
+
+                            <div class="split">
+                                <div class="header">
+                                    <p>Job Information</p>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Current Salary:</span>
+                                    <span id="ProfilecCurrentSalary"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Current Role:</span>
+                                    <span id="ProfileCurrentRole"></span>
+                                </div>
+
                             </div>
 
                         </div>
