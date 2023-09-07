@@ -1,25 +1,25 @@
 var array1 = ["darsh", "vyas", "darshatak", "jatin", "jain", "jotin"]
 
-console.log(array1)
+console.log(array1);
 //* ⁡⁢⁢⁢[ 'darsh', 'vyas', 'darshatak', 'jatin', 'jain', 'jotin' ]⁡⁡
 
-console.log(array1.length)
+console.log(array1.length);
 //* ⁡⁢⁢⁢𝟲⁡
 
-console.log(array1[array1.length-1])
+console.log(array1[array1.length - 1]);
 //* jotin
 
 //! Returns the first (least) index of an element within the array equal
 //! to an element, or -1 if none is found. Tt search the element from the
 //! 0th index number
-console.log(array1.indexOf("vyas"))
+console.log(array1.indexOf("vyas"));
 //* 1
 
 console.log(array1);
 //* 1
 
 //!Print all indexes
-for (items in array1){ 
+for (items in array1){
     console.log(items);
 }
 //* 0
